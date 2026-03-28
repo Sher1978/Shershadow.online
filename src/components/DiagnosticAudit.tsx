@@ -2,25 +2,31 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
-const zoneAContent = {
-  header: "ZONE A: ENGINE ARCHITECTURE",
-  sub: "ПРИРОДА ВНУТРЕННЕЙ БУКСОВКИ",
-  text: "Внешние инструменты (MBA, найм, маркетинг) — это «обвес». Если двигатель (твоя психика) работает с Налогом на Трение, скорость не вырастет. Ты не сломан. Тебе просто нужно обновление «прошивки» двигателя до версии Launch Control.",
-};
-
-const entities = [
-  { 
-    title: "Хранитель (Guardian)", 
-    desc: "Внутренний механизм защиты, который саботирует твой рост под видом «здравого смысла». Он блокирует масштаб, чтобы сохранить твою безопасность.",
-    label: "SABOTAGE_PROTOCOL" 
+const cards = [
+  {
+    id: "01",
+    zone: "ZONE A: ENGINE ARCHITECTURE",
+    title: "ПРИРОДА ВНУТРЕННЕЙ БУКСОВКИ",
+    description: "Внешние инструменты (МВА, найм, маркетинг) — это «обвес». Если двигатель (твоя психика) работает с Налогом на Трение, скорость не вырастет. Ты не сломан. Тебе просто нужно обновление «прошивки» двигателя до версии <span class='text-[#FFFB00] font-bold'>Launch Control</span>.",
+    icon: "/engine_schematic.png"
   },
-  { 
-    title: "Золотая Тень", 
-    desc: "Твой заблокированный ресурс силы. Там спрятана твоя агрессия, масштаб и истинный драйв, которые ты подавил в угоду социуму.",
-    label: "POWER_RESERVE" 
+  {
+    id: "02",
+    zone: "ZONE B: INTERNAL FRICTION ($SFI$)",
+    title: "КТО ТОРМОЗИТ ТВОЙ ГИПЕРКАР?",
+    description: "Твои «Защитники» (Guardians) — это страхи и блоки, которые когда-то спасли тебя, но сегодня превратились в ограничители скорости. Они боятся твоего масштаба так же сильно, как и ты.",
+    icon: "/process_final.png"
   },
+  {
+    id: "03",
+    zone: "ZONE C: THE GOLDEN SHADOW",
+    title: "СКРЫТЫЙ РЕЗЕРВ МОЩНОСТИ",
+    description: "Твоя «Золотая Тень» — это вытесненный потенциал, агрессия и масштаб. Распаковка этих качеств дает мгновенный прирост эффективности и прибыли без увеличения нагрузки.",
+    icon: "/superpower_final.png"
+  }
 ];
 
 export default function DiagnosticAudit() {
@@ -31,120 +37,92 @@ export default function DiagnosticAudit() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-[#0A0A0A] w-full h-[300vh] z-10 selection:bg-gold selection:text-black">
+    <section ref={containerRef} className="relative bg-[#0A0A0A] py-24 px-4 overflow-hidden">
       
-      {/* HUD Progress Bar */}
-      <div className="fixed left-0 top-0 w-full h-[1px] bg-white/5 md:left-12 md:top-1/2 md:-translate-y-1/2 md:w-[1px] md:h-64 z-[100] pointer-events-none">
-        <motion.div 
-          className="h-full bg-gold shadow-[0_0_10px_#D4AF37] md:hidden" 
-          style={{ width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }} 
-        />
-        <motion.div 
-          className="hidden md:block w-full bg-gold shadow-[0_0_10px_#D4AF37]" 
-          style={{ height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }} 
-        />
+      {/* Background Blueprint Image */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
+         <Image 
+           src="/engine_schematic.png" 
+           alt="Blueprint Background" 
+           fill 
+           className="object-cover grayscale"
+         />
       </div>
 
-      {/* STACK OF CARDS */}
-      
-      {/* CARD 1: THE ENGINE LOGIC */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-10 border-b border-white/5 bg-[#0A0A0A]">
-        <div className="absolute inset-0 scanner-grid opacity-[0.05] pointer-events-none" />
-        
-        <motion.div 
-          style={{ 
-            opacity: useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 1, 0]),
-            scale: useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 1, 0.9]),
-          }}
-          className="container mx-auto px-6 relative flex flex-col justify-center items-center text-center"
-        >
-          <span className="absolute text-[15rem] md:text-[25rem] font-bold text-white/[0.02] select-none pointer-events-none" 
-                style={{ WebkitTextStroke: '1px rgba(255,255,255,0.05)' }}>A/D</span>
-          
-          <div className="mb-4 flex items-center gap-4">
-             <div className="h-px w-12 bg-gold/50" />
-             <span className="font-mono text-xs text-gold tracking-[0.4em] uppercase">{zoneAContent.header}</span>
-             <div className="h-px w-12 bg-gold/50" />
-          </div>
-
-          <h2 className="text-4xl md:text-7xl font-bold text-white mb-10 max-w-5xl uppercase tracking-tighter" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-            {zoneAContent.sub}
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-24">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-gold font-mono text-xs tracking-[0.3em] uppercase mb-4"
+          >
+            Diagnostic // Audit_Sequence
+          </motion.p>
+          <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+            Логика <span className="text-white/30">Системы</span>
           </h2>
-          <p className="text-xl md:text-3xl text-white/60 font-light max-w-3xl leading-relaxed italic">
-            {zoneAContent.text}
-          </p>
-        </motion.div>
-      </div>
-
-      {/* CARD 2: THE ENTITIES (Guardian & Gold Shadow) */}
-      <motion.div 
-        style={{ 
-          y: useTransform(scrollYProgress, [0, 0.4, 0.5], ["100vh", "100vh", "0vh"]),
-          opacity: useTransform(scrollYProgress, [0.4, 0.5, 0.8, 0.9], [0, 1, 1, 0]),
-          scale: useTransform(scrollYProgress, [0.8, 0.9], [1, 0.9]),
-        }}
-        className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-20 border-b border-white/5 bg-[#0E0E0E] shadow-[0_-20px_60px_rgba(0,0,0,0.8)]"
-      >
-        <div className="absolute inset-0 scanner-grid opacity-[0.05] pointer-events-none" />
-        
-        <div className="container mx-auto px-6 relative flex flex-col justify-center items-center">
-          <div className="w-full max-w-6xl">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 uppercase tracking-tighter text-center" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-              КЛЮЧЕВЫЕ СУЩНОСТИ <span className="text-gold">СИСТЕМЫ:</span>
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {entities.map((ent, idx) => (
-                <div key={idx} className="group p-10 bg-black/40 border border-white/5 hover:border-gold/30 transition-all duration-500 relative">
-                  <div className="absolute top-0 right-0 p-4 font-mono text-[8px] text-gold/40 uppercase group-hover:text-gold transition-colors italic">
-                    {ent.label}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight">{ent.title}</h3>
-                  <p className="text-white/50 text-lg font-light leading-relaxed">{ent.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-      </motion.div>
 
-      {/* CARD 3: THE CALL TO UPGRADE */}
-      <motion.div 
-        style={{ 
-          y: useTransform(scrollYProgress, [0, 0.8, 0.9], ["100vh", "100vh", "0vh"]),
-          opacity: useTransform(scrollYProgress, [0.8, 0.9], [0, 1]),
-        }}
-        className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-30 bg-[#0A0A0A] shadow-[0_-20px_60px_rgba(0,0,0,0.8)]"
-      >
-        <div className="absolute inset-0 scanner-grid opacity-[0.05] pointer-events-none" />
-        
-        <div className="container mx-auto px-6 relative flex flex-col justify-center items-center text-center">
-          <div className="w-full max-w-4xl">
-            <p className="font-mono text-neon-scan text-sm tracking-[0.5em] mb-8 uppercase">SYSTEM_STATE: READY_FOR_UPGRADE</p>
-            <h2 className="text-4xl md:text-7xl font-bold text-white mb-12 uppercase tracking-tighter leading-none" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-              ТЫ НЕ СЛОМАН. <br />
-              МЫ ОБНОВИМ ТВОЮ <br />
-              <span className="text-gold italic">«ПРОШИВКУ»</span>
-            </h2>
-            
-            <p className="text-xl md:text-2xl text-white/50 font-light mb-16 max-w-2xl mx-auto italic leading-relaxed">
-              Переход на уровень <span className="text-white font-bold">Launch Control</span> — это не магия, а снятие системных ограничений.
-            </p>
-
-            <Link href="/sfitest">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative px-16 py-8 bg-gold text-black font-bold tracking-[0.3em] uppercase overflow-hidden transition-all duration-500 shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+        <div className="space-y-[40vh]">
+          {cards.map((card, index) => {
+            return (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ margin: "-100px" }}
+                transition={{ duration: 0.8 }}
+                className="sticky top-24 w-full"
               >
-                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                <span className="relative z-10">ОБНУЛИТЬ ТРЕНИЕ</span>
-              </motion.button>
-            </Link>
-          </div>
+                <div className="bg-[#111111]/80 backdrop-blur-xl border border-white/10 p-8 md:p-16 rounded-sm shadow-2xl overflow-hidden relative group">
+                  
+                  {/* Decorative number */}
+                  <div className="absolute top-4 right-8 text-[12rem] font-bold text-white/5 pointer-events-none select-none italic">
+                    {card.id}
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="space-y-8 relative z-10">
+                      <div>
+                        <p className="text-gold font-mono text-[10px] tracking-widest mb-2">{card.zone}</p>
+                        <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight uppercase">
+                          {card.title}
+                        </h3>
+                      </div>
+                      <p 
+                        className="text-lg text-white/60 font-light leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: card.description }}
+                      />
+                      
+                      <Link href="https://shershadow.web.app/sfitest">
+                        <motion.button
+                          whileHover={{ x: 10 }}
+                          className="flex items-center gap-4 text-neon-scan font-bold tracking-widest text-xs uppercase"
+                        >
+                          Launch System Scan 
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </motion.button>
+                      </Link>
+                    </div>
+
+                    <div className="relative h-[300px] md:h-[400px] w-full rounded-sm overflow-hidden border border-white/5 bg-black/40">
+                      <Image
+                        src={card.icon}
+                        alt={card.title}
+                        fill
+                        className="object-cover opacity-40 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
-      </motion.div>
-      
+      </div>
     </section>
   );
 }

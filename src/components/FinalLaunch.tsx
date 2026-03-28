@@ -1,51 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function FinalLaunch() {
   return (
-    <section className="py-32 bg-[#0A0A0A] relative overflow-hidden border-t border-white/5 selection:bg-neon-scan selection:text-black">
+    <section className="relative bg-[#0A0A0A] py-32 px-4 overflow-hidden min-h-screen flex items-center justify-center">
       
-      {/* Background Scanning HUD */}
-      <div className="absolute inset-0 scanner-grid opacity-[0.05] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-neon-scan/20 blur-sm" />
+      {/* Background Portal Visual */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
+          <Image 
+            src="/portal_bg.png" 
+            alt="Event Horizon" 
+            fill 
+            className="object-cover scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
+      </div>
 
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-4xl mx-auto relative z-10 text-center">
         <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           className="max-w-4xl mx-auto"
+           initial={{ opacity: 0, scale: 0.95 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           className="relative p-12 md:p-24 border border-white/10 bg-black/60 backdrop-blur-3xl rounded-sm overflow-hidden"
         >
-          <div className="mb-8 font-mono text-xs text-neon-scan tracking-[0.5em] uppercase">SYSTEM_STATE: READY_FOR_SCAN</div>
-          <h2 className="text-5xl md:text-8xl font-bold text-white mb-10 tracking-[0.05em] uppercase leading-none" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-             СИСТЕМА <span className="text-gold">ГОТОВА</span> <br /> К СКАНИРОВАНИЮ.
+          {/* Decorative Corner */}
+          <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-gold/40" />
+          <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-gold/40" />
+
+          <p className="text-neon-scan font-mono text-[10px] tracking-[0.5em] uppercase mb-12">Final_Sequence // Launch_Initiated</p>
+          
+          <h2 className="text-5xl md:text-8xl font-bold text-white uppercase tracking-tighter mb-12 leading-tight" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+             Твой новый <br /> 
+             <span className="text-gold">Стейдж</span>
           </h2>
-          <p className="text-xl md:text-3xl text-white/50 font-light mb-16 italic max-w-2xl mx-auto px-4">
-             Узнай свой Индекс Теневого Трения и получи пошаговый план по снятию с ручника за 30 дней.
+
+          <p className="text-xl md:text-2xl text-white/70 font-light mb-16 leading-relaxed max-w-2xl mx-auto font-heading">
+             «Мы не обещаем, что будет легко. Мы обещаем, что ты перестанешь буксовать и начнешь лететь.»
           </p>
 
-          <Link href="/sfitest">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-16 py-8 bg-neon-scan text-black font-bold tracking-[0.3em] uppercase transition-all duration-500 shadow-[0_0_50px_rgba(0,240,255,0.3)] hover:shadow-[0_0_80px_rgba(0,240,255,0.5)]"
-            >
-              ПРОЙТИ SFI-ТЕСТ
-            </motion.button>
-          </Link>
-          
-          <div className="mt-12 flex justify-center gap-8 font-mono text-[9px] text-white/20 tracking-[0.3em] uppercase">
-             <span>Protocol: ZH-9021</span>
-             <span>Access: UNLIMITED</span>
+          <div className="space-y-8">
+            <Link href="https://shershadow.web.app/sfitest">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(212, 175, 55, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full md:w-auto px-20 py-10 bg-gold text-black font-bold uppercase tracking-[0.4em] text-sm  hover:bg-white transition-all shadow-2xl relative group"
+              >
+                ЗАПУСТИТЬ SFI ТЕСТ
+                <div className="absolute inset-0 bg-white/20 group-hover:scale-105 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
+              </motion.button>
+            </Link>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12 opacity-40">
+               <p className="font-mono text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
+                 <span className="w-1.5 h-1.5 bg-neon-scan rounded-full" /> 
+                 Ready_for_Upload
+               </p>
+               <p className="font-mono text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
+                 <span className="w-1.5 h-1.5 bg-neon-scan rounded-full" /> 
+                 System_Calibrated
+               </p>
+            </div>
           </div>
         </motion.div>
       </div>
-      
-      {/* Decorative Circles */}
-      <div className="absolute -bottom-64 -left-64 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" />
-      <div className="absolute -top-64 -right-64 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" />
+
     </section>
   );
 }

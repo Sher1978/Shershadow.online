@@ -1,89 +1,107 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const steps = [
-  { 
-    id: "01", 
-    title: "ПОИСК БАГА", 
-    desc: "Сканирование системы на поиск Хранителя и зон утечек Теневого Капитала." 
-  },
-  { 
-    id: "02", 
-    title: "ИЗВЛЕЧЕНИЕ КАПИТАЛА", 
-    desc: "Разблокировка запрещенной энергии и перевод её из пассива в актив." 
-  },
-  { 
-    id: "03", 
-    title: "ПРОШИВКА ПАТТЕРНОВ", 
-    desc: "Внедрение новых алгоритмов принятия решений на уровне инстинктов." 
-  },
+  { id: "01", title: "SEARCH BUG", desc: "Глубокий поиск багов в твоей нейросети, которые мешают тебе видеть возможности роста." },
+  { id: "02", title: "EXTRACT CAPITAL", desc: "Распаковка твоей «Золотой Тени» — скрытых талантов и агрессивного потенциала." },
+  { id: "03", title: "REWRITE PROTOCOL", desc: "Внедрение новой прошивки SFI 1.0 для работы в режиме Zero Friction." }
 ];
 
 export default function Science() {
   return (
-    <section className="py-24 bg-[#0A0A0A] relative overflow-hidden border-t border-white/5 selection:bg-neon-scan selection:text-black">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter uppercase"
-            style={{ fontFamily: "'Syncopate', sans-serif" }}
-          >
-            ZERO FRICTION: <br />
-            <span className="text-gold">АЛГОРИТМ ОПТИМИЗАЦИИ</span>
-          </motion.h2>
-          <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed italic">
-            Это не терапия. Это спринт. Мы находим баг, извлекаем Теневой Капитал и прошиваем новые паттерны за 30 дней. Единственная система для предпринимателей, переводящая психологическое сопротивление в оцифрованный финансовый результат.
-          </p>
-        </div>
+    <section className="relative bg-[#0A0A0A] py-24 px-4 overflow-hidden min-h-screen flex flex-col justify-center">
+      
+      {/* Background Illustration */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
+          <Image 
+            src="/science_final.png" 
+            alt="Algorithm Background" 
+            fill 
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {steps.map((step, i) => (
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <div className="space-y-12">
+            <div>
+              <motion.p 
+                 initial={{ opacity: 0 }}
+                 whileInView={{ opacity: 1 }}
+                 className="text-neon-scan font-mono text-xs tracking-widest mb-4"
+              >
+                The_Method // Zero_Friction
+              </motion.p>
+              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter mb-6" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+                30-Days <br /> 
+                <span className="text-white/20">Sprint</span> Algorithm
+              </h2>
+              <p className="text-xl text-white/60 font-light max-w-lg leading-relaxed italic border-l-2 border-gold pl-6">
+                «Мы не просто правим твое состояние. Мы переписываем твой рабочий процесс под новый уровень масштаба.»
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={step.id}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  className="group flex gap-8 items-start p-6 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 rounded-sm"
+                >
+                  <span className="text-4xl font-bold text-white/10 group-hover:text-gold transition-colors font-mono">
+                    {step.id}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 tracking-widest uppercase">{step.title}</h3>
+                    <p className="text-white/50 font-light leading-relaxed">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <Link href="https://shershadow.web.app/sfitest">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-5 bg-gold text-black font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-white transition-all shadow-[0_0_40px_rgba(212,175,55,0.2)]"
+              >
+                Начать Спринт
+              </motion.button>
+            </Link>
+          </div>
+
+          <div className="relative aspect-square lg:aspect-auto lg:h-[700px] group">
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="p-10 bg-carbon-light/30 border border-white/5 relative group hover:border-gold/30 transition-all duration-500"
+              animate={{ rotate: [0, 5, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              className="w-full h-full relative"
             >
-              <div className="absolute top-0 left-10 -translate-y-1/2 bg-gold text-black px-4 py-1 font-mono text-[10px] font-bold">
-                 STEP_{step.id}
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight" style={{ fontFamily: "'Syncopate', sans-serif" }}>{step.title}</h3>
-              <p className="text-white/50 text-lg leading-relaxed">{step.desc}</p>
-              
-              <div className="mt-8 h-1 w-full bg-white/5 overflow-hidden">
-                 <motion.div 
-                   initial={{ x: "-100%" }}
-                   whileInView={{ x: "0%" }}
-                   transition={{ delay: 0.5 + i * 0.2, duration: 1 }}
-                   className="h-full bg-gold"
-                 />
-              </div>
+              <Image
+                src="/science_final.png"
+                alt="Science Visualization"
+                fill
+                className="object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-1000 grayscale group-hover:grayscale-0"
+              />
+              {/* Floating elements */}
+              <motion.div 
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute top-1/4 right-0 p-4 border border-gold/40 bg-black/60 backdrop-blur-md hidden md:block"
+              >
+                <p className="text-[10px] font-mono text-gold uppercase tracking-tighter">PHASE_01_COMPLETE</p>
+              </motion.div>
             </motion.div>
-          ))}
-        </div>
+          </div>
 
-        <div className="flex justify-center">
-          <Link href="/sfitest">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-6 bg-transparent border border-gold text-gold font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-black transition-all duration-500"
-            >
-              ПЕРЕПРОШИТЬ СИСТЕМУ
-            </motion.button>
-          </Link>
         </div>
       </div>
-      
-      {/* Blueprint Visual Element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-gold/5 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-gold/10 pointer-events-none" />
     </section>
   );
 }

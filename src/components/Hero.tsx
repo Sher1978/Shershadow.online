@@ -10,6 +10,7 @@ const hooks = [
   { id: "Expansion", text: "...твой масштаб пугает твоего внутреннего «скромного мальчика»?" },
   { id: "Vitality", text: "...логика убила твой инстинкт хищника и драйв?" },
   { id: "Architect", text: "...ты строишь идеальные планы в мире тотального хаоса?" },
+  { id: "Mismatch", text: "...твои РЕЗУЛЬТАТЫ не соответствуют твоим знаниям и умениям?" },
 ];
 
 export default function Hero() {
@@ -91,7 +92,7 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          <Link href="/sfitest">
+          <Link href="https://shershadow.web.app/sfitest">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -115,16 +116,39 @@ export default function Hero() {
         <motion.div
           animate={{ scale: [1, 1.05] }}
           transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-          className="w-full h-full relative grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-1000"
+          className="w-full h-full relative"
         >
           <Image
-            src="/hero_final.png"
+            src="/hero_car_cinematic.png"
             alt="Anomaly Logic Visualization"
             fill
             className="object-cover"
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
           />
+
+          {/* Smoke/Steam Effect Overlays */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ 
+                  opacity: [0, 0.2, 0], 
+                  y: [0, -200], 
+                  x: [0, (i % 2 ? 50 : -50)],
+                  scale: [1, 2.5] 
+                }}
+                transition={{ 
+                  duration: 7 + Math.random() * 5, 
+                  repeat: Infinity, 
+                  delay: i * 2,
+                  ease: "easeOut" 
+                }}
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-white/5 blur-[100px] rounded-full"
+              />
+            ))}
+          </div>
         </motion.div>
         
         {/* HUD Elements */}
