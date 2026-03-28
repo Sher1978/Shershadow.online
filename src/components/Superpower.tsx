@@ -5,9 +5,15 @@ import Image from "next/image";
 
 export default function Superpower() {
   return (
-    <section className="py-32 bg-carbon text-white relative overflow-hidden border-y border-white/5">
+    <section className="py-12 md:py-24 bg-carbon text-white relative overflow-hidden border-y border-white/5">
       <div className="absolute inset-0 z-0 opacity-10">
-        <img src="/superpower_final.png" alt="Infinite track" className="w-full h-full object-cover" />
+        <Image 
+          src="/superpower_final.png" 
+          alt="Infinite track" 
+          fill 
+          className="object-cover" 
+          sizes="100vw"
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

@@ -1,35 +1,33 @@
 "use client";
 
 import Hero from "@/components/Hero";
-import ShadowTax from "@/components/ShadowTax";
-import Dashboard from "@/components/Dashboard";
+import DiagnosticAudit from "@/components/DiagnosticAudit";
 import Science from "@/components/Science";
-import Superpower from "@/components/Superpower";
-import HorizontalScroll from "@/components/HorizontalScroll";
-import DangerZone from "@/components/DangerZone";
 import Author from "@/components/Author";
-import SocialProof from "@/components/SocialProof";
-import FinalLaunch from "@/components/FinalLaunch";
+import Dashboard from "@/components/Dashboard";
 import FAQ from "@/components/FAQ";
-import Separator from "@/components/Separator";
+import FinalLaunch from "@/components/FinalLaunch";
 
 export default function Home() {
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-background min-h-screen">
+      {/* 
+        JTBD STRUCTURE:
+        Block 1: HERO (Anomaly Detection)
+        Block 2: THE BLUEPRINT LOGIC (Diagnostic Audit)
+        Block 3: ZERO FRICTION (The Method - Science)
+        Block 4: ABOUT AUTHOR (Chief Engineer)
+        Block 5: TELEMETRY (Dashboard)
+        Block 6: SHADOW LOGIC FAQ
+        Block 7: FINAL CTA (Final Launch)
+      */}
       <Hero />
-      <ShadowTax />
+      <DiagnosticAudit />
       <Science />
-      <Dashboard />
-      <Separator text="TRANSITION TO ACCELERATION" />
-      <Superpower />
-      <Separator text="THE SPRINT LOGIC" />
-      <HorizontalScroll />
-      <Separator text="THE RISK ARCHITECTURE" />
-      <DangerZone />
       <Author />
-      <SocialProof />
-      <FinalLaunch />
+      <Dashboard />
       <FAQ />
+      <FinalLaunch />
     </main>
   );
 }

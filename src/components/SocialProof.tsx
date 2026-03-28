@@ -8,15 +8,15 @@ const images = [
   { src: "/proof_2.png", alt: "Luxury watch" },
   { src: "/proof_3.png", alt: "Private jet briefing" },
   { src: "/proof_4.png", alt: "Dubai night speed" },
-  { src: "/hero.png", alt: "Dubai Vibes" },
-  { src: "/dashboard.png", alt: "AI Dashboard" },
+  { src: "/hero_final.png", alt: "Dubai Vibes" },
+  { src: "/process_final.png", alt: "AI Dashboard" },
   { src: "/author.png", alt: "Sherlock Dubai" },
-  { src: "/hero_final.png", alt: "Bugatti Power" },
+  { src: "/science_final.png", alt: "Technical Depth" },
 ];
 
 export default function SocialProof() {
   return (
-    <section className="py-24 bg-carbon text-white border-t border-white/5 overflow-hidden">
+    <section className="py-12 md:py-24 bg-carbon text-white border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="mb-16">
           <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4 tracking-tighter uppercase">ГАЛЕРЕЯ ПРОЯВЛЕННОСТИ</h2>

@@ -1,134 +1,168 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+const hooks = [
+  { id: "Sovereign", text: "...ты боишься нанять тех, кто сильнее тебя?" },
+  { id: "Expansion", text: "...твой масштаб пугает твоего внутреннего «скромного мальчика»?" },
+  { id: "Vitality", text: "...логика убила твой инстинкт хищника и драйв?" },
+  { id: "Architect", text: "...ты строишь идеальные планы в мире тотального хаоса?" },
+];
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
+  const [currentHook, setCurrentHook] = useState(0);
 
-  // Background Parallax & Zoom
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  
-  // Opacity Transitions for Hierarchy
-  const h1Opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const h1Scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.9]);
-  
-  const h2Opacity = useTransform(scrollYProgress, [0.3, 0.5, 0.8], [0, 1, 1]);
-  const h2Scale = useTransform(scrollYProgress, [0.3, 0.6], [0.8, 1]);
-  const h2Y = useTransform(scrollYProgress, [0.3, 0.6], [50, 0]);
-
-  const ctaOpacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
-  const ctaScale = useTransform(scrollYProgress, [0.6, 0.8], [0.9, 1]);
-
-  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setMounted(true);
+    const timer = setInterval(() => {
+      setCurrentHook((prev) => (prev + 1) % hooks.length);
+    }, 2500); // 2.5s interval
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-[#0A0A0C]">
-      {/* Background Sticky Container */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <motion.div style={{ scale: bgScale }} className="absolute inset-0 z-0">
-          <img
-            src="/hero_final.png"
-            alt="Cinematic Hypercar"
-            className="w-full h-full object-cover"
-          />
-          {/* Vignette Overlays */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(10,10,12,0.6)_60%,#0A0A0C_100%)] z-10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0C]/20 to-[#0A0A0C] z-10" />
-        </motion.div>
+    <section className="relative w-full h-screen overflow-hidden flex flex-col md:grid md:grid-cols-2 bg-[#0A0A0A] selection:bg-neon-scan selection:text-black">
+      
+      {/* Background Scanning Visuals */}
+      <div className="absolute inset-0 scanner-grid opacity-10 pointer-events-none z-1" />
+      <div className="absolute inset-0 noise-overlay z-2" />
+      <motion.div 
+        animate={{ y: ["-100%", "100%"] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-link-gold to-transparent opacity-30 z-3" 
+      />
 
-        {/* Volumetric Smoke Particles */}
-        {mounted && (
-          <div className="absolute inset-0 z-20 pointer-events-none">
-            {[...Array(15)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ x: `${Math.random() * 100}%`, y: "110%", opacity: 0 }}
-                animate={{ 
-                  y: ["110%", "-20%"],
-                  opacity: [0, 0.2, 0],
-                  scale: [1, 2, 4],
-                  filter: ["blur(20px)", "blur(60px)", "blur(120px)"]
-                }}
-                transition={{ 
-                  duration: 10 + Math.random() * 15, 
-                  repeat: Infinity, 
-                  delay: Math.random() * 10 
-                }}
-                className="absolute w-80 h-80 bg-white/5 rounded-full"
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Content Layers (Sticky) */}
-        <div className="absolute inset-0 z-30 flex items-center justify-center px-6">
-          <div className="container mx-auto text-center relative h-full flex flex-col items-center justify-center">
-            
-            {/* Block A: ILLUSION (Initial State) */}
-            <motion.div
-              style={{ opacity: h1Opacity, scale: h1Scale }}
-              className="absolute inset-0 flex flex-col items-center justify-center space-y-8"
-            >
-              <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-[0.2em] leading-none text-white uppercase" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-                ИЛЛЮЗИЯ <br /> СКОРОСТИ.
-              </h1>
-              <p className="text-xl md:text-4xl font-light tracking-[0.3em] uppercase text-white/60" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Твои 1000 сил уходят в дым.
-              </p>
-            </motion.div>
-
-            {/* Block B: REALIZATION (Scroll-triggered) */}
-            <motion.div
-              style={{ opacity: h2Opacity, scale: h2Scale, y: h2Y }}
-              className="flex flex-col items-center space-y-12 max-w-5xl"
-            >
-              <h2 className="text-4xl md:text-7xl lg:text-8xl font-black uppercase italic leading-tight tracking-tighter" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#FF0000" }}>
-                Твой КПД — 5%, <br /> потому что ты <br /> едешь на ручнике.
-              </h2>
-              
-              <p className="text-lg md:text-2xl text-[#8E8E93] max-w-3xl font-medium" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                Пока конкуренты скользят по льду, ты жжешь тормозные колодки собственного бизнеса. Пора отпустить тормоз.
-              </p>
-
-              {/* Pulsating CTA */}
-              <motion.div style={{ opacity: ctaOpacity, scale: ctaScale }} className="mt-8">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative px-16 py-8 bg-transparent border-2 border-[#FF0000] text-white font-bold tracking-widest uppercase overflow-hidden transition-all"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                  <motion.div 
-                    animate={{ opacity: [0.2, 0.5, 0.2] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                    className="absolute inset-0 bg-[#FF0000]/30 blur-2xl" 
-                  />
-                  <span className="relative z-10 text-xl text-white">Пройти Shadow Audit</span>
-                  <div className="absolute inset-0 border-2 border-[#FF0000] opacity-0 group-hover:opacity-100 transition-opacity animate-pulse shadow-[0_0_30px_#FF0000]" />
-                </motion.button>
-              </motion.div>
-            </motion.div>
-          </div>
+      {/* Left Column (System Diagnosis) */}
+      <div className="order-2 md:order-1 min-h-[60vh] md:h-full flex flex-col justify-between p-8 md:p-24 relative z-20">
+        
+        {/* System ID Tag */}
+        <div className="flex gap-4 items-center mb-12">
+          <div className="w-2 h-2 bg-neon-scan animate-pulse" />
+          <span className="font-mono text-[10px] text-neon-scan tracking-[0.4em] uppercase">SYSTEM_INIT // DETECTION_MODE_ACTIVE</span>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          style={{ opacity: h1Opacity }}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-4"
+        {/* H1 (Static) */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "circOut" }}
         >
-          <div className="w-px h-24 bg-gradient-to-b from-white to-transparent" />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase leading-[0.9]" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+            Твой бизнес <br /> 
+            <span className="text-white/20">буксует,</span> <br />
+            потому что <br />
+            <span className="text-neon-scan">...</span>
+          </h1>
         </motion.div>
+
+        {/* Dynamic Hooks Loader */}
+        <div className="relative h-40 flex items-center my-8 md:my-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentHook}
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -30, filter: "blur(10px)" }}
+              transition={{ duration: 0.6, ease: "circInOut" }}
+              className="absolute inset-0 flex flex-col justify-center"
+            >
+              <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight max-w-2xl italic tracking-tight underline decoration-neon-scan/30 underline-offset-8">
+                {hooks[currentHook].text}
+              </p>
+              <div className="mt-4 font-mono text-[10px] text-neon-scan/50 uppercase tracking-[0.2em]">
+                PHASE_TAG: {hooks[currentHook].id} // [DETECTED]
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Sub-headline + CTA */}
+        <div className="max-w-xl space-y-12">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="space-y-6"
+          >
+            <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed">
+              Пока ты ищешь внешние инструменты развития, твоя Тень <span className="text-white font-bold">($Shadow$)</span> незаметно сжигает до 50% твоей прибыли. Мы не учим тебя бизнесу. Мы убираем внутреннее трение <span className="text-neon-scan font-bold">($SFI$)</span>, которое мешает тебе взлететь.
+            </p>
+          </motion.div>
+
+          <Link href="/sfitest">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative flex items-center gap-6 px-12 py-6 bg-transparent border border-neon-scan/40 hover:border-gold transition-all duration-500 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-scan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 right-0 w-8 h-8 flex items-center justify-center">
+                 <div className="w-1.5 h-1.5 bg-neon-scan group-hover:bg-gold transition-colors" />
+              </div>
+              <span className="relative z-10 text-white font-bold tracking-[0.25em] uppercase text-sm">ЗАПУСТИТЬ СКАНИРОВАНИЕ SFI</span>
+              <svg className="w-6 h-6 text-neon-scan group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </motion.button>
+          </Link>
+        </div>
       </div>
+
+      {/* Right Column (Blueprint Image) */}
+      <div className="order-1 md:order-2 h-[40vh] md:h-full relative overflow-hidden bg-black/40 border-l border-white/5">
+        <motion.div
+          animate={{ scale: [1, 1.05] }}
+          transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+          className="w-full h-full relative grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-1000"
+        >
+          <Image
+            src="/hero_final.png"
+            alt="Anomaly Logic Visualization"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </motion.div>
+        
+        {/* HUD Elements */}
+        <div className="absolute bottom-12 right-12 z-20 pointer-events-none hidden md:block">
+           <div className="p-6 border border-white/10 bg-black/60 backdrop-blur-md">
+              <div className="grid grid-cols-2 gap-x-12 gap-y-4">
+                 <div className="space-y-1">
+                    <p className="font-mono text-[8px] text-white/40 uppercase">Target_Status</p>
+                    <p className="font-heading text-xs text-neon-scan uppercase">In_Stall</p>
+                 </div>
+                 <div className="space-y-1">
+                    <p className="font-mono text-[8px] text-white/40 uppercase">Shadow_Tax</p>
+                    <p className="font-heading text-xs text-white uppercase font-bold">82.3%</p>
+                 </div>
+                 <div className="space-y-1">
+                    <p className="font-mono text-[8px] text-white/40 uppercase">System_Load</p>
+                    <p className="font-heading text-xs text-white uppercase">Critical</p>
+                 </div>
+                 <div className="space-y-1">
+                    <p className="font-mono text-[8px] text-white/40 uppercase">Efficiency</p>
+                    <div className="w-16 h-1 bg-white/10 mt-1 overflow-hidden">
+                       <motion.div 
+                         initial={{ width: 0 }} 
+                         animate={{ width: "15%" }} 
+                         transition={{ delay: 1, duration: 2 }}
+                         className="h-full bg-neon-scan" 
+                       />
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent z-10 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent md:hidden z-10" />
+      </div>
+
     </section>
   );
 }

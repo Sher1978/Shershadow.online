@@ -1,56 +1,89 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
+
+const steps = [
+  { 
+    id: "01", 
+    title: "ПОИСК БАГА", 
+    desc: "Сканирование системы на поиск Хранителя и зон утечек Теневого Капитала." 
+  },
+  { 
+    id: "02", 
+    title: "ИЗВЛЕЧЕНИЕ КАПИТАЛА", 
+    desc: "Разблокировка запрещенной энергии и перевод её из пассива в актив." 
+  },
+  { 
+    id: "03", 
+    title: "ПРОШИВКА ПАТТЕРНОВ", 
+    desc: "Внедрение новых алгоритмов принятия решений на уровне инстинктов." 
+  },
+];
 
 export default function Science() {
   return (
-    <section className="py-24 bg-carbon text-white overflow-hidden relative border-t border-white/5">
-      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative aspect-square bg-black/40 border border-white/10 overflow-hidden group"
-        >
-          <Image 
-            src="/science_final.png" 
-            alt="Ego Core Architecture" 
-            fill 
-            className="object-contain group-hover:scale-110 transition-transform duration-1000"
-          />
-          <div className="absolute inset-0 bg-accent/5 pointer-events-none" />
-          <div className="absolute top-4 left-4 font-mono text-[10px] text-accent/60">
-            PERSONALITY_ARCH_MAP_V1 <br />
-            GUARDIAN_LAYER: ACTIVE
-          </div>
-        </motion.div>
+    <section className="py-24 bg-[#0A0A0A] relative overflow-hidden border-t border-white/5 selection:bg-neon-scan selection:text-black">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter uppercase"
+            style={{ fontFamily: "'Syncopate', sans-serif" }}
+          >
+            ZERO FRICTION: <br />
+            <span className="text-gold">АЛГОРИТМ ОПТИМИЗАЦИИ</span>
+          </motion.h2>
+          <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed italic">
+            Это не терапия. Это спринт. Мы находим баг, извлекаем Теневой Капитал и прошиваем новые паттерны за 30 дней. Единственная система для предпринимателей, переводящая психологическое сопротивление в оцифрованный финансовый результат.
+          </p>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-8 uppercase tracking-tighter">
-            НИЖЕ РАДАРА <br />
-            <span className="text-white/40">ХРАНИТЕЛЯ</span>
-          </h2>
-          
-          <div className="space-y-6 font-body text-grey text-lg leading-relaxed border-l-2 border-gold pl-8">
-            <p>
-              Твой <span className="text-white font-bold italic">Хранитель</span> (алгоритм безопасности мозга) видит в росте угрозу и жмет на тормоз.
-            </p>
-            <p>
-              Мы не занимаемся терапией. Метод <span className="text-gold font-bold italic underline decoration-gold/20">Zero Friction</span> — это высокоточная инженерия, работающая ниже радаров защиты.
-            </p>
-            <p>
-              Мы перепрошиваем софт: Хранитель становится союзником, охраняющим твой новый масштаб.
-            </p>
-          </div>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              viewport={{ once: true }}
+              className="p-10 bg-carbon-light/30 border border-white/5 relative group hover:border-gold/30 transition-all duration-500"
+            >
+              <div className="absolute top-0 left-10 -translate-y-1/2 bg-gold text-black px-4 py-1 font-mono text-[10px] font-bold">
+                 STEP_{step.id}
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight" style={{ fontFamily: "'Syncopate', sans-serif" }}>{step.title}</h3>
+              <p className="text-white/50 text-lg leading-relaxed">{step.desc}</p>
+              
+              <div className="mt-8 h-1 w-full bg-white/5 overflow-hidden">
+                 <motion.div 
+                   initial={{ x: "-100%" }}
+                   whileInView={{ x: "0%" }}
+                   transition={{ delay: 0.5 + i * 0.2, duration: 1 }}
+                   className="h-full bg-gold"
+                 />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Link href="/sfitest">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-12 py-6 bg-transparent border border-gold text-gold font-bold tracking-[0.3em] uppercase hover:bg-gold hover:text-black transition-all duration-500"
+            >
+              ПЕРЕПРОШИТЬ СИСТЕМУ
+            </motion.button>
+          </Link>
+        </div>
       </div>
+      
+      {/* Blueprint Visual Element */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-gold/5 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-gold/10 pointer-events-none" />
     </section>
   );
 }

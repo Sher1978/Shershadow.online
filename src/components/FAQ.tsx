@@ -1,55 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const faqs = [
   {
-    q: "ПОЧЕМУ ИИ ОБЪЕКТИВНЕЕ ЧЕЛОВЕКА?",
-    a: "ИИ не имеет 'Хранителя'. Он видит твои паттерны через данные, игнорируя социальные маски и попытки мозга оправдать саботаж.",
+    q: "ПОЧЕМУ СЕЙЧАС?",
+    a: "Твой Хранитель выигрывает время. Каждая неделя промедления — это не просто упущенная выгода, это ресурс, который твоя Тень ($Shadow$) сжигает прямо сейчас. Система не прощает бездействия в условиях предельных нагрузок."
   },
   {
-    q: "КАК СПРИНТ ОКУПАЕТСЯ ЧЕРЕЗ НЕДЕЛЮ?",
-    a: "Когда ты перестаешь тратить 80% энергии на трение, твоя эффективность растет кратно. Высвобожденный ресурс мгновенно конвертируется в решения, которые ты откладывал месяцами.",
+    q: "ПОЧЕМУ ТЕНЬ ВАЖНЕЕ МАРКЕТИНГА?",
+    a: "Маркетинг — это бензин. Если в баке твоего двигателя дыра (Налог на Трение), ты просто заливаешь деньги в асфальт. Мы не вешаем на машину новый обтекатель, мы чиним сам двигатель."
   },
   {
-    q: "БЕЗОПАСНЫ ЛИ МОИ ДАННЫЕ?",
-    a: "Мы используем стек PostgreSQL/Redis с полным шифрованием. Твоя Тень дешифруется только локально в рамках твоего Sprint-аккаунта.",
+    q: "КТО ТАКОЙ ХРАНИТЕЛЬ?",
+    a: "Это твой внутренний механизм защиты. Он саботирует твой рост, маскируясь под 'здравый смысл' и 'рациональное планирование'. Его задача — оставить тебя там, где тебе 'безопасно', но где нет твоего масштаба."
   },
   {
-    q: "ЧЕМ ЭТО ОТЛИЧАЕТСЯ ОТ КОУЧИНГА?",
-    a: "Коучинг работает с сознанием. Мы работаем с системной архитектурой твоего 'железа'. Это не разговор, это перепрошивка.",
-  },
+    q: "ЧТО ТАКОЕ SFI INDEX?",
+    a: "Shadow Friction Index — это оцифрованный показатель твоего внутреннего сопротивления. Это технический параметр, который показывает, сколько усилий твоя система тратит на борьбу с самой собой."
+  }
 ];
 
 export default function FAQ() {
   return (
-    <section className="py-24 bg-carbon text-white border-t border-white/5">
+    <section className="py-24 bg-[#0A0A0A] text-white border-t border-white/5 selection:bg-gold selection:text-black">
       <div className="container mx-auto px-6">
-        <div className="mb-16">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4 tracking-tighter uppercase">ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ</h2>
+        <div className="mb-24 flex flex-col items-center text-center">
+          <div className="mb-4 text-gold font-mono text-[10px] tracking-[0.5em] uppercase">FAQ_PROTOCOL_LOG_V3.01</div>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+             ОБРАБОТКА <span className="text-white/20">САБОТАЖА</span>
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="border-l border-white/10 pl-8"
+              className="p-10 bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-500"
             >
-              <h3 className="font-heading text-lg font-bold mb-4 text-gold">{faq.q}</h3>
-              <p className="font-body text-grey leading-relaxed italic">{faq.a}</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-6 text-gold uppercase tracking-tight">{faq.q}</h3>
+              <p className="text-white/50 text-lg font-light leading-relaxed italic">{faq.a}</p>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 font-heading text-[10px] text-grey tracking-[0.5em] uppercase">
-          <p>© 2026 SHER SHADOW CAPITAL. ALL RIGHTS RESERVED.</p>
+        <div className="mt-32 pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 font-mono text-[10px] text-white/20 tracking-[0.5em] uppercase">
+          <p>© 2026 SHER SHADOW CAPITAL // ALL_RIGHTS_RESERVED</p>
           <div className="flex gap-12">
-            <span>STK: NEXTJS/FRAMER/TAILWIND</span>
-            <span>LOC: DUBAI DESERT HQ</span>
+            <span>STK: NEXTJS/FRAMER/BLUEPRINT</span>
+            <span>SYSTEM_ORIGIN: DUBAI HQ</span>
           </div>
         </div>
       </div>

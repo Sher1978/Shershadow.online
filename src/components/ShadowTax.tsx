@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ShadowTax() {
   return (
-    <section className="py-24 bg-carbon relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-carbon relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -33,7 +33,7 @@ export default function ShadowTax() {
                     whileInView={{ height: `${Math.random() * 100}%` }}
                     transition={{ delay: i * 0.05, duration: 1 }}
                     viewport={{ once: true }}
-                    className={`flex-1 ${i > 15 ? 'bg-accent' : 'bg-danger/40'}`}
+                    className={`flex-1 transition-all duration-500 ${i > 15 ? 'bg-accent/80' : 'bg-danger/60'}`}
                   />
                 ))}
              </div>

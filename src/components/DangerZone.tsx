@@ -16,12 +16,12 @@ export default function DangerZone() {
     ["#000000", "#3E0000", "#1A0000", "#000000"]
   );
 
-  const stage1Opacity = useTransform(scrollYProgress, [0.15, 0.25, 0.35], [0.1, 1, 0.1]);
-  const stage2Opacity = useTransform(scrollYProgress, [0.35, 0.45, 0.55], [0.1, 1, 0.1]);
-  const stage3Opacity = useTransform(scrollYProgress, [0.55, 0.65, 0.75], [0.1, 1, 0.1]);
+  const stage1Opacity = useTransform(scrollYProgress, [0.05, 0.2, 0.35], [0.1, 1, 0.1]);
+  const stage2Opacity = useTransform(scrollYProgress, [0.4, 0.55, 0.7], [0.1, 1, 0.1]);
+  const stage3Opacity = useTransform(scrollYProgress, [0.75, 0.9, 1.0], [0.1, 1, 1]);
   
   // Ruptured loop logic: circle that gaps open as you scroll
-  const dashOffset = useTransform(scrollYProgress, [0.1, 0.8], [1885, 1200]); // 2*PI*300 is ~1885
+  const dashOffset = useTransform(scrollYProgress, [0, 1], [1885, 1300]); // 2*PI*300 is ~1885
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function DangerZone() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative py-24 overflow-hidden h-[300vh]">
+    <section ref={containerRef} className="relative py-12 md:py-24 overflow-hidden h-[150vh] md:h-[200vh]">
       <motion.div 
         style={{ backgroundColor }}
         className="absolute inset-0 z-0"

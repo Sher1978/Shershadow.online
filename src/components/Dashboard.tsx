@@ -1,90 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Gauge, Zap, AlertTriangle } from "lucide-react";
+import Link from "next/link";
 
-const cards = [
+const results = [
   {
-    title: "Уставший победитель",
-    description: "Тебе всё дается через сверхусилия. Пока другие скользят по льду, ты продираешься через бетон.",
-    icon: <Zap className="w-6 h-6 text-gold" />,
-    label: "OVERHEATED",
+    title: "PROFIT_CONVERSION",
+    label: "ПРИБЫЛЬ",
+    desc: "Полная конвертация Налога на Трение в чистую прибыль. Рост маржинальности без привлечения внешних инвестиций."
   },
   {
-    title: "Пленник этики",
-    description: "Твой масштаб заперт внутри твоей 'вежливости'. Ты боишься быть неудобным и строишь комфортную среду для всех, кроме себя.",
-    icon: <AlertTriangle className="w-6 h-6 text-gold" />,
-    label: "LIMITER ACTIVE",
+    title: "SOVEREIGN_LEADERSHIP",
+    label: "ЛИДЕРСТВО",
+    desc: "Управление лидерами из позиции Sovereign. Ты больше не контролер, ты — Архитектор, задающий вектор развития."
   },
   {
-    title: "Узкое горлышко",
-    description: "Система работает только на твоем ручном приводе. Ты и есть главный тормоз своего бизнеса, потому что боишься отпустить контроль.",
-    icon: <Gauge className="w-6 h-6 text-gold" />,
-    label: "BOTTLENECK",
-  },
+    title: "SYSTEM_FREEDOM",
+    label: "СВОБОДА",
+    desc: "Выход из операционного ада через калибровку «внутреннего компаса». Система работает на тебя, а не ты на неё."
+  }
 ];
 
 export default function Dashboard() {
   return (
-    <section className="py-24 bg-carbon-light relative overflow-hidden border-t border-white/5">
-      {/* Scanline Effect */}
-      <div className="absolute inset-0 pointer-events-none opacity-5 animate-scanline bg-gradient-to-b from-transparent via-accent to-transparent h-1/4" />
-
+    <section className="py-24 bg-[#0A0A0A] relative overflow-hidden selection:bg-neon-scan selection:text-black">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="mb-16">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4 tracking-tighter uppercase">
-            ДЛЯ КОГО ЭТОТ СПРИНТ
-          </h2>
-          <p className="font-body text-grey text-lg max-w-xl">
-            Только для тех, кто уже на вершине, но задыхается от трения.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+           <div className="max-w-2xl">
+              <div className="flex gap-4 items-center mb-6">
+                 <div className="w-12 h-[1px] bg-neon-scan" />
+                 <span className="font-mono text-xs text-neon-scan tracking-[0.4em] uppercase">TELEMETRY_STATUS: OPTIMIZED</span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+                 ТЕЛЕМЕТРИЯ <br /> <span className="text-gold">БУДУЩЕГО</span>
+              </h2>
+           </div>
+           <div className="bg-white/5 border border-white/10 p-4 font-mono text-[10px] text-white/40 uppercase">
+              Target_Index: <span className="text-neon-scan">SFI 1.0 (Zero Friction)</span>
+           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cards.map((card, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                borderColor: "rgba(255, 69, 0, 0.5)",
-                backgroundColor: "rgba(18, 18, 18, 1)",
-                y: -5
-              }}
-              className="glass-card p-10 border border-white/5 relative group cursor-pointer transition-all duration-300"
-            >
-              <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-accent/20 group-hover:border-accent transition-colors" />
-              
-              <div className="flex justify-between items-start mb-16">
-                <motion.div 
-                  animate={{ rotate: [0, 2, -2, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, delay: index }}
-                  className="p-4 bg-gold/10 rounded-sm"
-                >
-                  {card.icon}
-                </motion.div>
-                <span className="text-[10px] font-heading text-gold tracking-[0.2em] font-bold">{card.label}</span>
-              </div>
+           {results.map((res, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.1 }}
+                className="group p-10 bg-carbon-light/20 border border-white/5 hover:border-neon-scan/40 transition-all duration-500 relative"
+              >
+                 <div className="text-neon-scan font-mono text-[10px] tracking-[0.3em] uppercase mb-8 opacity-40 group-hover:opacity-100 transition-opacity">
+                    {res.title}
+                 </div>
+                 <h3 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">{res.label}</h3>
+                 <p className="text-white/40 text-lg font-light leading-relaxed group-hover:text-white/80 transition-colors">
+                    {res.desc}
+                 </p>
+                 
+                 {/* Visual Gauge */}
+                 <div className="mt-12 h-[2px] w-full bg-white/5 overflow-hidden">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "100%" }}
+                      transition={{ delay: 0.5 + i * 0.2, duration: 1.5 }}
+                      className="h-full bg-neon-scan"
+                    />
+                 </div>
+              </motion.div>
+           ))}
+        </div>
 
-              <h3 className="font-heading text-2xl font-bold mb-6 group-hover:text-accent transition-colors">
-                {card.title}
-              </h3>
-              <p className="font-body text-grey leading-relaxed group-hover:text-white transition-colors">
-                {card.description}
-              </p>
-
-              <div className="mt-12 h-[2px] bg-white/5 relative overflow-hidden">
-                <motion.div 
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${60 + Math.random() * 30}%` }}
-                  transition={{ duration: 1.5, delay: 0.5 }}
-                  className="absolute inset-0 bg-accent shadow-[0_0_10px_#FF4500]" 
-                />
-              </div>
-            </motion.div>
-          ))}
+        <div className="mt-24 text-center">
+           <Link href="/sfitest">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-16 py-6 bg-transparent border border-neon-scan text-neon-scan font-bold tracking-[0.3em] uppercase hover:bg-neon-scan hover:text-black transition-all duration-500 shadow-[0_0_30px_rgba(0,240,255,0.1)]"
+              >
+                 ЗАПУСТИТЬ ТЕЛЕМЕТРИЮ
+              </motion.button>
+           </Link>
         </div>
       </div>
     </section>
