@@ -2,6 +2,7 @@
 
 import Hero from "@/components/Hero";
 import DiagnosticAudit from "@/components/DiagnosticAudit";
+import SabotageMechanics from "@/components/SabotageMechanics";
 import Science from "@/components/Science";
 import Author from "@/components/Author";
 import Dashboard from "@/components/Dashboard";
@@ -15,6 +16,7 @@ export default function Home() {
         JTBD STRUCTURE:
         Block 1: HERO (Anomaly Detection)
         Block 2: THE BLUEPRINT LOGIC (Diagnostic Audit)
+        Block 2.5: SYSTEM RESISTANCE (Sabotage Mechanics)
         Block 3: ZERO FRICTION (The Method - Science)
         Block 4: ABOUT AUTHOR (Chief Engineer)
         Block 5: TELEMETRY (Dashboard)
@@ -23,6 +25,7 @@ export default function Home() {
       */}
       <Hero />
       <DiagnosticAudit />
+      <SabotageMechanics />
       <Science />
       <Author />
       <Dashboard />
