@@ -28,7 +28,7 @@ export default function Author() {
               className="w-full h-full relative"
               initial={{ filter: "grayscale(100%)", opacity: 0.4 }}
               whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
-              viewport={{ amount: 0.6 }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 1.2 }}
             >
               <video 

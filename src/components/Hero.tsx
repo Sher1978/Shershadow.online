@@ -116,7 +116,7 @@ export default function Hero() {
         <motion.div
           initial={{ filter: "grayscale(100%)", scale: 1.1 }}
           whileInView={{ filter: "grayscale(0%)", scale: 1 }}
-          viewport={{ amount: 0.4 }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 2, ease: "easeOut" }}
           className="w-full h-full relative"
         >

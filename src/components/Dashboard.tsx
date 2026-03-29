@@ -48,7 +48,7 @@ export default function Dashboard() {
               key={res.label}
               initial={{ opacity: 0, y: 30, filter: "grayscale(100%)" }}
               whileInView={{ opacity: 1, y: 0, filter: "grayscale(0%)" }}
-              viewport={{ amount: 0.5 }}
+              viewport={{ amount: 0.3 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
               className="p-12 border border-white/5 bg-carbon-light/60 backdrop-blur-md rounded-sm hover:border-gold/30 transition-all group"
             >

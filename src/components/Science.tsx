@@ -86,7 +86,7 @@ export default function Science() {
               <motion.div
                 initial={{ filter: "grayscale(100%)", opacity: 0.5 }}
                 whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
-                viewport={{ amount: 0.5 }}
+                viewport={{ amount: 0.3 }}
                 transition={{ duration: 1.5 }}
                 className="w-full h-full relative"
               >
