@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Author() {
   return (
-    <section className="relative bg-carbon py-24 px-4 overflow-hidden min-h-screen flex items-center">
+    <section className="relative bg-carbon py-12 md:py-24 px-4 overflow-hidden md:min-h-screen flex items-center">
       
       {/* Background World/Dubai Illustration */}
       <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
@@ -20,7 +20,7 @@ export default function Author() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           
           {/* Video / Visual Side */}
           <div className="relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black aspect-[9/16] md:aspect-square lg:aspect-[4/5] max-w-lg mx-auto lg:mx-0">
@@ -43,9 +43,9 @@ export default function Author() {
             </motion.div>
             
             {/* Live Indicator */}
-            <div className="absolute top-8 left-8 flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-              <p className="font-mono text-[10px] text-white/50 tracking-[0.4em] uppercase">LINK_ESTABLISHED // LIVE_TELEMETRY</p>
+            <div className="absolute top-4 md:top-8 left-4 md:left-8 flex items-center gap-2 md:gap-3">
+              <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-red-600 animate-pulse" />
+              <p className="font-mono text-[8px] md:text-[10px] text-white/50 tracking-[0.4em] uppercase">LINK_ESTABLISHED // LIVE_TELEMETRY</p>
             </div>
 
             {/* Scanning Overlay */}
@@ -57,7 +57,7 @@ export default function Author() {
           </div>
 
           {/* Text Side */}
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             <div>
               <motion.p 
                  initial={{ opacity: 0 }}
@@ -66,11 +66,11 @@ export default function Author() {
               >
                 Chief_Engineer // Igor_Sherlock
               </motion.p>
-              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter mb-8" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter mb-4 md:mb-8" style={{ fontFamily: "'Syncopate', sans-serif" }}>
                 Архитектор <br /> 
                 <span className="text-white/20">Системы</span>
               </h2>
-              <div className="space-y-6 text-lg text-white/60 font-light leading-relaxed max-w-xl">
+              <div className="space-y-4 md:space-y-6 text-base md:text-lg text-white/60 font-light leading-relaxed max-w-xl">
                  <p>
                    Игорь Шерлок — больше чем ментор. Это инженер, который разбирает твой бизнес и твою психику как сложный механизм, находя скрытые баги там, где другие видят «просто лень» или «плохой рынок».
                  </p>
@@ -80,13 +80,13 @@ export default function Author() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 py-8 border-y border-white/5">
+            <div className="grid grid-cols-2 gap-4 md:gap-8 py-6 md:py-8 border-y border-white/5">
                <div>
-                  <p className="text-3xl font-bold text-white mb-1">15+</p>
+                  <p className="text-2xl md:text-3xl font-bold text-white mb-1">15+</p>
                   <p className="text-[10px] text-gold font-mono uppercase tracking-widest">YEARS_EXP</p>
                </div>
                <div>
-                  <p className="text-3xl font-bold text-white mb-1">500+</p>
+                  <p className="text-2xl md:text-3xl font-bold text-white mb-1">500+</p>
                   <p className="text-[10px] text-gold font-mono uppercase tracking-widest">SFI_OPTIMIZED</p>
                </div>
             </div>
@@ -95,10 +95,10 @@ export default function Author() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-6 border border-white/20 hover:border-gold text-white font-bold uppercase tracking-[0.2em] text-xs transition-all flex items-center gap-4 group"
+                className="w-full md:w-auto px-8 md:px-12 py-5 md:py-6 border border-white/20 hover:border-gold text-white font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs transition-all flex items-center justify-center gap-4 group"
               >
                 Подключиться к системе
-                <svg className="w-5 h-5 group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </motion.button>

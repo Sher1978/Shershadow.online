@@ -12,7 +12,7 @@ const steps = [
 
 export default function Science() {
   return (
-    <section className="relative bg-carbon py-24 px-4 overflow-hidden min-h-screen flex flex-col justify-center">
+    <section className="relative bg-carbon py-12 md:py-32 px-4 overflow-hidden md:min-h-screen flex flex-col justify-center">
       
       {/* Background Illustration */}
       <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
@@ -26,9 +26,9 @@ export default function Science() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             <div>
               <motion.p 
                  initial={{ opacity: 0 }}
@@ -41,26 +41,26 @@ export default function Science() {
                 30-Days <br /> 
                 <span className="text-white/20">Sprint</span> Algorithm
               </h2>
-              <p className="text-xl text-white/60 font-light max-w-lg leading-relaxed italic border-l-2 border-gold pl-6">
+              <p className="text-lg md:text-xl text-white/60 font-light max-w-lg leading-relaxed italic border-l-2 border-gold pl-6">
                 «Мы не просто правим твое состояние. Мы переписываем твой рабочий процесс под новый уровень масштаба.»
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {steps.map((step, index) => (
                 <motion.div
                   key={step.id}
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className="group flex gap-8 items-start p-6 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 rounded-sm"
+                  className="group flex gap-6 md:gap-8 items-start p-4 md:p-6 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 rounded-sm"
                 >
-                  <span className="text-4xl font-bold text-white/10 group-hover:text-gold transition-colors font-mono">
+                  <span className="text-3xl md:text-4xl font-bold text-white/10 group-hover:text-gold transition-colors font-mono">
                     {step.id}
                   </span>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2 tracking-widest uppercase">{step.title}</h3>
-                    <p className="text-white/50 font-light leading-relaxed">{step.desc}</p>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-2 tracking-widest uppercase">{step.title}</h3>
+                    <p className="text-sm md:text-base text-white/50 font-light leading-relaxed">{step.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -70,14 +70,14 @@ export default function Science() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gold text-black font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-white transition-all shadow-[0_0_40px_rgba(212,175,55,0.2)]"
+                className="w-full md:w-auto px-10 py-5 bg-gold text-black font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-white transition-all shadow-[0_0_40px_rgba(212,175,55,0.2)]"
               >
                 Начать Спринт
               </motion.button>
             </Link>
           </div>
 
-          <div className="relative aspect-square lg:aspect-auto lg:h-[700px] group">
+          <div className="relative aspect-square lg:aspect-auto lg:h-[700px] group hidden md:block">
             <motion.div
               animate={{ rotate: [0, 5, 0] }}
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}

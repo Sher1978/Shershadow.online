@@ -36,10 +36,10 @@ export default function Hero() {
       />
 
       {/* Left Column (System Diagnosis) */}
-      <div className="order-2 md:order-1 flex flex-col justify-center p-8 md:p-24 relative z-20 min-h-[60vh]">
+      <div className="order-2 md:order-1 flex flex-col justify-center p-6 md:p-24 relative z-20 min-h-[50vh] md:min-h-screen">
         
         {/* System ID Tag */}
-        <div className="flex gap-4 items-center mb-8">
+        <div className="flex gap-4 items-center mb-6 md:mb-8">
           <div className="w-2 h-2 bg-neon-scan animate-pulse" />
           <span className="font-mono text-[10px] text-neon-scan tracking-[0.4em] uppercase">SYSTEM_INIT // DETECTION_MODE_ACTIVE</span>
         </div>
@@ -50,7 +50,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, ease: "circOut" }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase leading-[0.9]" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase leading-[0.9]" style={{ fontFamily: "'Syncopate', sans-serif" }}>
             Твой бизнес <br /> 
             <span className="text-white/20">буксует,</span> <br />
             потому что <br />
@@ -59,7 +59,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Dynamic Hooks Loader */}
-        <div className="relative min-h-[14rem] md:min-h-[16rem] flex items-center my-6 md:my-8">
+        <div className="relative min-h-[10rem] md:min-h-[16rem] flex items-center my-4 md:my-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentHook}
@@ -69,7 +69,7 @@ export default function Hero() {
               transition={{ duration: 0.6, ease: "circInOut" }}
               className="absolute inset-x-0 flex flex-col justify-center"
             >
-              <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight max-w-2xl italic tracking-tight underline decoration-neon-scan/30 underline-offset-8">
+              <p className="text-xl md:text-3xl lg:text-4xl font-light text-white leading-tight max-w-2xl italic tracking-tight underline decoration-neon-scan/30 underline-offset-8">
                 {hooks[currentHook].text}
               </p>
               <div className="mt-4 font-mono text-[10px] text-neon-scan/50 uppercase tracking-[0.2em]">
@@ -80,14 +80,14 @@ export default function Hero() {
         </div>
 
         {/* Sub-headline + CTA */}
-        <div className="max-w-xl space-y-8 md:space-y-12 mb-12">
+        <div className="max-w-xl space-y-6 md:space-y-12 mb-8 md:mb-12">
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4 md:space-y-6"
           >
-            <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed">
+            <p className="text-base md:text-xl text-white/70 font-light leading-relaxed">
               Пока ты ищешь внешние инструменты развития, твоя Тень <span className="text-white font-bold">($Shadow$)</span> незаметно сжигает до 50% твоей прибыли. Мы не учим тебя бизнесу. Мы убираем внутреннее трение <span className="text-neon-scan font-bold">($SFI$)</span>, которое мешает тебе взлететь.
             </p>
           </motion.div>
@@ -96,14 +96,14 @@ export default function Hero() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative flex items-center gap-6 px-12 py-6 bg-transparent border border-neon-scan/40 hover:border-gold transition-all duration-500 overflow-hidden"
+              className="group relative flex items-center gap-6 px-8 md:px-12 py-4 md:py-6 bg-transparent border border-neon-scan/40 hover:border-gold transition-all duration-500 overflow-hidden w-full md:w-auto"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-neon-scan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="absolute top-0 right-0 w-8 h-8 flex items-center justify-center">
                  <div className="w-1.5 h-1.5 bg-neon-scan group-hover:bg-gold transition-colors" />
               </div>
-              <span className="relative z-10 text-white font-bold tracking-[0.25em] uppercase text-sm">ЗАПУСТИТЬ СКАНИРОВАНИЕ SFI</span>
-              <svg className="w-6 h-6 text-neon-scan group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <span className="relative z-10 text-white font-bold tracking-[0.25em] uppercase text-xs md:text-sm">ЗАПУСТИТЬ СКАНИРОВАНИЕ SFI</span>
+              <svg className="w-5 h-5 md:w-6 md:h-6 text-neon-scan group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </motion.button>
@@ -112,7 +112,7 @@ export default function Hero() {
       </div>
 
       {/* Right Column (Blueprint Image) - High visibility on mobile */}
-      <div className="order-1 md:order-2 h-[45vh] md:h-full relative overflow-hidden bg-[#111113] border-b md:border-b-0 md:border-l border-white/5 z-10">
+      <div className="order-1 md:order-2 h-[35vh] md:h-full relative overflow-hidden bg-[#111113] border-b md:border-b-0 md:border-l border-white/5 z-10">
         <motion.div
           initial={{ filter: "grayscale(100%)", scale: 1.1, opacity: 0.01 }}
           animate={{ filter: "grayscale(0%)", scale: 1, opacity: 1 }}
@@ -185,9 +185,10 @@ export default function Hero() {
 
         {/* Overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#111113] via-[#111113]/20 to-transparent z-10 hidden md:block" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111113] via-transparent to-transparent md:hidden z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111113] via-transparent to-transparent md:hidden z-10 pointer-events-none" />
       </div>
 
     </section>
+
   );
 }

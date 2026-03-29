@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function FinalLaunch() {
   return (
-    <section className="relative bg-[#0A0A0A] py-32 px-4 overflow-hidden min-h-screen flex items-center justify-center">
+    <section className="relative bg-[#0A0A0A] py-16 md:py-32 px-4 overflow-hidden md:min-h-screen flex items-center justify-center">
       
       {/* Background Portal Visual */}
       <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
@@ -19,45 +19,45 @@ export default function FinalLaunch() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10 text-center">
+      <div className="max-w-4xl mx-auto relative z-10 text-center w-full">
         <motion.div
            initial={{ opacity: 0, scale: 0.95 }}
            whileInView={{ opacity: 1, scale: 1 }}
-           className="relative p-12 md:p-24 border border-white/10 bg-black/60 backdrop-blur-3xl rounded-sm overflow-hidden"
+           className="relative p-8 md:p-24 border border-white/10 bg-black/60 backdrop-blur-3xl rounded-sm overflow-hidden"
         >
           {/* Decorative Corner */}
-          <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-gold/40" />
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-gold/40" />
+          <div className="absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 border-t-2 border-r-2 border-gold/40" />
+          <div className="absolute bottom-0 left-0 w-12 h-12 md:w-16 md:h-16 border-b-2 border-l-2 border-gold/40" />
 
-          <p className="text-neon-scan font-mono text-[10px] tracking-[0.5em] uppercase mb-12">Final_Sequence // Launch_Initiated</p>
+          <p className="text-neon-scan font-mono text-[10px] tracking-[0.5em] uppercase mb-8 md:mb-12">Final_Sequence // Launch_Initiated</p>
           
-          <h2 className="text-5xl md:text-8xl font-bold text-white uppercase tracking-tighter mb-12 leading-tight" style={{ fontFamily: "'Syncopate', sans-serif" }}>
+          <h2 className="text-4xl md:text-8xl font-bold text-white uppercase tracking-tighter mb-8 md:mb-12 leading-tight" style={{ fontFamily: "'Syncopate', sans-serif" }}>
              Твой новый <br /> 
              <span className="text-gold">Стейдж</span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-white/70 font-light mb-16 leading-relaxed max-w-2xl mx-auto font-heading">
+          <p className="text-lg md:text-2xl text-white/70 font-light mb-12 md:mb-16 leading-relaxed max-w-2xl mx-auto font-heading italic">
              «Мы не обещаем, что будет легко. Мы обещаем, что ты перестанешь буксовать и начнешь лететь.»
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <Link href="https://shershadow.web.app/sfitest">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(212, 175, 55, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full md:w-auto px-20 py-10 bg-gold text-black font-bold uppercase tracking-[0.4em] text-sm  hover:bg-white transition-all shadow-2xl relative group"
+                className="w-full md:w-auto px-12 md:px-20 py-6 md:py-10 bg-gold text-black font-bold uppercase tracking-[0.4em] text-xs md:text-sm hover:bg-white transition-all shadow-2xl relative group"
               >
                 ЗАПУСТИТЬ SFI ТЕСТ
                 <div className="absolute inset-0 bg-white/20 group-hover:scale-105 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
               </motion.button>
             </Link>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12 opacity-40">
-               <p className="font-mono text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 md:mt-12 opacity-40">
+               <p className="font-mono text-[8px] md:text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
                  <span className="w-1.5 h-1.5 bg-neon-scan rounded-full" /> 
                  Ready_for_Upload
                </p>
-               <p className="font-mono text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
+               <p className="font-mono text-[8px] md:text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
                  <span className="w-1.5 h-1.5 bg-neon-scan rounded-full" /> 
                  System_Calibrated
                </p>
@@ -65,7 +65,7 @@ export default function FinalLaunch() {
           </div>
         </motion.div>
       </div>
-
+    </section>
     </section>
   );
 }

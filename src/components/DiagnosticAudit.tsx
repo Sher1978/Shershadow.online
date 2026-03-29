@@ -37,7 +37,7 @@ export default function DiagnosticAudit() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-carbon py-24 px-4 overflow-hidden">
+    <section ref={containerRef} className="relative bg-carbon py-12 md:py-24 px-4 overflow-hidden">
       
       {/* Background Blueprint Image */}
       <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
@@ -50,7 +50,7 @@ export default function DiagnosticAudit() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-24">
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -63,7 +63,7 @@ export default function DiagnosticAudit() {
           </h2>
         </div>
 
-        <div className="space-y-[40vh]">
+        <div className="space-y-12 md:space-y-[40vh]">
           {cards.map((card, index) => {
             return (
               <motion.div
@@ -74,23 +74,23 @@ export default function DiagnosticAudit() {
                 transition={{ duration: 0.8 }}
                 className="sticky top-24 w-full"
               >
-                <div className="bg-[#161618]/90 backdrop-blur-xl border border-white/10 p-8 md:p-16 rounded-sm shadow-2xl overflow-hidden relative group">
+                <div className="bg-[#161618]/90 backdrop-blur-xl border border-white/10 p-6 md:p-16 rounded-sm shadow-2xl overflow-hidden relative group">
                   
                   {/* Decorative number */}
-                  <div className="absolute top-4 right-8 text-[12rem] font-bold text-white/5 pointer-events-none select-none italic">
+                  <div className="absolute top-4 right-8 text-[8rem] md:text-[12rem] font-bold text-white/5 pointer-events-none select-none italic">
                     {card.id}
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-8 relative z-10">
+                  <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div className="space-y-6 md:space-y-8 relative z-10">
                       <div>
                         <p className="text-gold font-mono text-[10px] tracking-widest mb-2">{card.zone}</p>
-                        <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight uppercase">
+                        <h3 className="text-2xl md:text-4xl font-bold text-white leading-tight uppercase">
                           {card.title}
                         </h3>
                       </div>
                       <p 
-                        className="text-lg text-white/60 font-light leading-relaxed"
+                        className="text-base md:text-lg text-white/60 font-light leading-relaxed"
                         dangerouslySetInnerHTML={{ __html: card.description }}
                       />
                       
@@ -107,7 +107,7 @@ export default function DiagnosticAudit() {
                       </Link>
                     </div>
 
-                    <div className="relative h-[300px] md:h-[400px] w-full rounded-sm overflow-hidden border border-white/5 bg-black/40">
+                    <div className="relative h-[250px] md:h-[400px] w-full rounded-sm overflow-hidden border border-white/5 bg-black/40">
                       <motion.div
                         className="w-full h-full relative"
                         initial={{ filter: "grayscale(100%)", opacity: 0.4 }}
