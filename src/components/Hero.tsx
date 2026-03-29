@@ -111,13 +111,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Right Column (Blueprint Image) */}
-      <div className="order-1 md:order-2 min-h-[50vh] md:h-full relative overflow-hidden bg-black/40 border-l border-white/5 z-10">
+      {/* Right Column (Blueprint Image) - High visibility on mobile */}
+      <div className="order-1 md:order-2 h-[45vh] md:h-full relative overflow-hidden bg-[#111113] border-b md:border-b-0 md:border-l border-white/5 z-10">
         <motion.div
-          initial={{ filter: "grayscale(100%)", scale: 1.1 }}
-          whileInView={{ filter: "grayscale(0%)", scale: 1 }}
-          viewport={{ amount: 0.1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
+          initial={{ filter: "grayscale(100%)", scale: 1.1, opacity: 0.01 }}
+          animate={{ filter: "grayscale(0%)", scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
           className="w-full h-full relative z-0"
         >
           <Image
