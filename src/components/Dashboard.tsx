@@ -12,17 +12,17 @@ const results = [
 
 export default function Dashboard() {
   return (
-    <section className="relative bg-[#0A0A0A] py-32 px-4 overflow-hidden min-h-[80vh] flex items-center">
+    <section className="relative bg-carbon py-32 px-4 overflow-hidden min-h-[80vh] flex items-center">
       
       {/* Background HUD Visual */}
-      <div className="absolute inset-x-0 top-0 bottom-0 opacity-15 pointer-events-none z-0">
+      <div className="absolute inset-x-0 top-0 bottom-0 opacity-20 pointer-events-none z-0">
           <Image 
             src="/telemetry_bg.png" 
             alt="Dashboard HUD Backdrop" 
             fill 
             className="object-cover scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-carbon via-transparent to-carbon" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full text-center">
@@ -46,16 +46,22 @@ export default function Dashboard() {
           {results.map((res, index) => (
             <motion.div
               key={res.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="p-12 border border-white/5 bg-black/40 backdrop-blur-md rounded-sm hover:border-gold/30 transition-all group"
+              initial={{ opacity: 0, y: 30, filter: "grayscale(100%)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "grayscale(0%)" }}
+              viewport={{ amount: 0.5 }}
+              transition={{ delay: index * 0.2, duration: 0.8 }}
+              className="p-12 border border-white/5 bg-carbon-light/60 backdrop-blur-md rounded-sm hover:border-gold/30 transition-all group"
             >
               <div className="mb-6">
                 <p className="font-mono text-[10px] text-white/40 tracking-[0.3em] uppercase mb-1">{res.label}</p>
-                <p className={`text-6xl font-bold ${res.color} tracking-tighter group-hover:scale-110 transition-transform duration-500`}>
+                <motion.p 
+                  initial={{ scale: 0.9 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: index * 0.2 + 0.5, duration: 0.8 }}
+                  className={`text-6xl font-bold ${res.color} tracking-tighter`}
+                >
                   {res.value}
-                </p>
+                </motion.p>
               </div>
               <p className="text-sm text-white/40 font-light leading-relaxed">{res.desc}</p>
             </motion.div>

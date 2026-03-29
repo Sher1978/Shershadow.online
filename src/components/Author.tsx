@@ -6,17 +6,17 @@ import Link from "next/link";
 
 export default function Author() {
   return (
-    <section className="relative bg-[#0A0A0A] py-24 px-4 overflow-hidden min-h-screen flex items-center">
+    <section className="relative bg-carbon py-24 px-4 overflow-hidden min-h-screen flex items-center">
       
       {/* Background World/Dubai Illustration */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
+      <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
           <Image 
             src="/author.png" 
             alt="Chief Engineer World Visual" 
             fill 
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-black" />
+          <div className="absolute inset-0 bg-gradient-to-l from-carbon via-transparent to-carbon" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
@@ -24,15 +24,23 @@ export default function Author() {
           
           {/* Video / Visual Side */}
           <div className="relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black aspect-[9/16] md:aspect-square lg:aspect-[4/5] max-w-lg mx-auto lg:mx-0">
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
+            <motion.div
+              className="w-full h-full relative"
+              initial={{ filter: "grayscale(100%)", opacity: 0.4 }}
+              whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
+              viewport={{ amount: 0.6 }}
+              transition={{ duration: 1.2 }}
             >
-              <source src="https://player.vimeo.com/external/494252666.sd.mp4?s=724071981ed673418ef0066d93963486af4a737f&profile_id=165" type="video/mp4" />
-            </video>
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="https://player.vimeo.com/external/494252666.sd.mp4?s=724071981ed673418ef0066d93963486af4a737f&profile_id=165" type="video/mp4" />
+              </video>
+            </motion.div>
             
             {/* Live Indicator */}
             <div className="absolute top-8 left-8 flex items-center gap-3">

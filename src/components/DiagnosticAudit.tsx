@@ -37,15 +37,15 @@ export default function DiagnosticAudit() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-[#0A0A0A] py-24 px-4 overflow-hidden">
+    <section ref={containerRef} className="relative bg-carbon py-24 px-4 overflow-hidden">
       
       {/* Background Blueprint Image */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
+      <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
          <Image 
            src="/engine_schematic.png" 
            alt="Blueprint Background" 
            fill 
-           className="object-cover grayscale"
+           className="object-cover grayscale opacity-50"
          />
       </div>
 
@@ -74,7 +74,7 @@ export default function DiagnosticAudit() {
                 transition={{ duration: 0.8 }}
                 className="sticky top-24 w-full"
               >
-                <div className="bg-[#111111]/80 backdrop-blur-xl border border-white/10 p-8 md:p-16 rounded-sm shadow-2xl overflow-hidden relative group">
+                <div className="bg-[#161618]/90 backdrop-blur-xl border border-white/10 p-8 md:p-16 rounded-sm shadow-2xl overflow-hidden relative group">
                   
                   {/* Decorative number */}
                   <div className="absolute top-4 right-8 text-[12rem] font-bold text-white/5 pointer-events-none select-none italic">
@@ -108,13 +108,21 @@ export default function DiagnosticAudit() {
                     </div>
 
                     <div className="relative h-[300px] md:h-[400px] w-full rounded-sm overflow-hidden border border-white/5 bg-black/40">
-                      <Image
-                        src={card.icon}
-                        alt={card.title}
-                        fill
-                        className="object-cover opacity-40 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                      <motion.div
+                        className="w-full h-full relative"
+                        initial={{ filter: "grayscale(100%)", opacity: 0.4 }}
+                        whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
+                        viewport={{ amount: 0.6 }}
+                        transition={{ duration: 1.2 }}
+                      >
+                        <Image
+                          src={card.icon}
+                          alt={card.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </motion.div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
                     </div>
                   </div>
                 </div>

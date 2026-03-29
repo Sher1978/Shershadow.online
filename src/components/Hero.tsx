@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden flex flex-col md:grid md:grid-cols-2 bg-[#0A0A0A] selection:bg-neon-scan selection:text-black">
+    <section className="relative w-full min-h-screen overflow-hidden flex flex-col md:grid md:grid-cols-2 bg-[#0A0A0A] selection:bg-neon-scan selection:text-black">
       
       {/* Background Scanning Visuals */}
       <div className="absolute inset-0 scanner-grid opacity-10 pointer-events-none z-1" />
@@ -36,10 +36,10 @@ export default function Hero() {
       />
 
       {/* Left Column (System Diagnosis) */}
-      <div className="order-2 md:order-1 min-h-[60vh] md:h-full flex flex-col justify-between p-8 md:p-24 relative z-20">
+      <div className="order-2 md:order-1 flex flex-col justify-center p-8 md:p-24 relative z-20 min-h-[60vh]">
         
         {/* System ID Tag */}
-        <div className="flex gap-4 items-center mb-12">
+        <div className="flex gap-4 items-center mb-8">
           <div className="w-2 h-2 bg-neon-scan animate-pulse" />
           <span className="font-mono text-[10px] text-neon-scan tracking-[0.4em] uppercase">SYSTEM_INIT // DETECTION_MODE_ACTIVE</span>
         </div>
@@ -59,15 +59,15 @@ export default function Hero() {
         </motion.div>
 
         {/* Dynamic Hooks Loader */}
-        <div className="relative h-40 flex items-center my-8 md:my-0">
+        <div className="relative min-h-[14rem] md:min-h-[16rem] flex items-center my-6 md:my-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentHook}
-              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -30, filter: "blur(10px)" }}
+              exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
               transition={{ duration: 0.6, ease: "circInOut" }}
-              className="absolute inset-0 flex flex-col justify-center"
+              className="absolute inset-x-0 flex flex-col justify-center"
             >
               <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight max-w-2xl italic tracking-tight underline decoration-neon-scan/30 underline-offset-8">
                 {hooks[currentHook].text}
@@ -80,11 +80,11 @@ export default function Hero() {
         </div>
 
         {/* Sub-headline + CTA */}
-        <div className="max-w-xl space-y-12">
+        <div className="max-w-xl space-y-8 md:space-y-12 mb-12">
           <motion.div 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
             className="space-y-6"
           >
             <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed">
@@ -112,10 +112,12 @@ export default function Hero() {
       </div>
 
       {/* Right Column (Blueprint Image) */}
-      <div className="order-1 md:order-2 h-[40vh] md:h-full relative overflow-hidden bg-black/40 border-l border-white/5">
+      <div className="order-1 md:order-2 min-h-[40vh] md:h-full relative overflow-hidden bg-black/40 border-l border-white/5">
         <motion.div
-          animate={{ scale: [1, 1.05] }}
-          transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+          initial={{ filter: "grayscale(100%)", scale: 1.1 }}
+          whileInView={{ filter: "grayscale(0%)", scale: 1 }}
+          viewport={{ amount: 0.4 }}
+          transition={{ duration: 2, ease: "easeOut" }}
           className="w-full h-full relative"
         >
           <Image

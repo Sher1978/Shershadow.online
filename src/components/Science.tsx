@@ -12,17 +12,17 @@ const steps = [
 
 export default function Science() {
   return (
-    <section className="relative bg-[#0A0A0A] py-24 px-4 overflow-hidden min-h-screen flex flex-col justify-center">
+    <section className="relative bg-carbon py-24 px-4 overflow-hidden min-h-screen flex flex-col justify-center">
       
       {/* Background Illustration */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
+      <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
           <Image 
             src="/science_final.png" 
             alt="Algorithm Background" 
             fill 
-            className="object-cover"
+            className="object-cover grayscale opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-carbon" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
@@ -83,12 +83,20 @@ export default function Science() {
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
               className="w-full h-full relative"
             >
-              <Image
-                src="/science_final.png"
-                alt="Science Visualization"
-                fill
-                className="object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-1000 grayscale group-hover:grayscale-0"
-              />
+              <motion.div
+                initial={{ filter: "grayscale(100%)", opacity: 0.5 }}
+                whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
+                viewport={{ amount: 0.5 }}
+                transition={{ duration: 1.5 }}
+                className="w-full h-full relative"
+              >
+                <Image
+                  src="/science_final.png"
+                  alt="Science Visualization"
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
               {/* Floating elements */}
               <motion.div 
                 animate={{ y: [0, -20, 0] }}

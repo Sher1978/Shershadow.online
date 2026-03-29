@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0A0A0A;
+  --color-background: #0F0F11;
   --color-foreground: #FFFFFF;
   
-  --color-carbon: #0A0A0A;
-  --color-carbon-light: #121214;
+  --color-carbon: #0F0F11;
+  --color-carbon-light: #161618;
   
   --color-gold: #D4AF37; /* Cold Gold */
   --color-gold-light: #F9E6B7;
@@ -14,12 +14,12 @@
   
   --color-neon-scan: #00F0FF; /* Neon Scanner Cyan */
   
-  --color-danger: #8B0000;
-  --color-danger-bright: #FF0000;
+  --color-danger: #9B1111;
+  --color-danger-bright: #FF3333;
   
-  --color-grey: #A0A0A0;
-  --color-platinum: #1E1E20; 
-  --color-off-white: #EEEEF0;
+  --color-grey: #B0B0B0;
+  --color-platinum: #252528; 
+  --color-off-white: #F5F5F7;
   
   --font-heading: 'Syncopate', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -48,7 +48,7 @@
 }
 
 :root {
-  --background: #0A0A0A;
+  --background: #0F0F11;
   --foreground: #FFFFFF;
 }
 
