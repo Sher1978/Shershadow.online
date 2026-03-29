@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden flex flex-col md:grid md:grid-cols-2 bg-[#0A0A0A] selection:bg-neon-scan selection:text-black">
+    <section className="relative w-full min-h-screen overflow-hidden flex flex-col md:grid md:grid-cols-2 bg-[#111113] selection:bg-neon-scan selection:text-black">
       
       {/* Background Scanning Visuals */}
       <div className="absolute inset-0 scanner-grid opacity-10 pointer-events-none z-1" />
@@ -112,13 +112,13 @@ export default function Hero() {
       </div>
 
       {/* Right Column (Blueprint Image) */}
-      <div className="order-1 md:order-2 min-h-[40vh] md:h-full relative overflow-hidden bg-black/40 border-l border-white/5">
+      <div className="order-1 md:order-2 min-h-[50vh] md:h-full relative overflow-hidden bg-black/40 border-l border-white/5 z-10">
         <motion.div
           initial={{ filter: "grayscale(100%)", scale: 1.1 }}
           whileInView={{ filter: "grayscale(0%)", scale: 1 }}
-          viewport={{ amount: 0.3 }}
+          viewport={{ amount: 0.1 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="w-full h-full relative"
+          className="w-full h-full relative z-0"
         >
           <Image
             src="/hero_car_cinematic.png"
@@ -185,8 +185,8 @@ export default function Hero() {
         </div>
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent z-10 hidden md:block" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent md:hidden z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111113] via-[#111113]/20 to-transparent z-10 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111113] via-transparent to-transparent md:hidden z-10" />
       </div>
 
     </section>
