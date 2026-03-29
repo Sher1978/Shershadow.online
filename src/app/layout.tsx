@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Syncopate } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="ru" className="dark h-full">
       <body className={`${inter.variable} ${syncopate.variable} min-h-full bg-carbon text-white antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
