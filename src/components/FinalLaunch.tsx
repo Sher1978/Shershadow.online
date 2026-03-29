@@ -66,6 +66,5 @@ export default function FinalLaunch() {
         </motion.div>
       </div>
     </section>
-    </section>
   );
 }
