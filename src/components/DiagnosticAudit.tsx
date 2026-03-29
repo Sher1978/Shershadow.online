@@ -37,7 +37,7 @@ export default function DiagnosticAudit() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-carbon py-12 md:py-24 px-4 overflow-hidden">
+    <section ref={containerRef} className="relative bg-carbon py-8 md:py-16 px-4 overflow-hidden">
       
       {/* Background Blueprint Image */}
       <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
@@ -63,7 +63,7 @@ export default function DiagnosticAudit() {
           </h2>
         </div>
 
-        <div className="space-y-12 md:space-y-[40vh]">
+        <div className="space-y-6 md:space-y-8">
           {cards.map((card, index) => {
             return (
               <motion.div

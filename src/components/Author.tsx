@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Author() {
   return (
-    <section className="relative bg-carbon py-12 md:py-24 px-4 overflow-hidden md:min-h-screen flex items-center">
+    <section className="relative bg-carbon py-16 md:py-20 px-4 overflow-hidden md:min-h-screen flex items-center">
       
       {/* Background World/Dubai Illustration */}
       <div className="absolute inset-0 opacity-15 pointer-events-none z-0">

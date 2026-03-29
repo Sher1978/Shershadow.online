@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ShadowTax() {
   return (
-    <section className="py-12 md:py-32 bg-[#111113] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#111113] relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
           <motion.div
@@ -40,7 +40,7 @@ export default function ShadowTax() {
             className="relative aspect-video lg:aspect-square bg-black border border-white/10 overflow-hidden group shadow-2xl"
           >
              <Image 
-                src="/golden_shadow.png"
+                src="/zone_c_update.png"
                 alt="The Golden Shadow - Dynamic Speed"
                 fill
                 className="object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"

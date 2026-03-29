@@ -12,7 +12,7 @@ const steps = [
 
 export default function Science() {
   return (
-    <section className="relative bg-carbon py-12 md:py-32 px-4 overflow-hidden md:min-h-screen flex flex-col justify-center">
+    <section className="relative bg-carbon py-16 md:py-20 px-4 overflow-hidden md:min-h-screen flex items-center">
       
       {/* Background Illustration */}
       <div className="absolute inset-0 opacity-15 pointer-events-none z-0">

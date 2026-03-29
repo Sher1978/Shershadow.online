@@ -40,7 +40,31 @@ export default function FinalLaunch() {
              «Мы не обещаем, что будет легко. Мы обещаем, что ты перестанешь буксовать и начнешь лететь.»
           </p>
 
+          {/* SFI 4 Scenarios Explanation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-16 text-left max-w-4xl mx-auto">
+             {[
+               { id: "01", label: "VITALITY", desc: "Проверка уровня жизненного ресурса и устойчивости системы к внешним нагрузкам." },
+               { id: "02", label: "SOVEREIGN", desc: "Оценка внутренней власти и свободы от неосознанных манипуляций." },
+               { id: "03", label: "EXPANSION", desc: "Измерение способности к росту без активации протоколов самосаботажа." },
+               { id: "04", label: "ARCHITECT", desc: "Анализ структурной целостности и системной логики твоего бизнеса." }
+             ].map((item) => (
+               <div key={item.id} className="p-6 md:p-8 bg-white/5 border border-white/10 hover:border-gold/30 transition-all group">
+                  <div className="flex items-center gap-4 mb-3">
+                    <span className="font-mono text-[10px] text-neon-scan opacity-40">{item.id} //</span>
+                    <h3 className="font-heading text-lg md:text-xl font-bold text-white tracking-widest">{item.label}</h3>
+                  </div>
+                  <p className="text-sm text-white/40 leading-relaxed font-light">{item.desc}</p>
+               </div>
+             ))}
+          </div>
+
           <div className="space-y-6 md:space-y-8">
+            <div className="text-center mb-4">
+               <p className="text-neon-scan font-mono text-[10px] tracking-[0.3em] uppercase mb-2">Diagnostic_Protocol // 12_Data_Points</p>
+               <p className="text-white/30 text-[11px] font-light max-w-md mx-auto">
+                 Пройди тест из 12 вопросов, чтобы получить точный расчет индекса Теневого Трения ($SFI$) по 4 ключевым сценариям.
+               </p>
+            </div>
             <Link href="https://shershadow.web.app/sfitest">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(212, 175, 55, 0.4)" }}
