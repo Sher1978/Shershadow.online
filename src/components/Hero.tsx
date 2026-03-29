@@ -128,28 +128,7 @@ export default function Hero() {
             sizes="(max-width: 768px) 100vw, 50vw"
           />
 
-          {/* Smoke/Steam Effect Overlays */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ 
-                  opacity: [0, 0.2, 0], 
-                  y: [0, -200], 
-                  x: [0, (i % 2 ? 50 : -50)],
-                  scale: [1, 2.5] 
-                }}
-                transition={{ 
-                  duration: 7 + Math.random() * 5, 
-                  repeat: Infinity, 
-                  delay: i * 2,
-                  ease: "easeOut" 
-                }}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-white/5 blur-[100px] rounded-full"
-              />
-            ))}
-          </div>
+
         </motion.div>
         
         {/* HUD Elements */}
