@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import DiagnosticAudit from "@/components/DiagnosticAudit";
 import SabotageMechanics from "@/components/SabotageMechanics";
 import Science from "@/components/Science";
+import ComparativeAnalysis from "@/components/ComparativeAnalysis";
 import Author from "@/components/Author";
 import Dashboard from "@/components/Dashboard";
 import FAQ from "@/components/FAQ";
@@ -27,6 +28,7 @@ export default function Home() {
       <DiagnosticAudit />
       <SabotageMechanics />
       <Science />
+      <ComparativeAnalysis />
       <Author />
       <Dashboard />
       <FAQ />
