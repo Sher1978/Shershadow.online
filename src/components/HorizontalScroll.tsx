@@ -4,31 +4,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
-const steps = [
-  {
-    num: "01",
-    title: "Shadow Audit",
-    subtitle: "Аудит Теневого Трения",
-    desc: "ИИ-сканирование вашего реального Индекса Трения (SFI). Находим скрытые точки слива энергии и саботажа в системе принятия решений.",
-    color: "#FFFFFF",
-  },
-  {
-    num: "02",
-    title: "30-Day Sprint",
-    subtitle: "Дешифровка и Перепрошивка",
-    desc: "Работа с Shadow Advisor и живым куратором. Изоляция багов управления и внедрение новых протоколов действия без сопротивления.",
-    color: "#FF0000",
-  },
-  {
-    num: "03",
-    title: "Zero Resistance",
-    subtitle: "Масштаб без тормозов",
-    desc: "Мгновенные решения. Естественный выход на новый уровень оборота. Чистое ускорение, где бизнес растет быстрее тебя.",
-    color: "#FF0000",
-  },
-];
+import { useDictionary } from "./DictionaryProvider";
 
 export default function SprintRoute() {
+  const dict = useDictionary();
+  const d = dict.HorizontalScroll;
+  const steps = d.steps;
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -45,14 +26,14 @@ export default function SprintRoute() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <span className="font-heading text-gold text-[10px] tracking-[0.5em] uppercase font-bold mb-4 block">THE_TRAJECTORY // МАРШРУТ</span>
+          <span className="font-heading text-gold text-[10px] tracking-[0.5em] uppercase font-bold mb-4 block">{d.trajectory}</span>
           <h2 className="font-heading text-4xl md:text-7xl font-bold text-white uppercase italic tracking-tighter">
-            ТРИ ЭТАПА <span className="text-white/40">ПРОРЫВА</span>
+            {d.titleLine1} <span className="text-white/40">{d.titleLine2}</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, i) => (
+          {steps.map((step: any, i: number) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -87,7 +68,7 @@ export default function SprintRoute() {
 
               {/* Technical Bit */}
               <div className="mt-10 pt-6 border-t border-white/5 flex justify-between items-center opacity-40 group-hover:opacity-100 transition-opacity">
-                 <span className="font-mono text-[8px] text-white tracking-widest">STATUS: READY_FOR_SYNC</span>
+                 <span className="font-mono text-[8px] text-white tracking-widest">{d.status}</span>
                  <div className="flex gap-1">
                     {[...Array(4)].map((_, j) => (
                       <div key={j} className="w-4 h-[1px] bg-white/20" />

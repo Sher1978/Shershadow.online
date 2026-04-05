@@ -4,16 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-const hooks = [
-  { id: "Sovereign", text: "...ты боишься нанять тех, кто сильнее тебя?" },
-  { id: "Expansion", text: "...твой масштаб пугает твоего внутреннего «скромного мальчика»?" },
-  { id: "Vitality", text: "...логика убила твой инстинкт хищника и драйв?" },
-  { id: "Architect", text: "...ты строишь идеальные планы в мире тотального хаоса?" },
-  { id: "Mismatch", text: "...твои РЕЗУЛЬТАТЫ не соответствуют твоим знаниям и умениям?" },
-];
+import { useDictionary } from "./DictionaryProvider";
 
 export default function Hero() {
+  const dict = useDictionary();
+  const h = dict.Hero;
+  const hooks = h.hooks;
   const [currentHook, setCurrentHook] = useState(0);
 
   useEffect(() => {
@@ -21,7 +17,7 @@ export default function Hero() {
       setCurrentHook((prev) => (prev + 1) % hooks.length);
     }, 2500); // 2.5s interval
     return () => clearInterval(timer);
-  }, []);
+  }, [hooks.length]);
 
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex flex-col md:grid md:grid-cols-2 bg-[#111113] selection:bg-neon-scan selection:text-black">
@@ -41,7 +37,7 @@ export default function Hero() {
         {/* System ID Tag */}
         <div className="flex gap-4 items-center mb-6 md:mb-8">
           <div className="w-2 h-2 bg-neon-scan animate-pulse" />
-          <span className="font-mono text-[10px] text-neon-scan tracking-[0.4em] uppercase">SYSTEM_INIT // DETECTION_MODE_ACTIVE</span>
+          <span className="font-mono text-[10px] text-neon-scan tracking-[0.4em] uppercase">{h.systemInit}</span>
         </div>
 
         {/* H1 (Static) */}
@@ -51,9 +47,9 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "circOut" }}
         >
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase leading-[0.9]" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-            Твой бизнес <br /> 
-            <span className="text-white/20">буксует,</span> <br />
-            потому что <br />
+            {h.titleLine1} <br /> 
+            <span className="text-white/20">{h.titleLine2}</span> <br />
+            {h.titleLine3} <br />
             <span className="text-neon-scan">...</span>
           </h1>
         </motion.div>
@@ -73,7 +69,7 @@ export default function Hero() {
                 {hooks[currentHook].text}
               </p>
               <div className="mt-4 font-mono text-[10px] text-neon-scan/50 uppercase tracking-[0.2em]">
-                PHASE_TAG: {hooks[currentHook].id} // [DETECTED]
+                {h.phaseTag}: {hooks[currentHook].id} // {h.detected}
               </div>
             </motion.div>
           </AnimatePresence>
@@ -88,26 +84,77 @@ export default function Hero() {
             className="space-y-4 md:space-y-6"
           >
             <p className="text-base md:text-xl text-white/70 font-light leading-relaxed">
-              Пока ты ищешь внешние инструменты развития, твоя Тень <span className="text-white font-bold">($Shadow$)</span> незаметно сжигает до 50% твоей прибыли. Мы не учим тебя бизнесу. Мы убираем внутреннее трение <span className="text-neon-scan font-bold">($SFI$)</span>, которое мешает тебе взлететь.
+              {h.subHeadline.split('($Shadow$)').map((part: string, i: number, arr: string[]) => (
+                <span key={i}>
+                  {part}
+                  {i < arr.length - 1 && <span className="text-white font-bold">($Shadow$)</span>}
+                </span>
+              )).map((part: any, i: number) => {
+                // Split by ($SFI$) as well
+                const subParts = part.props.children[0].split('($SFI$)');
+                if (subParts.length > 1) {
+                  return (
+                    <span key={i}>
+                      {subParts.map((sub: string, j: number, subArr: string[]) => (
+                        <span key={j}>
+                          {sub}
+                          {j < subArr.length - 1 && <span className="text-neon-scan font-bold">($SFI$)</span>}
+                        </span>
+                      ))}
+                      {part.props.children[1]}
+                    </span>
+                  );
+                }
+                return part;
+              })}
             </p>
           </motion.div>
 
-          <Link href="https://shershadow.web.app/sfitest">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative flex items-center gap-6 px-8 md:px-12 py-4 md:py-6 bg-transparent border border-neon-scan/40 hover:border-gold transition-all duration-500 overflow-hidden w-full md:w-auto"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-scan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute top-0 right-0 w-8 h-8 flex items-center justify-center">
-                 <div className="w-1.5 h-1.5 bg-neon-scan group-hover:bg-gold transition-colors" />
-              </div>
-              <span className="relative z-10 text-white font-bold tracking-[0.25em] uppercase text-xs md:text-sm">ЗАПУСТИТЬ СКАНИРОВАНИЕ SFI</span>
-              <svg className="w-5 h-5 md:w-6 md:h-6 text-neon-scan group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.button>
-          </Link>
+          <div className="flex flex-col md:flex-row gap-4 md:items-center">
+            <Link href="https://shershadow.web.app/sfitest">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative flex items-center justify-center gap-6 px-8 md:px-12 py-4 md:py-6 bg-transparent border border-neon-scan/40 hover:border-gold transition-all duration-500 overflow-hidden w-full md:w-auto"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-neon-scan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 right-0 w-8 h-8 flex items-center justify-center">
+                   <div className="w-1.5 h-1.5 bg-neon-scan group-hover:bg-gold transition-colors" />
+                </div>
+                <span className="relative z-10 text-white font-bold tracking-[0.25em] uppercase text-xs md:text-sm">{h.cta}</span>
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-neon-scan group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </motion.button>
+            </Link>
+
+            <div className="flex gap-4 w-full md:w-auto">
+              <Link href="https://t.me/shershadow" className="flex-1 md:flex-none">
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 240, 255, 0.1)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full p-4 border border-white/10 flex items-center justify-center transition-all"
+                  title="Telegram"
+                >
+                  <svg className="w-6 h-6 text-white/60 hover:text-neon-scan" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.944 0C5.344 0 0 5.344 0 11.944c0 6.6 5.344 11.944 11.944 11.944 6.6 0 11.944-5.344 11.944-11.944C23.888 5.344 18.544 0 11.944 0zM17.8 8.1c-.2 2.1-1 6.8-1.5 9-.2.9-1 .9-1.3.6-.3-.3-.7-.6-1-.9-3.2-2.1-2-1.9-2.8-1.3-.1.1-1.3 1.2-1.3 1.2s-.1.1-.3.1c-.2 0-.3-.1-.3-.1L6.7 13.1c-.3-.1-.3-.4 0-.5 1-.3 8.3-3.1 8.3-3.1s1.3-.5 1.3.5c0 .3-.1.7-.2 1.1s-1.1 4.3-1.1 4.3l-.2.1c-.1 0-.1-.1-.1-.1l-.2-.3c-.3-.4-.5-.9-.8-1.3L15 11.8c.2-.2.3-.4.3-.6 0-.2-.1-.3-.3-.3h-3.1c-.2 0-.4.1-.5.3l-1.3 3.9c-.1.2-.3.3-.5.3h-1.5l2.2-6.6c.1-.2.3-.3.5-.3h5c.3 0 .5.1.7.3.1.2.1.4.1.6z"/>
+                  </svg>
+                </motion.button>
+              </Link>
+              <Link href="https://wa.me/79001234567" className="flex-1 md:flex-none">
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(212, 175, 55, 0.1)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full p-4 border border-white/10 flex items-center justify-center transition-all"
+                  title="WhatsApp"
+                >
+                  <svg className="w-6 h-6 text-white/60 hover:text-gold" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                </motion.button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -136,19 +183,19 @@ export default function Hero() {
            <div className="p-6 border border-white/10 bg-black/60 backdrop-blur-md">
               <div className="grid grid-cols-2 gap-x-12 gap-y-4">
                  <div className="space-y-1">
-                    <p className="font-mono text-[8px] text-white/40 uppercase">Target_Status</p>
-                    <p className="font-heading text-xs text-neon-scan uppercase">In_Stall</p>
+                    <p className="font-mono text-[8px] text-white/40 uppercase">{h.targetStatus}</p>
+                    <p className="font-heading text-xs text-neon-scan uppercase">{h.inStall}</p>
                  </div>
                  <div className="space-y-1">
-                    <p className="font-mono text-[8px] text-white/40 uppercase">Shadow_Tax</p>
+                    <p className="font-mono text-[8px] text-white/40 uppercase">{h.shadowTax}</p>
                     <p className="font-heading text-xs text-white uppercase font-bold">82.3%</p>
                  </div>
                  <div className="space-y-1">
-                    <p className="font-mono text-[8px] text-white/40 uppercase">System_Load</p>
-                    <p className="font-heading text-xs text-white uppercase">Critical</p>
+                    <p className="font-mono text-[8px] text-white/40 uppercase">{h.systemLoad}</p>
+                    <p className="font-heading text-xs text-white uppercase">{h.critical}</p>
                  </div>
                  <div className="space-y-1">
-                    <p className="font-mono text-[8px] text-white/40 uppercase">Efficiency</p>
+                    <p className="font-mono text-[8px] text-white/40 uppercase">{h.efficiency}</p>
                     <div className="w-16 h-1 bg-white/10 mt-1 overflow-hidden">
                        <motion.div 
                          initial={{ width: 0 }} 

@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useDictionary } from "./DictionaryProvider";
 
 export default function Footer() {
+  const dict = useDictionary();
+  const d = dict.Footer;
+
   return (
     <footer className="bg-carbon border-t border-white/5 py-24 relative overflow-hidden">
       {/* Background decoration */}
@@ -15,7 +19,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <h2 className="font-heading text-3xl md:text-6xl font-bold mb-12 tracking-widest uppercase">
-            ГОТОВ <span className="text-accent underline decoration-accent/20">ОТПУСТИТЬ РУЧНИК?</span>
+            {d.title1} <span className="text-accent underline decoration-accent/20">{d.title2}</span>
           </h2>
 
           <motion.button
@@ -25,17 +29,18 @@ export default function Footer() {
             }}
             whileTap={{ scale: 0.95 }}
             className="group relative px-12 py-6 bg-accent text-white font-heading font-bold text-xl rounded-none transition-all mb-24 overflow-hidden"
+            onClick={() => window.open('https://t.me/IgorSherlock', '_blank')}
           >
-            <span className="relative z-10">ЗАПУСТИТЬ АУДИТ</span>
+            <span className="relative z-10">{d.cta}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-accent via-accent-glow to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.button>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-white/5 text-[10px] font-heading text-grey tracking-widest uppercase">
-            <p>© 2026 SHER SHADOW CAPITAL. ALL RIGHTS RESERVED.</p>
+            <p>{d.rights}</p>
             <div className="flex gap-12">
-              <a href="#" className="hover:text-white transition-colors">PRIVACY POLICY</a>
-              <a href="#" className="hover:text-white transition-colors">DUBAI DESERT HQ</a>
-              <a href="#" className="hover:text-white transition-colors">ZERO FRICTION PROTOCOL</a>
+              <a href="#" className="hover:text-white transition-colors">{d.privacy}</a>
+              <a href="#" className="hover:text-white transition-colors">{d.hq}</a>
+              <a href="#" className="hover:text-white transition-colors">{d.protocol}</a>
             </div>
           </div>
         </motion.div>

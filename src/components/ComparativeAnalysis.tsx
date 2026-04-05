@@ -2,71 +2,36 @@
 
 import { motion } from "framer-motion";
 import { Shield, Target, Minus } from "lucide-react";
-
-const comparisons = [
-  {
-    title: "Конвенциональная Терапия",
-    symbol: "🚫",
-    items: [
-      {
-        primary: "Поиск причин в прошлом",
-        secondary: "Копание в детстве не меняет текущие нейронные цепочки саботажа здесь и сейчас.",
-      },
-      {
-        primary: "Бессрочный процесс",
-        secondary: "Отсутствие дедлайна позволяет психике годами имитировать работу без результата.",
-      },
-      {
-        primary: "Интеллектуальный инсайт",
-        secondary: "Понимание проблемы не дает инструментов для её технического устранения.",
-      }
-    ],
-    verdict: "АНАЛИЗ БЕЗ ПЕРЕСБОРКИ. СИСТЕМА ОСТАЕТСЯ В СТАРОЙ АРХИТЕКТУРЕ.",
-    isShadow: false
-  },
-  {
-    title: "Коучинг и Тренинги",
-    symbol: "🚫",
-    items: [
-      {
-        primary: "Внешние инструменты",
-        secondary: "Попытка внедрить навыки на старый фундамент приводит к быстрому отторжению.",
-      },
-      {
-        primary: "Ставка на силу воли",
-        secondary: "Ресурс воли ограничен — система всегда возвращает вас в точку комфорта.",
-      },
-      {
-        primary: "Дофаминовая ловушка",
-        secondary: "Временный подъем на тренинге сменяется еще более глубоким откатом.",
-      }
-    ],
-    verdict: "ВНЕШНИЙ ЛОСК. СИСТЕМА «ХРАНИТЕЛЬ» БЫСТРО ПОДАВЛЯЕТ ЭТОТ ИМПУЛЬС.",
-    isShadow: false
-  },
-  {
-    title: "Shadow Sprint (SFI)",
-    symbol: "⚡️",
-    items: [
-      {
-        primary: "Инженерный протокол",
-        secondary: "Мы не мотивируем, мы пересобираем архитектуру вашей личности под новые задачи.",
-      },
-      {
-        primary: "30-дневный Спринт",
-        secondary: "Сверхкороткий цикл изменений не дает защитным механизмам успеть среагировать.",
-      },
-      {
-        primary: "Движение «Ниже радаров»",
-        secondary: "Методология обходит сопротивление Эго, делая квантовый скачок естественным.",
-      }
-    ],
-    verdict: "ZERO FRICTION. УСТОЙЧИВЫЙ ПЕРЕХОД НА НОВЫЙ УРОВЕНЬ ДОХОДА И ЭНЕРГИИ.",
-    isShadow: true
-  }
-];
+import { useDictionary } from "./DictionaryProvider";
 
 export default function ComparativeAnalysis() {
+  const dict = useDictionary();
+  const d = dict.Comparative;
+
+  const comparisons = [
+    {
+      title: d.column1.title,
+      symbol: "🚫",
+      items: d.column1.items,
+      verdict: d.column1.verdict,
+      isShadow: false
+    },
+    {
+      title: d.column2.title,
+      symbol: "🚫",
+      items: d.column2.items,
+      verdict: d.column2.verdict,
+      isShadow: false
+    },
+    {
+      title: d.column3.title,
+      symbol: "⚡️",
+      items: d.column3.items,
+      verdict: d.column3.verdict,
+      isShadow: true
+    }
+  ];
+
   return (
     <section className="relative bg-[#020202] py-24 px-4 overflow-hidden border-t border-white/5">
       {/* Background Gradients for visibility */}
@@ -79,19 +44,19 @@ export default function ComparativeAnalysis() {
           whileInView={{ opacity: 1 }}
           className="text-gold/60 font-mono text-[10px] tracking-[0.4em] uppercase mb-4"
         >
-          SYSTEM_AUDIT // THE_ILLUSION_OF_CHOICE
+          {d.auditLabel}
         </motion.p>
         <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter mb-8" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-          Иллюзия <span className="text-white/20">выбора</span>
+          {d.title}
         </h2>
-        <p className="text-white/40 max-w-2xl mx-auto font-light leading-relaxed text-lg lg:text-xl">
-          Почему классические методы работы с состоянием и бизнесом <span className="text-white/80 font-medium">НЕ ДАЮТ РЕЗУЛЬТАТА</span> на уровне <span className="text-white/80 font-medium">СВЕРХ-ЗАДАЧ</span>. 
-          Выбирай не между «лучшим», а между <span className="text-gold/90 font-medium tracking-wide italic">«РАБОТАЮЩИМ»</span>.
-        </p>
+        <p 
+          className="text-white/40 max-w-2xl mx-auto font-light leading-relaxed text-lg lg:text-xl"
+          dangerouslySetInnerHTML={{ __html: d.subTitle }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 relative z-10">
-        {comparisons.map((item, index) => (
+        {comparisons.map((item: any, index: number) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -114,7 +79,7 @@ export default function ComparativeAnalysis() {
             </div>
 
             <div className="space-y-10 mb-16 flex-grow">
-              {item.items.map((point, pIdx) => (
+              {item.items.map((point: any, pIdx: number) => (
                 <div key={pIdx} className="flex gap-5 relative opacity-90">
                   <div className={`shrink-0 flex items-center justify-center w-8 h-8 rounded-full ${item.isShadow ? 'bg-gold/15' : 'bg-white/10'}`}>
                     <span className="text-base">
@@ -136,7 +101,7 @@ export default function ComparativeAnalysis() {
             <div className={`mt-auto pt-8 border-t ${item.isShadow ? 'border-gold/20' : 'border-white/5'}`}>
               <div className="flex items-center gap-3 mb-4 opacity-50">
                 <div className={`w-1.5 h-1.5 rounded-full ${item.isShadow ? 'bg-gold animate-pulse shadow-[0_0_8px_rgba(255,184,0,1)]' : 'bg-white'}`} />
-                <label className="text-[9px] font-mono text-white/40 uppercase tracking-[0.3em]">Вердикт_системы</label>
+                <label className="text-[9px] font-mono text-white/40 uppercase tracking-[0.3em]">{d.verdictLabel}</label>
               </div>
               <p className={`text-xs font-bold uppercase leading-relaxed tracking-widest ${item.isShadow ? 'text-gold' : 'text-white/50'}`}>
                 {item.verdict}
@@ -162,7 +127,7 @@ export default function ComparativeAnalysis() {
           <div className="inline-flex items-center gap-6 px-10 py-5 border border-white/15 bg-white/[0.05] rounded-full backdrop-blur-md">
               <Shield className="w-4 h-4 text-gold/60" />
               <span className="text-[10px] font-mono text-white/50 uppercase tracking-[0.5em]">
-                  Shadow_Protocol // Comparative_Matrix // v1.10
+                  {d.protocolLabel}
               </span>
           </div>
       </div>

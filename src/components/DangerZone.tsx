@@ -2,8 +2,12 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useDictionary } from "./DictionaryProvider";
 
 export default function DangerZone() {
+  const dict = useDictionary();
+  const d = dict.DangerZone;
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -27,6 +31,8 @@ export default function DangerZone() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const opacities = [stage1Opacity, stage2Opacity, stage3Opacity];
 
   return (
     <section ref={containerRef} className="relative py-12 md:py-24 overflow-hidden h-[150vh] md:h-[200vh]">
@@ -61,43 +67,40 @@ export default function DangerZone() {
       <div className="sticky top-0 h-screen z-10 container mx-auto px-6 flex flex-col items-center justify-center text-center">
         <motion.div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-4xl md:text-7xl font-bold mb-12 text-white leading-none tracking-tighter uppercase italic">
-            ОПАСНОСТЬ: <br />
-            <span className="text-danger-bright underline decoration-white/10">«ПЕТЛЯ САБОТАЖА»</span>
+            {d.title1} <br />
+            <span className="text-danger-bright underline decoration-white/10">{d.title2}</span>
           </h2>
           
           <div className="space-y-16">
-            <p className="font-body text-xl md:text-2xl font-light text-white/80 leading-tight">
-              Самостоятельно увидеть Тень невозможно. <br />
-              Пытаясь сделать это сам, ты попадаешь в петлю:
-            </p>
+            <p 
+              className="font-body text-xl md:text-2xl font-light text-white/80 leading-tight"
+              dangerouslySetInnerHTML={{ __html: d.desc1 }}
+            />
             
             <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
-               <motion.div style={{ opacity: stage1Opacity }} className="text-center group">
-                 <div className="mb-4 text-white/20 font-heading text-4xl group-hover:text-white transition-colors">01</div>
-                 <span className="font-heading text-sm tracking-widest text-white uppercase font-bold">ИЛЛЮЗИЯ ПРОГРЕССА</span>
-               </motion.div>
-               
-               <div className="hidden md:flex items-center text-white/10 text-2xl">→</div>
-               
-               <motion.div style={{ opacity: stage2Opacity }} className="text-center group">
-                 <div className="mb-4 text-danger-bright/20 font-heading text-4xl group-hover:text-danger-bright transition-colors">02</div>
-                 <span className="font-heading text-sm tracking-widest text-danger-bright uppercase font-bold">СКРЫТЫЙ САБОТАЖ</span>
-               </motion.div>
-
-               <div className="hidden md:flex items-center text-white/10 text-2xl">→</div>
-
-               <motion.div style={{ opacity: stage3Opacity }} className="text-center group">
-                 <div className="mb-4 text-danger/20 font-heading text-4xl group-hover:text-danger transition-colors">03</div>
-                 <span className="font-heading text-sm tracking-widest text-danger uppercase font-bold">ЖЕСТКИЙ ОТKAT</span>
-               </motion.div>
+               {d.steps.map((stepText: string, i: number) => (
+                 <div key={i} className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+                   <motion.div style={{ opacity: opacities[i] }} className="text-center group">
+                     <div className={`mb-4 font-heading text-4xl transition-colors ${i === 0 ? 'text-white/20 group-hover:text-white' : i === 1 ? 'text-danger-bright/20 group-hover:text-danger-bright' : 'text-danger/20 group-hover:text-danger'}`}>
+                       0{i + 1}
+                     </div>
+                     <span className={`font-heading text-sm tracking-widest uppercase font-bold ${i === 0 ? 'text-white' : i === 1 ? 'text-danger-bright' : 'text-danger'}`}>
+                       {stepText}
+                     </span>
+                   </motion.div>
+                   {i < d.steps.length - 1 && (
+                     <div className="hidden md:flex items-center text-white/10 text-2xl">→</div>
+                   )}
+                 </div>
+               ))}
             </div>
 
             <div className="space-y-4">
               <p className="font-body text-2xl md:text-4xl font-bold text-white uppercase italic tracking-tighter">
-                Итог — точка «ниже нуля».
+                {d.resultTitle}
               </p>
               <p className="font-body text-lg md:text-xl text-danger-bright font-medium max-w-2xl mx-auto border-t border-danger-bright/20 pt-6">
-                Либо Спринт и объективный контроль, либо сгоревший двигатель твоей системы.
+                {d.resultDesc}
               </p>
             </div>
           </div>

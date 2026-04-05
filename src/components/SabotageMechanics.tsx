@@ -2,36 +2,12 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-
-const steps = [
-  {
-    title: "Импульс",
-    desc: "Ты ставишь «максимально достижимую цель» на волевом усилии.",
-    status: "INITIATING_GROWTH",
-  },
-  {
-    title: "Напряжение",
-    desc: "Резкий рост создает избыточное давление на систему. Твой Индекс Трения ($SFI$) уходит в красную зону.",
-    status: "PRESSURE_OVERLOAD",
-  },
-  {
-    title: "Активация Хранителя",
-    desc: "Твой механизм безопасности (Guardian) воспринимает успех как угрозу стабильности (неизвестность = опасность).",
-    status: "GUARDIAN_ARMED",
-  },
-  {
-    title: "Сброс давления (Саботаж)",
-    desc: "Чтобы спасти тебя от «перегрева», Хранитель включает лень, болезни, расфокус или неверные решения.",
-    status: "EMERGENCY_VENT",
-  },
-  {
-    title: "Откат",
-    desc: "Система принудительно возвращает тебя в «безопасную гавань» — к твоим минимальным привычкам. Часто — глубже, чем было до старта.",
-    status: "SYSTEM_RECOVERY",
-  },
-];
+import { useDictionary } from "./DictionaryProvider";
 
 export default function SabotageMechanics() {
+  const dict = useDictionary();
+  const d = dict.Sabotage;
+
   return (
     <section className="py-24 md:py-32 bg-[#0A0A0A] relative overflow-hidden border-t border-white/5">
       {/* Background HUD Grid */}
@@ -48,18 +24,17 @@ export default function SabotageMechanics() {
           >
             <div className="flex justify-center gap-4 items-center mb-6">
               <div className="w-8 h-[1px] bg-gold" />
-              <span className="font-mono text-[10px] text-gold tracking-[0.4em] uppercase">SYSTEM_CONFLICT // ANALYSIS</span>
+              <span className="font-mono text-[10px] text-gold tracking-[0.4em] uppercase">{d.systemConflict}</span>
               <div className="w-8 h-[1px] bg-gold" />
             </div>
             
-            <h2 className="text-4xl md:text-7xl font-bold text-white mb-8 uppercase tracking-tighter leading-tight font-heading">
-              САМОСАБОТАЖ — ЭТО <br />
-              <span className="text-gold">НЕ ОШИБКА.</span> ЭТО <br />
-              <span className="text-neon-scan">ЗАЩИТНЫЙ ПРОТОКОЛ.</span>
-            </h2>
+            <h2 
+              className="text-4xl md:text-7xl font-bold text-white mb-8 uppercase tracking-tighter leading-tight font-heading"
+              dangerouslySetInnerHTML={{ __html: d.title }}
+            />
             
             <p className="text-xl text-white/40 font-light max-w-2xl mx-auto font-body italic">
-              «Почему 95% попыток «начать новую жизнь» заканчиваются возвратом в исходную точку.»
+              {d.subTitle}
             </p>
           </motion.div>
         </div>
@@ -75,14 +50,12 @@ export default function SabotageMechanics() {
             <div className="p-8 border border-white/10 bg-white/[0.02] backdrop-blur-sm relative overflow-hidden">
                <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/40" />
                <h3 className="font-heading text-2xl text-white uppercase mb-6 flex items-center gap-3">
-                 <span className="text-gold font-mono text-sm">[01]</span> Концепция Сет-Пойнта
+                 <span className="text-gold font-mono text-sm">[01]</span> {d.setPointTitle}
                </h3>
                <div className="space-y-6 text-lg text-white/60 font-light leading-relaxed font-body">
-                 <p>
-                    У твоей психики есть <span className="text-white font-bold">«установочная точка»</span> или Сет-пойнт. Это твой внутренний уровень нормы: количество денег, объем ответственности и уровень стресса, которые система считает «безопасными».
-                 </p>
+                 <p dangerouslySetInnerHTML={{ __html: d.setPointDesc1 }} />
                  <p className="p-4 bg-white/5 border-l-2 border-gold text-base italic">
-                    «Это твоя версия минимально приемлемых привычек.»
+                    {d.setPointQuote}
                  </p>
                </div>
             </div>
@@ -90,10 +63,10 @@ export default function SabotageMechanics() {
             <div className="p-8 border border-white/10 bg-white/[0.02] backdrop-blur-sm relative overflow-hidden">
                <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/40" />
                <h3 className="font-heading text-2xl text-white uppercase mb-6 flex items-center gap-3">
-                 <span className="text-gold font-mono text-sm">[02]</span> Почему воля не работает
+                 <span className="text-gold font-mono text-sm">[02]</span> {d.willpowerTitle}
                </h3>
                <p className="text-lg text-white/60 font-light leading-relaxed font-body">
-                  Пытаться удерживать результат на одной воле — это всё равно что пытаться удерживать растянутую пружину руками. Рано или поздно ресурс префронтальной коры истощится, и пружина (твой Хранитель) вернет тебя на место с удвоенной силой.
+                  {d.willpowerDesc}
                </p>
             </div>
           </motion.div>
@@ -109,8 +82,8 @@ export default function SabotageMechanics() {
             >
                {/* Label Overlay */}
                <div className="flex justify-between font-mono text-[9px] text-white/20 uppercase tracking-widest pb-4 border-b border-white/5">
-                 <span>System_Load // Volatility</span>
-                 <span>Ref: SET_POINT_STABILITY</span>
+                 <span>{d.telemetry}</span>
+                 <span>{d.refStability}</span>
                </div>
 
                {/* The SVG Chart */}
@@ -118,7 +91,7 @@ export default function SabotageMechanics() {
                   <svg viewBox="0 0 400 300" className="w-full h-full overflow-visible">
                     {/* Baseline (Set-point) */}
                     <line x1="0" y1="200" x2="400" y2="200" stroke="white" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.3" />
-                    <text x="350" y="215" className="fill-white/30 font-mono text-[8px] uppercase tracking-widest">Floor_Level</text>
+                    <text x="350" y="215" className="fill-white/30 font-mono text-[8px] uppercase tracking-widest">{d.floorLevel}</text>
 
                     {/* The Growth/Crash Curve */}
                     <motion.path
@@ -133,30 +106,30 @@ export default function SabotageMechanics() {
 
                     {/* Points of Interest */}
                     <motion.circle cx="160" cy="50" r="4" fill="#D4AF37" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.5 }} />
-                    <text x="170" y="45" className="fill-white font-mono text-[10px] uppercase font-bold">Peak_Load</text>
+                    <text x="170" y="45" className="fill-white font-mono text-[10px] uppercase font-bold">{d.peakLoad}</text>
 
                     <motion.circle cx="300" cy="280" r="4" fill="#FF4444" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 2.2 }} />
-                    <text x="250" y="295" className="fill-red-500 font-mono text-[10px] uppercase font-bold">CRASH // ROLLBACK</text>
+                    <text x="250" y="295" className="fill-red-500 font-mono text-[10px] uppercase font-bold">{d.crashRollback}</text>
 
                     <circle cx="400" cy="200" r="4" fill="#00F0FF" />
-                    <text x="320" y="190" className="fill-neon-scan font-mono text-[10px] uppercase">Normal_State</text>
+                    <text x="320" y="190" className="fill-neon-scan font-mono text-[10px] uppercase">{d.normalState}</text>
                   </svg>
                </div>
 
                {/* Bottom Axis */}
                <div className="flex justify-between py-4 border-t border-white/5 font-mono text-[8px] text-white/20 uppercase">
-                  <span>Cycle_Start</span>
-                  <span>Willpower_Push</span>
-                  <span>Entropy_Point</span>
+                  <span>{d.cycleStart}</span>
+                  <span>{d.willpowerPush}</span>
+                  <span>{d.entropyPoint}</span>
                </div>
 
                {/* Indicator Tags */}
                <div className="absolute top-12 left-12 p-3 bg-black/80 border border-white/5 backdrop-blur-md">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-2 h-2 bg-gold animate-pulse" />
-                    <span className="font-mono text-[9px] text-gold uppercase tracking-widest">Guardian_Armed</span>
+                    <span className="font-mono text-[9px] text-gold uppercase tracking-widest">{d.guardianArmed}</span>
                   </div>
-                  <p className="font-mono text-[8px] text-white/40">ANOMALY_DETECTED_IN_ZONE_B</p>
+                  <p className="font-mono text-[8px] text-white/40">{d.anomalyDetected}</p>
                </div>
             </motion.div>
           </div>
@@ -165,7 +138,7 @@ export default function SabotageMechanics() {
         {/* The Mechanics Step-by-Step */}
         <div className="mb-32">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-             {steps.map((step, idx) => (
+             {d.steps.map((step: any, idx: number) => (
                <motion.div
                  key={idx}
                  initial={{ opacity: 0, y: 20 }}
@@ -190,26 +163,20 @@ export default function SabotageMechanics() {
         {/* The Solution */}
         <div className="max-w-4xl mx-auto p-8 md:p-16 bg-gradient-to-br from-gold/10 to-transparent border border-gold/20 relative overflow-hidden text-center backdrop-blur-sm">
            <div className="absolute top-0 left-0 w-2 h-full bg-gold/40" />
-           <p className="font-mono text-[10px] text-gold uppercase tracking-[0.4em] mb-8">Solution // SHERLOCK_SHADOW_V4</p>
+           <p className="font-mono text-[10px] text-gold uppercase tracking-[0.4em] mb-8">{d.solutionLabel}</p>
            
-           <h3 className="text-3xl md:text-5xl font-bold text-white uppercase mb-8 font-heading">
-             Мы не учим тебя <span className="text-gold">«прыгать выше»</span>. <br />
-             Мы занимаемся <span className="text-neon-scan">перепрошивкой</span> фундамента.
-           </h3>
+           <h3 
+              className="text-3xl md:text-5xl font-bold text-white uppercase mb-8 font-heading"
+              dangerouslySetInnerHTML={{ __html: d.solutionTitle }}
+           />
 
-           <ul className="space-y-4 text-lg text-white/60 mb-12 max-w-xl mx-auto list-none font-body">
-             <li className="flex items-center justify-center gap-3">
-               <span className="w-1.5 h-1.5 bg-gold rotate-45" />
-               Мы находим теневые аспекты, которые твой Хранитель считает «опасными».
-             </li>
-             <li className="flex items-center justify-center gap-3">
-               <span className="w-1.5 h-1.5 bg-gold rotate-45" />
-               Мы интегрируем их в твой Сет-пойнт.
-             </li>
-             <li className="flex items-center justify-center gap-3">
-               <span className="w-1.5 h-1.5 bg-gold rotate-45" />
-               <span className="text-white font-bold">Твой «пол» (минимум) поднимается.</span>
-             </li>
+           <ul className="space-y-4 text-lg text-white/60 mb-12 max-w-xl mx-auto list-none font-body text-left md:text-center">
+             {d.solutionItems.map((item: string, idx: number) => (
+               <li key={idx} className="flex items-start md:items-center justify-start md:justify-center gap-3">
+                 <span className="w-1.5 h-1.5 bg-gold rotate-45 shrink-0 mt-1.5 md:mt-0" />
+                 <span dangerouslySetInnerHTML={{ __html: item }} />
+               </li>
+             ))}
            </ul>
 
            <motion.button
@@ -217,7 +184,7 @@ export default function SabotageMechanics() {
               whileTap={{ scale: 0.95 }}
               className="px-12 py-5 bg-gold text-black font-bold uppercase tracking-[0.3em] text-xs hover:bg-white transition-all shadow-[0_0_30px_rgba(212,175,55,0.2)]"
            >
-              ОПРЕДЕЛИТЬ МОЙ ТЕКУЩИЙ СЕТ-ПОЙНТ
+              {d.solutionCTA}
            </motion.button>
         </div>
       </div>

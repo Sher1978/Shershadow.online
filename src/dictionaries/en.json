@@ -1,0 +1,278 @@
+{
+  "Hero": {
+    "systemInit": "SYSTEM_INIT // DETECTION_MODE_ACTIVE",
+    "titleLine1": "Your business",
+    "titleLine2": "is stalling,",
+    "titleLine3": "because",
+    "hooks": [
+      { "id": "EternalStudent", "text": "...you're an \"eternal student\" who constantly gathers knowledge but never turns it into results?" },
+      { "id": "NoEnergy", "text": "...you wake up already without energy, and every new step feels like a struggle?" },
+      { "id": "Stagnation", "text": "...you see others growing manifold, while you are always waiting for something?" },
+      { "id": "Impostor", "text": "...you feel like an impostor (impostor syndrome), despite your real solid successes?" },
+      { "id": "DeferredLife", "text": "...you live in \"deferred life\" mode, constantly preparing for a real start that never comes?" }
+    ],
+    "phaseTag": "PHASE_TAG",
+    "detected": "[DETECTED]",
+    "subHeadline": "Your Shadow ($Shadow$) is secretly blocking your path through sabotage scenarios. We don't teach you marketing — we remove internal friction ($SFI$), which makes you stall where you should be soaring.",
+    "cta": "START SFI SCANNING",
+    "targetStatus": "Target_Status",
+    "inStall": "In_Stall",
+    "shadowTax": "Shadow_Tax",
+    "systemLoad": "System_Load",
+    "critical": "Critical",
+    "efficiency": "Efficiency"
+  },
+  "Author": {
+    "role": "Chief_Engineer // Igor_Sherlock",
+    "titleLine1": "System",
+    "titleLine2": "Architect",
+    "desc1": "Igor Sherlock is more than a mentor. He is an engineer who deconstructs your business and your mind like a complex mechanism, finding hidden bugs where others see \"just laziness\" or \"bad market\".",
+    "desc2": "Founder of Sherlock Capital, creator of the SFI protocol, and author of the Zero Friction methodology. His mission is to turn your struggle into a smooth, high-speed move towards scaling.",
+    "yearsExp": "15+",
+    "yearsExpLabel": "YEARS_EXP",
+    "optimized": "500+",
+    "optimizedLabel": "SFI_OPTIMIZED",
+    "cta": "Connect to the System"
+  },
+  "Diagnostic": {
+    "auditSequence": "Diagnostic // Audit_Sequence",
+    "titleLine1": "System",
+    "titleLine2": "Logic",
+    "cards": [
+      {
+        "id": "01",
+        "zone": "ZONE A: ENGINE ARCHITECTURE",
+        "title": "NATURE OF INTERNAL STALLING",
+        "description": "External tools (MBA, hiring, marketing) are just \"body kits\". If the engine (your psyche) operates with Friction Tax, speed won't increase. You're not broken. You just need an engine \"firmware\" update to the <span class='text-[#FFFB00] font-bold'>Launch Control</span> version."
+      },
+      {
+        "id": "02",
+        "zone": "ZONE B: INTERNAL FRICTION ($SFI$)",
+        "title": "WHO IS BRAKING YOUR HYPERCAR?",
+        "description": "Your \"Guardians\" are fears and blocks that once saved you, but today have turned into speed limiters. They fear your scale as much as you do."
+      },
+      {
+        "id": "03",
+        "zone": "ZONE C: THE GOLDEN SHADOW",
+        "title": "HIDDEN POWER RESERVE",
+        "description": "Your \"Golden Shadow\" is suppressed potential, aggression, and scale. Unpacking these qualities gives an immediate boost in efficiency and profit without increasing the load."
+      }
+    ],
+    "scanCTA": "Launch System Scan"
+  },
+  "Sabotage": {
+    "systemConflict": "SYSTEM_CONFLICT // ANALYSIS",
+    "title": "SELF-SABOTAGE IS NOT AN ERROR. IT IS A PROTECTIVE PROTOCOL.",
+    "subTitle": "“Why 95% of attempts to ‘start a new life’ end with a return to the starting point.”",
+    "setPointTitle": "The Set-Point Concept",
+    "setPointDesc1": "Your psyche has a <span class='text-white font-bold'>“set point”</span>. This is your internal level of normal: the amount of money, volume of responsibility, and level of stress that the system considers “safe”.",
+    "setPointQuote": "“This is your version of minimum acceptable habits.”",
+    "willpowerTitle": "Why willpower doesn't work",
+    "willpowerDesc": "Trying to maintain results on willpower alone is like trying to hold a stretched spring with your hands. Sooner or later, the resources of the prefrontal cortex will be exhausted, and the spring (your Guardian) will return you to your place with double force.",
+    "telemetry": "System_Load // Volatility",
+    "refStability": "Ref: SET_POINT_STABILITY",
+    "floorLevel": "Floor_Level",
+    "peakLoad": "Peak_Load",
+    "crashRollback": "CRASH // ROLLBACK",
+    "normalState": "Normal_State",
+    "cycleStart": "Cycle_Start",
+    "willpowerPush": "Willpower_Push",
+    "entropyPoint": "Entropy_Point",
+    "guardianArmed": "Guardian_Armed",
+    "anomalyDetected": "ANOMALY_DETECTED_IN_ZONE_B",
+    "steps": [
+      { "title": "Impulse", "desc": "You set the “maximum achievable goal” through willpower.", "status": "INITIATING_GROWTH" },
+      { "title": "Tension", "desc": "Rapid growth creates excessive pressure on the system. Your Friction Index ($SFI$) enters the red zone.", "status": "PRESSURE_OVERLOAD" },
+      { "title": "Guardian Activation", "desc": "Your safety mechanism (Guardian) perceives success as a threat to stability (unknown = danger).", "status": "GUARDIAN_ARMED" },
+      { "title": "Pressure Release (Sabotage)", "desc": "To save you from “overheating”, the Guardian turns on laziness, illness, out of focus, or wrong decisions.", "status": "EMERGENCY_VENT" },
+      { "title": "Rollback", "desc": "The system forcibly returns you to the “safe harbor” — to your minimal habits. Often deeper than it was before the start.", "status": "SYSTEM_RECOVERY" }
+    ],
+    "solutionLabel": "Solution // SHERLOCK_SHADOW_V4",
+    "solutionTitle": "We don't teach you to <span class='text-gold'>“jump higher”</span>. <br /> We are engaged in <span class='text-neon-scan'>flashing</span> the foundation.",
+    "solutionItems": [
+      "We find shadow aspects that your Guardian considers “dangerous”.",
+      "We integrate them into your Set-point.",
+      "<span class='text-white font-bold'>Your “floor” (minimum) rises.</span>"
+    ],
+    "solutionCTA": "IDENTIFY MY CURRENT SET-POINT"
+  },
+  "Science": {
+    "method": "The_Method // Zero_Friction",
+    "titleLine1": "30-Days",
+    "sprint": "Sprint",
+    "algorithm": "Algorithm",
+    "quote": "“We don't just fix your state. We rewrite your workflow for a new level of scale.”",
+    "steps": [
+      { "id": "01", "title": "SEARCH BUG", "desc": "Deep search for bugs in your neural network that prevent you from seeing growth opportunities." },
+      { "id": "02", "title": "EXTRACT CAPITAL", "desc": "Unpacking your “Golden Shadow” — hidden talents and aggressive potential." },
+      { "id": "03", "title": "REWRITE PROTOCOL", "desc": "Implementing the new SFI 1.0 firmware for operation in Zero Friction mode." }
+    ],
+    "cta": "Start Sprint",
+    "phaseComplete": "PHASE_01_COMPLETE"
+  },
+  "Comparative": {
+    "auditLabel": "SYSTEM_AUDIT // THE_ILLUSION_OF_CHOICE",
+    "title": "The Illusion of Choice",
+    "subTitle": "Why classic methods of working with state and business <span class='text-white/80 font-medium'>DO NOT GIVE RESULTS</span> at the level of <span class='text-white/80 font-medium'>SUPER-TASKS</span>. Choose not between “best”, but between <span class='text-gold/90 font-medium tracking-wide italic'>“WORKING”</span>.",
+    "column1": {
+      "title": "Conventional Therapy",
+      "verdict": "ANALYSIS WITHOUT REASSEMBLY. THE SYSTEM REMAINS IN THE OLD ARCHITECTURE.",
+      "items": [
+        { "primary": "Searching for reasons in the past", "secondary": "Digging into childhood does not change the current neural chains of sabotage here and now." },
+        { "primary": "Indefinite process", "secondary": "The lack of a deadline allows the psyche to imitate work without results for years." },
+        { "primary": "Intellectual insight", "secondary": "Understanding the problem does not provide tools for its technical elimination." }
+      ]
+    },
+    "column2": {
+      "title": "Coaching and Training",
+      "verdict": "EXTERNAL GLOSS. THE “GUARDIAN” SYSTEM QUICKLY REPRESSES THIS IMPULSE.",
+      "items": [
+        { "primary": "External tools", "secondary": "An attempt to implement skills on an old foundation leads to rapid rejection." },
+        { "primary": "Betting on willpower", "secondary": "Willpower resource is limited — the system always returns you to the comfort point." },
+        { "primary": "Dopamine trap", "secondary": "A temporary rise in training is replaced by an even deeper rollback." }
+      ]
+    },
+    "column3": {
+      "title": "Shadow Sprint (SFI)",
+      "verdict": "ZERO FRICTION. SUSTAINABLE TRANSITION TO A NEW LEVEL OF INCOME AND ENERGY.",
+      "items": [
+        { "primary": "Engineering protocol", "secondary": "We don’t motivate, we reassemble your personality architecture for new tasks." },
+        { "primary": "30-day Sprint", "secondary": "The short cycle of changes does not give the safety mechanisms time to react." },
+        { "primary": "Moving “Under the Radars”", "secondary": "The methodology bypasses Ego resistance, making the quantum leap natural." }
+      ]
+    },
+    "verdictLabel": "System_Verdict",
+    "protocolLabel": "Shadow_Protocol // Comparative_Matrix // v1.10"
+  },
+  "Dashboard": {
+    "telemetry": "Telemetry_Report // SFI_1.0_OUTCOME",
+    "titleLine1": "Telemetry of",
+    "titleLine2": "your",
+    "future": "future",
+    "subTitle": "The Sherlock Shadow system doesn't give “advice”. We introduce changes directly into your business architecture, turning chaos into measurable results.",
+    "results": [
+      { "label": "PROFIT CONVERSION", "value": "+42%", "desc": "Net profit growth due to the elimination of internal system bugs." },
+      { "label": "SOVEREIGN LEADERSHIP", "value": "DEEP", "desc": "Transition to the Master state, where you dictate the rules of the game to the market." },
+      { "label": "FREEDOM LEVEL", "value": "MAX", "desc": "Exit from operations without losing control and product quality." }
+    ],
+    "systemReady": "SYSTEM_READY_FOR_CALIBRATION",
+    "cta": "Get Access"
+  },
+  "FAQ": {
+    "protocol": "FAQ_PROTOCOL_LOG_V3.01",
+    "title": "PROCESSING",
+    "sabotage": "SABOTAGE",
+    "faqs": [
+      {
+        "q": "WHY NOW?",
+        "a": "Your Guardian is winning time. Every week of delay is not just lost profit, it is a resource that your Shadow ($Shadow$) burns right now. The system does not forgive inaction in conditions of limit loads."
+      },
+      {
+        "q": "WHY SHADOW IS MORE IMPORTANT THAN MARKETING?",
+        "a": "Marketing is gasoline. If there is a hole in your engine tank (Friction Tax), you just pour money into the asphalt. We don't hang a new fairing on the car, we fix the engine itself."
+      },
+      {
+        "q": "WHO IS THE GUARDIAN?",
+        "a": "This is your internal protection mechanism. It sabotages your growth, masquerading as 'common sense' and 'rational planning'. Its task is to leave you where it is 'safe' for you, but where there is no scale."
+      },
+      {
+        "q": "WHAT IS SFI INDEX?",
+        "a": "Shadow Friction Index is a digitized indicator of your internal resistance. This is a technical parameter that shows how much effort your system spends on fighting itself."
+      }
+    ],
+    "copyright": "© 2026 SHER SHADOW CAPITAL // ALL_RIGHTS_RESERVED",
+    "stk": "STK: NEXTJS/FRAMER/BLUEPRINT",
+    "origin": "SYSTEM_ORIGIN: DUBAI HQ"
+  },
+  "FinalLaunch": {
+    "sequence": "Final_Sequence // Launch_Initiated",
+    "title": "Your new",
+    "stage": "Stage",
+    "quote": "“We don't promise it will be easy. We promise that you will stop stalling and start soaring.”",
+    "scenarios": [
+      { "id": "01", "label": "VITALITY", "desc": "Checking the level of vital resource and system resistance to external loads." },
+      { "id": "02", "label": "SOVEREIGN", "desc": "Assessment of inner power and freedom from unconscious manipulations." },
+      { "id": "03", "label": "EXPANSION", "desc": "Measuring growth capacity without activating self-sabotage protocols." },
+      { "id": "04", "label": "ARCHITECT", "desc": "Analysis of structural integrity and system logic of your business." }
+    ],
+    "protocol": "Diagnostic_Protocol // 12_Data_Points",
+    "testDesc": "Take a 12-question test to get an accurate calculation of the Shadow Friction Index ($SFI$) for 4 key scenarios.",
+    "cta": "START SFI TEST",
+    "ready": "Ready_for_Upload",
+    "calibrated": "System_Calibrated"
+  },
+  "ShadowTax": {
+    "zone": "ZONE_C // ATTENTION_REQUIRED",
+    "titleLine1": "THE GOLDEN",
+    "titleLine2": "SHADOW",
+    "desc1": "The problem is not marketing or the team. You pay an invisible tax on success — <span class='text-white font-bold'>Shadow Friction</span>.",
+    "desc2": "Every action you take passes through an internal filter of sabotage. You spend 80% of your energy fighting yourself, and only 20% on real growth.",
+    "scanning": "_SCANNING_PSYCHE_ANOMALIES...",
+    "coord": "COORD: 25.2048° N, 55.2708° E",
+    "inputEnergy": "Input_Energy",
+    "frictionLoss": "Friction_Loss (82.4%)",
+    "resultField": "Result_Field"
+  },
+  "SocialProof": {
+    "title": "GALLERY OF MANIFESTATION",
+    "subTitle": "Scale that becomes natural. Energy that goes into results, not struggle."
+  },
+  "Solution": {
+    "titleLine1": "YOUR ADVANTAGE.",
+    "titleLine2": "YOUR SUPERPOWER.",
+    "desc1": "While the market is stalling and trying to 'squeeze' the result through discipline, you get a superpower.",
+    "desc2": "Shadow integration is driving without brakes. You direct 100% of the energy into motion, going into a point. <span class='text-carbon font-bold'>This advantage cannot be bought.</span>"
+  },
+  "Superpower": {
+    "title1": "ZERO",
+    "friction": "FRICTION.",
+    "desc1": "While competitors are burning rubber in attempts to “force” themselves to work, you direct 100% of the energy into movement.",
+    "desc2": "This is your unfair advantage. Superpower is when your internal engine no longer fights with the braking system."
+  },
+  "DangerZone": {
+    "title1": "DANGER:",
+    "title2": "«SABOTAGE LOOP»",
+    "desc1": "It is impossible to see the Shadow on your own. <br /> Trying to do it yourself, you fall into a loop:",
+    "steps": ["ILLUSION OF PROGRESS", "HIDDEN SABOTAGE", "HARD ROLLBACK"],
+    "resultTitle": "The result is a point “below zero”.",
+    "resultDesc": "Either Sprint and objective control, or a burned-out engine of your system."
+  },
+  "Footer": {
+    "titleLine1": "READY TO",
+    "titleLine2": "RELEASE THE HANDBRAKE?",
+    "cta": "START AUDIT",
+    "rights": "© 2026 SHER SHADOW CAPITAL. ALL RIGHTS RESERVED.",
+    "privacy": "PRIVACY POLICY",
+    "hq": "DUBAI DESERT HQ",
+    "protocol": "ZERO FRICTION PROTOCOL"
+  },
+  "HorizontalScroll": {
+    "trajectory": "THE_TRAJECTORY // ROUTE",
+    "titleLine1": "THREE STAGES",
+    "titleLine2": "OF BREAKTHROUGH",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Shadow Audit",
+        "subtitle": "Audit of Shadow Friction",
+        "desc": "AI scanning of your real Shadow Friction Index (SFI). We find hidden points of energy drain and sabotage in the decision-making system.",
+        "color": "#FFFFFF"
+      },
+      {
+        "num": "02",
+        "title": "30-Day Sprint",
+        "subtitle": "Decryption and Reflashing",
+        "desc": "Working with a Shadow Advisor and a live curator. Isolation of management bugs and implementation of new action protocols without resistance.",
+        "color": "#FF0000"
+      },
+      {
+        "num": "03",
+        "title": "Zero Resistance",
+        "subtitle": "Scale without brakes",
+        "desc": "Instant decisions. Natural exit to a new level of turnover. Pure acceleration, where the business grows faster than you.",
+        "color": "#FF0000"
+      }
+    ],
+    "status": "STATUS: READY_FOR_SYNC"
+  }
+}

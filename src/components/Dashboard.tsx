@@ -3,14 +3,18 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
-const results = [
-  { label: "PROFIT CONVERSION", value: "+42%", desc: "Рост чистой прибыли за счет устранения внутренних багов системы.", color: "text-gold" },
-  { label: "SOVEREIGN LEADERSHIP", value: "DEEP", desc: "Переход в состояние Хозяина, где ты диктуешь правила игры рынку.", color: "text-neon-scan" },
-  { label: "FREEDOM LEVEL", value: "MAX", desc: "Выход из операционки без потери контроля и качества продукта.", color: "text-white" }
-];
+import { useDictionary } from "./DictionaryProvider";
 
 export default function Dashboard() {
+  const dict = useDictionary();
+  const d = dict.Dashboard;
+
+  const colors = ["text-gold", "text-neon-scan", "text-white"];
+  const results = (d.results || []).map((res: any, index: number) => ({
+    ...res,
+    color: colors[index % colors.length]
+  }));
+
   return (
     <section className="relative bg-carbon py-16 md:py-32 px-4 overflow-hidden md:min-h-[80vh] flex items-center">
       
@@ -32,18 +36,18 @@ export default function Dashboard() {
              whileInView={{ opacity: 1 }}
              className="text-neon-scan font-mono text-xs tracking-widest mb-4"
           >
-            Telemetry_Report // SFI_1.0_OUTCOME
+            {d.telemetry}
           </motion.p>
           <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter mb-4 md:mb-8 max-w-4xl mx-auto" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-            Телеметрия <span className="text-white/20">твоего</span> будущего
+            {d.titleLine1} <span className="text-white/20">{d.titleLine2}</span> {d.titleLine3}
           </h2>
           <p className="text-base md:text-lg text-white/50 font-light max-w-2xl mx-auto leading-relaxed">
-            Система Sherlock Shadow не дает «советов». Мы внедряем изменения прямо в архитектуру твоего бизнеса, превращая хаос в измеримые результаты.
+            {d.subTitle}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {results.map((res, index) => (
+          {results.map((res: any, index: number) => (
             <motion.div
               key={res.label}
               initial={{ opacity: 0, y: 30, filter: "grayscale(100%)" }}
@@ -69,14 +73,14 @@ export default function Dashboard() {
         </div>
 
         <div className="mt-12 md:mt-24">
-          <p className="font-mono text-[10px] text-neon-scan blink mb-6 md:mb-8 uppercase tracking-[0.4em]">SYSTEM_READY_FOR_CALIBRATION</p>
+          <p className="font-mono text-[10px] text-neon-scan blink mb-6 md:mb-8 uppercase tracking-[0.4em]">{d.systemReady}</p>
           <Link href="https://shershadow.web.app/sfitest">
              <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full md:w-auto px-12 md:px-16 py-6 md:py-8 bg-white text-black font-bold uppercase tracking-[0.3em] text-xs md:text-sm hover:bg-gold transition-all"
              >
-                Получить доступ
+                {d.cta}
              </motion.button>
           </Link>
         </div>

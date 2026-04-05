@@ -4,32 +4,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-const cards = [
-  {
-    id: "01",
-    zone: "ZONE A: ENGINE ARCHITECTURE",
-    title: "ПРИРОДА ВНУТРЕННЕЙ БУКСОВКИ",
-    description: "Внешние инструменты (МВА, найм, маркетинг) — это «обвес». Если двигатель (твоя психика) работает с Налогом на Трение, скорость не вырастет. Ты не сломан. Тебе просто нужно обновление «прошивки» двигателя до версии <span class='text-[#FFFB00] font-bold'>Launch Control</span>.",
-    icon: "/engine_schematic.png"
-  },
-  {
-    id: "02",
-    zone: "ZONE B: INTERNAL FRICTION ($SFI$)",
-    title: "КТО ТОРМОЗИТ ТВОЙ ГИПЕРКАР?",
-    description: "Твои «Защитники» (Guardians) — это страхи и блоки, которые когда-то спасли тебя, но сегодня превратились в ограничители скорости. Они боятся твоего масштаба так же сильно, как и ты.",
-    icon: "/process_final.png"
-  },
-  {
-    id: "03",
-    zone: "ZONE C: THE GOLDEN SHADOW",
-    title: "СКРЫТЫЙ РЕЗЕРВ МОЩНОСТИ",
-    description: "Твоя «Золотая Тень» — это вытесненный потенциал, агрессия и масштаб. Распаковка этих качеств дает мгновенный прирост эффективности и прибыли без увеличения нагрузки.",
-    icon: "/zone_c_update.png"
-  }
-];
+import { useDictionary } from "./DictionaryProvider";
 
 export default function DiagnosticAudit() {
+  const dict = useDictionary();
+  const d = dict.Diagnostic;
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -56,15 +35,17 @@ export default function DiagnosticAudit() {
             whileInView={{ opacity: 1 }}
             className="text-gold font-mono text-xs tracking-[0.3em] uppercase mb-4"
           >
-            Diagnostic // Audit_Sequence
+            {d.auditSequence}
           </motion.p>
           <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-            Логика <span className="text-white/30">Системы</span>
+            {d.titleLine1} <span className="text-white/30">{d.titleLine2}</span>
           </h2>
         </div>
 
         <div className="space-y-6 md:space-y-8">
-          {cards.map((card, index) => {
+          {d.cards.map((card: any, index: number) => {
+            // Mapping static icons to cards
+            const icons = ["/engine_schematic.png", "/process_final.png", "/zone_c_update.png"];
             return (
               <motion.div
                 key={card.id}
@@ -99,7 +80,7 @@ export default function DiagnosticAudit() {
                           whileHover={{ x: 10 }}
                           className="flex items-center gap-4 text-neon-scan font-bold tracking-widest text-xs uppercase"
                         >
-                          Launch System Scan 
+                          {d.scanCTA}
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
@@ -116,7 +97,7 @@ export default function DiagnosticAudit() {
                         transition={{ duration: 1.2 }}
                       >
                         <Image
-                          src={card.icon}
+                          src={icons[index]}
                           alt={card.title}
                           fill
                           className="object-cover"

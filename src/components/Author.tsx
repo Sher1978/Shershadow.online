@@ -3,8 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useDictionary } from "./DictionaryProvider";
 
 export default function Author() {
+  const dict = useDictionary();
+  const a = dict.Author;
+
   return (
     <section className="relative bg-carbon py-16 md:py-20 px-4 overflow-hidden md:min-h-screen flex items-center">
       
@@ -64,30 +68,30 @@ export default function Author() {
                  whileInView={{ opacity: 1 }}
                  className="text-gold font-mono text-xs tracking-widest mb-4"
               >
-                Chief_Engineer // Igor_Sherlock
+                {a.role}
               </motion.p>
               <h2 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter mb-4 md:mb-8" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-                Архитектор <br /> 
-                <span className="text-white/20">Системы</span>
+                {a.titleLine1} <br /> 
+                <span className="text-white/20">{a.titleLine2}</span>
               </h2>
               <div className="space-y-4 md:space-y-6 text-base md:text-lg text-white/60 font-light leading-relaxed max-w-xl">
                  <p>
-                   Игорь Шерлок — больше чем ментор. Это инженер, который разбирает твой бизнес и твою психику как сложный механизм, находя скрытые баги там, где другие видят «просто лень» или «плохой рынок».
+                   {a.desc1}
                  </p>
                  <p>
-                   Основатель Sherlock Capital, создатель протокола SFI и автор методики Zero Friction. Его задача — превратить твою борьбу в плавное, скоростное движение к масштабу.
+                   {a.desc2}
                  </p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 md:gap-8 py-6 md:py-8 border-y border-white/5">
                <div>
-                  <p className="text-2xl md:text-3xl font-bold text-white mb-1">15+</p>
-                  <p className="text-[10px] text-gold font-mono uppercase tracking-widest">YEARS_EXP</p>
+                  <p className="text-2xl md:text-3xl font-bold text-white mb-1">{a.yearsExp}</p>
+                  <p className="text-[10px] text-gold font-mono uppercase tracking-widest">{a.yearsExpLabel}</p>
                </div>
                <div>
-                  <p className="text-2xl md:text-3xl font-bold text-white mb-1">500+</p>
-                  <p className="text-[10px] text-gold font-mono uppercase tracking-widest">SFI_OPTIMIZED</p>
+                  <p className="text-2xl md:text-3xl font-bold text-white mb-1">{a.optimized}</p>
+                  <p className="text-[10px] text-gold font-mono uppercase tracking-widest">{a.optimizedLabel}</p>
                </div>
             </div>
 
@@ -97,7 +101,7 @@ export default function Author() {
                 whileTap={{ scale: 0.95 }}
                 className="w-full md:w-auto px-8 md:px-12 py-5 md:py-6 border border-white/20 hover:border-gold text-white font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs transition-all flex items-center justify-center gap-4 group"
               >
-                Подключиться к системе
+                {a.cta}
                 <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

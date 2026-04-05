@@ -3,8 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useDictionary } from "./DictionaryProvider";
 
 export default function FinalLaunch() {
+  const dict = useDictionary();
+  const d = dict.FinalLaunch;
+
   return (
     <section className="relative bg-[#0A0A0A] py-16 md:py-32 px-4 overflow-hidden md:min-h-screen flex items-center justify-center">
       
@@ -29,25 +33,20 @@ export default function FinalLaunch() {
           <div className="absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 border-t-2 border-r-2 border-gold/40" />
           <div className="absolute bottom-0 left-0 w-12 h-12 md:w-16 md:h-16 border-b-2 border-l-2 border-gold/40" />
 
-          <p className="text-neon-scan font-mono text-[10px] tracking-[0.5em] uppercase mb-8 md:mb-12">Final_Sequence // Launch_Initiated</p>
+          <p className="text-neon-scan font-mono text-[10px] tracking-[0.5em] uppercase mb-8 md:mb-12">{d.sequence}</p>
           
           <h2 className="text-4xl md:text-8xl font-bold text-white uppercase tracking-tighter mb-8 md:mb-12 leading-tight" style={{ fontFamily: "'Syncopate', sans-serif" }}>
-             Твой новый <br /> 
-             <span className="text-gold">Стейдж</span>
+             {d.title.split("<br />")[0]} <br /> 
+             <span className="text-gold">{d.stage}</span>
           </h2>
 
           <p className="text-lg md:text-2xl text-white/70 font-light mb-12 md:mb-16 leading-relaxed max-w-2xl mx-auto font-heading italic">
-             «Мы не обещаем, что будет легко. Мы обещаем, что ты перестанешь буксовать и начнешь лететь.»
+             {d.quote}
           </p>
 
           {/* SFI 4 Scenarios Explanation */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-16 text-left max-w-4xl mx-auto">
-             {[
-               { id: "01", label: "VITALITY", desc: "Проверка уровня жизненного ресурса и устойчивости системы к внешним нагрузкам." },
-               { id: "02", label: "SOVEREIGN", desc: "Оценка внутренней власти и свободы от неосознанных манипуляций." },
-               { id: "03", label: "EXPANSION", desc: "Измерение способности к росту без активации протоколов самосаботажа." },
-               { id: "04", label: "ARCHITECT", desc: "Анализ структурной целостности и системной логики твоего бизнеса." }
-             ].map((item) => (
+             {d.scenarios.map((item: any) => (
                <div key={item.id} className="p-6 md:p-8 bg-white/5 border border-white/10 hover:border-gold/30 transition-all group">
                   <div className="flex items-center gap-4 mb-3">
                     <span className="font-mono text-[10px] text-neon-scan opacity-40">{item.id} //</span>
@@ -60,9 +59,9 @@ export default function FinalLaunch() {
 
           <div className="space-y-6 md:space-y-8">
             <div className="text-center mb-4">
-               <p className="text-neon-scan font-mono text-[10px] tracking-[0.3em] uppercase mb-2">Diagnostic_Protocol // 12_Data_Points</p>
+               <p className="text-neon-scan font-mono text-[10px] tracking-[0.3em] uppercase mb-2">{d.protocol}</p>
                <p className="text-white/30 text-[11px] font-light max-w-md mx-auto">
-                 Пройди тест из 12 вопросов, чтобы получить точный расчет индекса Теневого Трения ($SFI$) по 4 ключевым сценариям.
+                 {d.testDesc}
                </p>
             </div>
             <Link href="https://shershadow.web.app/sfitest">
@@ -71,7 +70,7 @@ export default function FinalLaunch() {
                 whileTap={{ scale: 0.95 }}
                 className="w-full md:w-auto px-12 md:px-20 py-6 md:py-10 bg-gold text-black font-bold uppercase tracking-[0.4em] text-xs md:text-sm hover:bg-white transition-all shadow-2xl relative group"
               >
-                ЗАПУСТИТЬ SFI ТЕСТ
+                {d.cta}
                 <div className="absolute inset-0 bg-white/20 group-hover:scale-105 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
               </motion.button>
             </Link>
@@ -79,11 +78,11 @@ export default function FinalLaunch() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 md:mt-12 opacity-40">
                <p className="font-mono text-[8px] md:text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
                  <span className="w-1.5 h-1.5 bg-neon-scan rounded-full" /> 
-                 Ready_for_Upload
+                 {d.ready}
                </p>
                <p className="font-mono text-[8px] md:text-[9px] uppercase tracking-widest text-white/50 flex items-center gap-2">
                  <span className="w-1.5 h-1.5 bg-neon-scan rounded-full" /> 
-                 System_Calibrated
+                 {d.calibrated}
                </p>
             </div>
           </div>

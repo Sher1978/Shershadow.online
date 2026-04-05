@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { useDictionary } from "./DictionaryProvider";
 
 const images = [
   { src: "/proof_1.png", alt: "Hypercar cockpit" },
@@ -15,13 +15,16 @@ const images = [
 ];
 
 export default function SocialProof() {
+  const dict = useDictionary();
+  const d = dict.SocialProof;
+
   return (
     <section className="py-12 md:py-24 bg-carbon text-white border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="mb-16">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4 tracking-tighter uppercase">ГАЛЕРЕЯ ПРОЯВЛЕННОСТИ</h2>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4 tracking-tighter uppercase">{d.title}</h2>
           <p className="font-body text-grey max-w-xl italic border-l-2 border-gold pl-6">
-            Масштаб, который становится естественным. Энергия, которая уходит в результат, а не в борьбу.
+            {d.subTitle}
           </p>
         </div>
 

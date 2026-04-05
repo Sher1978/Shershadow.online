@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useDictionary } from "./DictionaryProvider";
 
 export default function ShadowTax() {
+  const dict = useDictionary();
+  const d = dict.ShadowTax;
+
   return (
     <section className="py-16 md:py-24 bg-[#111113] relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
@@ -15,20 +19,16 @@ export default function ShadowTax() {
           >
             <div className="flex gap-4 items-center mb-6">
                <div className="w-8 h-[1px] bg-neon-scan" />
-               <span className="font-mono text-[10px] text-neon-scan tracking-[0.4em] uppercase">ZONE_C // ATTENTION_REQUIRED</span>
+               <span className="font-mono text-[10px] text-neon-scan tracking-[0.4em] uppercase">{d.zone}</span>
             </div>
             <h2 className="font-heading text-4xl md:text-6xl font-bold mb-8 text-white uppercase italic tracking-tighter leading-[0.9]">
-              THE GOLDEN <br />
-              <span className="text-neon-scan">SHADOW</span>
+              {d.titleLine1} <br />
+              <span className="text-neon-scan">{d.titleLine2}</span>
             </h2>
             
             <div className="space-y-6 font-body text-white/60 text-lg md:text-xl leading-relaxed max-w-xl">
-              <p>
-                Проблема не в маркетинге или команде. Ты платишь невидимый налог на успех — <span className="text-white font-bold">Shadow Friction (Теневое Трение)</span>.
-              </p>
-              <p>
-                Каждое твое действие проходит через внутренний фильтр саботажа. Ты тратишь 80% энергии на борьбу с собой, и только 20% — на реальный рост.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: d.desc1 }} />
+              <p>{d.desc2}</p>
             </div>
           </motion.div>
 
@@ -63,15 +63,15 @@ export default function ShadowTax() {
                 </div>
                 
                 <div className="flex justify-between font-mono text-[9px] md:text-[10px] text-white/40 uppercase tracking-[0.3em] relative z-10 border-t border-white/10 pt-4">
-                  <span>Input_Energy</span>
-                  <span className="text-white/20">Friction_Loss (82.4%)</span>
-                  <span className="text-neon-scan font-bold">Result_Field</span>
+                  <span>{d.inputEnergy}</span>
+                  <span className="text-white/20">{d.frictionLoss}</span>
+                  <span className="text-neon-scan font-bold">{d.resultField}</span>
                 </div>
 
                 {/* HUD Elements */}
                 <div className="absolute top-8 left-8 font-mono text-[10px] text-neon-scan/40 space-y-1">
-                  <p className="animate-pulse">_SCANNING_PSYCHE_ANOMALIES...</p>
-                  <p>COORD: 25.2048° N, 55.2708° E</p>
+                  <p className="animate-pulse">{d.scanning}</p>
+                  <p>{d.coord}</p>
                 </div>
                 <div className="absolute top-8 right-8 text-right font-mono text-[10px] text-white/20 whitespace-pre">
                    SFI_SYSTEM_V4.0 {"\n"}
