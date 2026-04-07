@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useDictionary } from "./DictionaryProvider";
+import SabotageLoopChart from "./SabotageLoopChart";
 
 export default function DangerZone() {
   const dict = useDictionary();
@@ -94,6 +95,16 @@ export default function DangerZone() {
                  </div>
                ))}
             </div>
+
+            {/* Sabotage Loop Infographic */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-4xl mx-auto py-8"
+            >
+              <SabotageLoopChart />
+            </motion.div>
 
             <div className="space-y-4">
               <p className="font-body text-2xl md:text-4xl font-bold text-white uppercase italic tracking-tighter">

@@ -19,16 +19,18 @@ function getLocale(request: NextRequest): string | undefined {
   return locale
 }
 
-export function proxy(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Check if there is any supported locale in the pathname
+  // Check if the path is a static asset (has an extension)
+  const isStaticAsset = /\..+$/.test(pathname)
+
+  // Redirect if there is no locale
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   )
 
-  // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
+  if (pathnameIsMissingLocale && !isStaticAsset) {
     const locale = getLocale(request)
 
     // e.g. incoming request is /products
@@ -40,9 +42,11 @@ export function proxy(request: NextRequest) {
       )
     )
   }
+
+  return NextResponse.next()
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  // Matcher ignoring `/_next/`, `/api/` and all files with extensions (static assets)
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'],
 }

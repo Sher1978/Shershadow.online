@@ -9,7 +9,8 @@
       { "id": "NoEnergy", "text": "...you wake up already without energy, and every new step feels like a struggle?" },
       { "id": "Stagnation", "text": "...you see others growing manifold, while you are always waiting for something?" },
       { "id": "Impostor", "text": "...you feel like an impostor (impostor syndrome), despite your real solid successes?" },
-      { "id": "DeferredLife", "text": "...you live in \"deferred life\" mode, constantly preparing for a real start that never comes?" }
+      { "id": "DeferredLife", "text": "...you live in \"deferred life\" mode, constantly preparing for a real start that never comes?" },
+      { "id": "Perfectionist", "text": "...you're a perfectionist who waits for the perfect moment while opportunities pass you by?" }
     ],
     "phaseTag": "PHASE_TAG",
     "detected": "[DETECTED]",
