@@ -129,7 +129,7 @@ export default function Hero() {
             </Link>
 
             <div className="flex gap-4 w-full md:w-auto">
-              <Link href="https://t.me/shershadow" className="flex-1 md:flex-none">
+              <Link href="https://t.me/sherlockdxb" className="flex-1 md:flex-none">
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 240, 255, 0.1)" }}
                   whileTap={{ scale: 0.95 }}
@@ -137,11 +137,11 @@ export default function Hero() {
                   title="Telegram"
                 >
                   <svg className="w-6 h-6 text-white/60 hover:text-neon-scan" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M11.944 0C5.344 0 0 5.344 0 11.944c0 6.6 5.344 11.944 11.944 11.944 6.6 0 11.944-5.344 11.944-11.944C23.888 5.344 18.544 0 11.944 0zM17.8 8.1c-.2 2.1-1 6.8-1.5 9-.2.9-1 .9-1.3.6-.3-.3-.7-.6-1-.9-3.2-2.1-2-1.9-2.8-1.3-.1.1-1.3 1.2-1.3 1.2s-.1.1-.3.1c-.2 0-.3-.1-.3-.1L6.7 13.1c-.3-.1-.3-.4 0-.5 1-.3 8.3-3.1 8.3-3.1s1.3-.5 1.3.5c0 .3-.1.7-.2 1.1s-1.1 4.3-1.1 4.3l-.2.1c-.1 0-.1-.1-.1-.1l-.2-.3c-.3-.4-.5-.9-.8-1.3L15 11.8c.2-.2.3-.4.3-.6 0-.2-.1-.3-.3-.3h-3.1c-.2 0-.4.1-.5.3l-1.3 3.9c-.1.2-.3.3-.5.3h-1.5l2.2-6.6c.1-.2.3-.3.5-.3h5c.3 0 .5.1.7.3.1.2.1.4.1.6z"/>
+                    <path d="M21.198 2.499a2.242 2.242 0 0 0-1.022.285L1.826 9.562c-1.1.447-1.097 1.069-.201 1.347l4.316 1.332 10.155-6.425c.483-.294.923-.136.561.186l-8.216 7.424-.316 1.488c.146.28.324.56.536.83l3.6 2.658c1.3.96 2.242.463 2.56-1.096l2.766-13.01c.23-.934-.16-1.53-.889-1.365Z"/>
                   </svg>
                 </motion.button>
               </Link>
-              <Link href="https://wa.me/79001234567" className="flex-1 md:flex-none">
+              <Link href="https://wa.me/971588044688" className="flex-1 md:flex-none">
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: "rgba(212, 175, 55, 0.1)" }}
                   whileTap={{ scale: 0.95 }}

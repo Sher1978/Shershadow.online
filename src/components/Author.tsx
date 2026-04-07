@@ -35,15 +35,13 @@ export default function Author() {
               viewport={{ amount: 0.3 }}
               transition={{ duration: 1.2 }}
             >
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="https://player.vimeo.com/external/494252666.sd.mp4?s=724071981ed673418ef0066d93963486af4a737f&profile_id=165" type="video/mp4" />
-              </video>
+              <iframe
+                src="https://www.youtube.com/embed/3f97cGVw_gI?autoplay=1&mute=1&loop=1&playlist=3f97cGVw_gI&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full pointer-events-none"
+                style={{ border: 'none' }}
+              ></iframe>
             </motion.div>
             
             {/* Live Indicator */}
