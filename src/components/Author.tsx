@@ -27,7 +27,7 @@ export default function Author() {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           
           {/* Video / Visual Side */}
-          <div className="relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black aspect-[9/16] md:aspect-square lg:aspect-[4/5] max-w-lg mx-auto lg:mx-0">
+          <div className="relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black aspect-[9/16] max-w-sm mx-auto lg:mx-0">
             <motion.div
               className="w-full h-full relative"
               initial={{ filter: "grayscale(100%)", opacity: 0.4 }}
@@ -36,10 +36,10 @@ export default function Author() {
               transition={{ duration: 1.2 }}
             >
               <iframe
-                src="https://www.youtube.com/embed/Et9q9fs8p0E?autoplay=1&mute=1&loop=1&playlist=Et9q9fs8p0E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                src="https://www.youtube.com/embed/Et9q9fs8p0E?autoplay=1&mute=0&loop=1&playlist=Et9q9fs8p0E&controls=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
                 allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="w-full h-full pointer-events-none"
+                className="w-full h-full"
                 style={{ border: 'none' }}
               ></iframe>
             </motion.div>
