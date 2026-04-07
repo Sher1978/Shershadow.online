@@ -36,7 +36,7 @@ export default function Author() {
               transition={{ duration: 1.2 }}
             >
               <iframe
-                src="https://www.youtube.com/embed/3f97cGVw_gI?autoplay=1&mute=1&loop=1&playlist=3f97cGVw_gI&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                src="https://www.youtube.com/embed/Et9q9fs8p0E?autoplay=1&mute=1&loop=1&playlist=Et9q9fs8p0E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
                 allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full pointer-events-none"
