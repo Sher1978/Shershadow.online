@@ -111,7 +111,7 @@ export default function Hero() {
           </motion.div>
 
           <div className="flex flex-col md:flex-row gap-4 md:items-center">
-            <Link href="https://shershadow.web.app/sfitest">
+            <Link href={`/${dict.lang}/sfitest`}>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

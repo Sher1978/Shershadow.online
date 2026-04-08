@@ -23,7 +23,7 @@ export default function Footer() {
             {d.title1} <span className="text-accent underline decoration-accent/20">{d.title2}</span>
           </h2>
 
-          <Link href="https://shershadow.web.app/sfitest">
+          <Link href={`/${dict.lang}/sfitest`}>
             <motion.button
               whileHover={{ 
                 scale: 1.05,

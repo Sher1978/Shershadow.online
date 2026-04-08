@@ -93,7 +93,7 @@ export default function Author() {
                </div>
             </div>
 
-            <Link href="https://shershadow.web.app/sfitest">
+            <Link href={`/${dict.lang}/sfitest`}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

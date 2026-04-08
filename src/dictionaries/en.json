@@ -1,4 +1,5 @@
 {
+  "lang": "en",
   "Hero": {
     "systemInit": "SYSTEM_INIT // DETECTION_MODE_ACTIVE",
     "titleLine1": "Your business",
@@ -273,7 +274,164 @@
         "desc": "Instant decisions. Natural exit to a new level of turnover. Pure acceleration, where the business grows faster than you.",
         "color": "#FF0000"
       }
+    ]
+  },
+  "Quiz": {
+    "title": "SFI_DIAGNOSTIC",
+    "subtitle": "SHADOW FRICTION TEST",
+    "cta": "NEXT QUESTION",
+    "resultCTA": "GET RESULT",
+    "progressLabel": "DATA_SYNCHRONIZATION",
+    "questions": [
+      {
+        "id": 1,
+        "text": "What irritates you most in the behavior of others?",
+        "options": [
+          { "text": "Weakness and inability to keep one's word.", "vector": "A" },
+          { "text": "Modesty that looks like hidden pride.", "vector": "B" },
+          { "text": "Slowness and lack of 'fire' in the eyes.", "vector": "C" },
+          { "text": "Stubborn logic where one should just feel.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "What is your main 'shadow' grievance against the world?",
+        "options": [
+          { "text": "The world is too chaotic, I want more control.", "vector": "A" },
+          { "text": "The world doesn't notice me, though I deserve more.", "vector": "B" },
+          { "text": "The world drains me, I feel like an empty battery.", "vector": "C" },
+          { "text": "The world is too predictable, I'm bored within these boundaries.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "If you could become a 'tyrant' for one day, what would you do?",
+        "options": [
+          { "text": "Impose strict order and fire everyone useless.", "vector": "A" },
+          { "text": "Force everyone to recognize my genius and uniqueness.", "vector": "B" },
+          { "text": "Cancel all rules and just enjoy myself.", "vector": "C" },
+          { "text": "Destroy old structures to see what is born in chaos.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Your ideal image of success is...",
+        "options": [
+          { "text": "A figure whose 'no' changes market destinies.", "vector": "A" },
+          { "text": "A figure everyone talks about with admiration.", "vector": "B" },
+          { "text": "A figure with an inexhaustible supply of drive and strength.", "vector": "C" },
+          { "text": "A figure who sees the future where others see fog.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "What do you fear most in deep loneliness?",
+        "options": [
+          { "text": "That I actually have no influence on anything.", "vector": "A" },
+          { "text": "That I am ordinary and unremarkable.", "vector": "B" },
+          { "text": "That I am empty and there is no life in me.", "vector": "C" },
+          { "text": "That life has no meaning and everything is accidental.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "What social mask do you wear most often?",
+        "options": [
+          { "text": "'The Fair and Correct One'.", "vector": "A" },
+          { "text": "'The Modest Professional'.", "vector": "B" },
+          { "text": "'The Ever-Busy Expert'.", "vector": "C" },
+          { "text": "'The Logical Systematist'.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "What do you spend the most energy on?",
+        "options": [
+          { "text": "Restraining aggression towards those who violate your boundaries.", "vector": "A" },
+          { "text": "Suppressing the desire to brag about your victories.", "vector": "B" },
+          { "text": "Fighting laziness and trying to 'ignite' yourself for work.", "vector": "C" },
+          { "text": "Trying to calculate all risks, killing intuition.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Your 'Shadow' dream in business is...",
+        "options": [
+          { "text": "To have absolute power over all processes.", "vector": "A" },
+          { "text": "To become #1 so competitors fear to even mention your name.", "vector": "B" },
+          { "text": "To work only when there is an impulse, and still grow rich.", "vector": "C" },
+          { "text": "To manage reality through signs and premonitions, not reports.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "In a conflict, you...",
+        "options": [
+          { "text": "Turn cold and distance yourself to strike more accurately.", "vector": "A" },
+          { "text": "Start proving your value and righteousness.", "vector": "B" },
+          { "text": "Give up because there is no strength to fight.", "vector": "C" },
+          { "text": "Confuse the opponent with irrational arguments.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "What is 'Money' to you, really?",
+        "options": [
+          { "text": "A tool to protect my autonomy and boundaries.", "vector": "A" },
+          { "text": "Confirmation of my audacity and scale.", "vector": "B" },
+          { "text": "Fuel for pleasures and high-life living.", "vector": "C" },
+          { "text": "A resource for realizing the maddest ideas.", "vector": "D" }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "Your main saboteur (Guardian) tells you:",
+        "options": [
+          { "text": "'Be polite, don't escalate the conflict.'", "vector": "A" },
+          { "text": "'Don't stick your neck out, it's not time to declare yourself yet.'", "vector": "B" },
+          { "text": "'Rest first, do it tomorrow.'", "vector": "C" },
+          { "text": "'It's illogical, make a plan first.'", "vector": "D" }
+        ]
+      },
+      {
+        "id": 12,
+        "text": "Which loss would be most painful for you?",
+        "options": [
+          { "text": "Loss of control over your life and resources.", "vector": "A" },
+          { "text": "Loss of recognition and status in the eyes of others.", "vector": "B" },
+          { "text": "Loss of taste for life and physical vigor.", "vector": "C" },
+          { "text": "Loss of ability to feel the 'Flow' and intuitive exits.", "vector": "D" }
+        ]
+      }
     ],
-    "status": "STATUS: READY_FOR_SYNC"
+    "results": {
+      "A": {
+        "title": "Sovereign (Power & Boundaries)",
+        "shadowBug": "Transparency",
+        "price": "You are an extra in your own life. While you are «understanding» others, your personal goals are on pause. You lose respect because people can walk all over you. Your potential drains into a bucket of other people's wants.",
+        "vector": "A"
+      },
+      "B": {
+        "title": "Expansion (Audacity & Scale)",
+        "shadowBug": "Self-ban on Brightness",
+        "price": "Delayed life syndrome. You are always «preparing» for a jump, but never jump. You earn 10x less than you could, simply because you are afraid to take your rightful place. Your ideas are stolen by those who are bolder but weaker than you.",
+        "vector": "B"
+      },
+      "C": {
+        "title": "Vitality (Resource & Energy)",
+        "shadowBug": "Life by the Manual",
+        "price": "Burnout and loss of meaning. You seem to be doing everything right, but there is zero joy. Your body will start to fall apart through illness — it's the only way to make you listen to yourself. You live like a robot waiting for disposal.",
+        "vector": "C"
+      },
+      "D": {
+        "title": "Architect (Intuition & Chaos)",
+        "shadowBug": "Prison of Logic",
+        "price": "Missed opportunities. While you build complex logical chains and search for «guarantees», life passes by. You get stuck in analysis paralysis while others just go and do. Your intuition is screaming, but you don't hear it.",
+        "vector": "D"
+      }
+    },
+    "botUsername": "Shadowass1st_bot",
+    "botCTA": "GET SOLUTION IN TELEGRAM",
+    "priceHeading": "THE PRICE OF YOUR SHADOW"
   }
 }

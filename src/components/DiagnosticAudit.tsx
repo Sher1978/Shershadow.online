@@ -75,7 +75,7 @@ export default function DiagnosticAudit() {
                         dangerouslySetInnerHTML={{ __html: card.description }}
                       />
                       
-                      <Link href="https://shershadow.web.app/sfitest">
+                      <Link href={`/${dict.lang}/sfitest`}>
                         <motion.button
                           whileHover={{ x: 10 }}
                           className="flex items-center gap-4 text-neon-scan font-bold tracking-widest text-xs uppercase"

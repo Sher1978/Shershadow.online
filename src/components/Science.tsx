@@ -64,7 +64,7 @@ export default function Science() {
               ))}
             </div>
 
-            <Link href="https://shershadow.web.app/sfitest">
+            <Link href={`/${d.lang}/sfitest`}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

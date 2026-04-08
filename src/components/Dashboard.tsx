@@ -74,7 +74,7 @@ export default function Dashboard() {
 
         <div className="mt-12 md:mt-24">
           <p className="font-mono text-[10px] text-neon-scan blink mb-6 md:mb-8 uppercase tracking-[0.4em]">{d.systemReady}</p>
-          <Link href="https://shershadow.web.app/sfitest">
+          <Link href={`/${dict.lang}/sfitest`}>
              <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

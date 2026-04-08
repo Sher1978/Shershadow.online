@@ -64,7 +64,7 @@ export default function FinalLaunch() {
                  {d.testDesc}
                </p>
             </div>
-            <Link href="https://shershadow.web.app/sfitest">
+            <Link href={`/${dict.lang}/sfitest`}>
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(212, 175, 55, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
