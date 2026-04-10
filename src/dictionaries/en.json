@@ -11,11 +11,12 @@
       { "id": "Stagnation", "text": "...you see others growing manifold, while you are always waiting for something?" },
       { "id": "Impostor", "text": "...you feel like an impostor (impostor syndrome), despite your real solid successes?" },
       { "id": "DeferredLife", "text": "...you live in \"deferred life\" mode, constantly preparing for a real start that never comes?" },
-      { "id": "Perfectionist", "text": "...you're a perfectionist who waits for the perfect moment while opportunities pass you by?" }
+      { "id": "Perfectionist", "text": "...you're a perfectionist who waits for the perfect moment while opportunities pass you by?" },
+      { "id": "BigMoneyFear", "text": "...you blow big deals and sabotage personal growth because your \"firmware\" isn't designed to handle BIG MONEY?" }
     ],
     "phaseTag": "PHASE_TAG",
     "detected": "[DETECTED]",
-    "subHeadline": "Your Shadow ($Shadow$) is secretly blocking your path through sabotage scenarios. We don't teach you marketing — we remove internal friction ($SFI$), which makes you stall where you should be soaring.",
+    "subHeadline": "Your Shadow ($Shadow$) secretly blocks your path through sabotage scenarios. We provide a deep SHADOW firmware UPDATE that hardware-eliminates resistance and guarantees a multiple growth of your results (Zero Friction).",
     "cta": "START SFI SCANNING",
     "targetStatus": "Target_Status",
     "inStall": "In_Stall",
@@ -90,7 +91,7 @@
       { "title": "Rollback", "desc": "The system forcibly returns you to the “safe harbor” — to your minimal habits. Often deeper than it was before the start.", "status": "SYSTEM_RECOVERY" }
     ],
     "solutionLabel": "Solution // SHERLOCK_SHADOW_V4",
-    "solutionTitle": "We don't teach you to <span class='text-gold'>“jump higher”</span>. <br /> We are engaged in <span class='text-neon-scan'>flashing</span> the foundation.",
+    "solutionTitle": "We don't teach you to <span class='text-gold'>“jump higher”</span>. <br /> We perform a <span class='text-neon-scan'>full Shadow firmware update</span>, after which <span class='text-white font-bold'>multiple growth of results is guaranteed</span> by eliminating internal friction.",
     "solutionItems": [
       "We find shadow aspects that your Guardian considers “dangerous”.",
       "We integrate them into your Set-point.",
@@ -103,7 +104,7 @@
     "titleLine1": "30-Days",
     "sprint": "Sprint",
     "algorithm": "Algorithm",
-    "quote": "“We don't just fix your state. We rewrite your workflow for a new level of scale.”",
+    "quote": "“We don't do cosmetic motivation. We rewrite the base code of your mindset through a Shadow firmware update, making multiple growth of results an inevitable systemic consequence, not the product of struggle.”",
     "steps": [
       { "id": "01", "title": "SEARCH BUG", "desc": "Deep search for bugs in your neural network that prevent you from seeing growth opportunities." },
       { "id": "02", "title": "EXTRACT CAPITAL", "desc": "Unpacking your “Golden Shadow” — hidden talents and aggressive potential." },
@@ -138,7 +139,7 @@
       "title": "Shadow Sprint (SFI)",
       "verdict": "ZERO FRICTION. SUSTAINABLE TRANSITION TO A NEW LEVEL OF INCOME AND ENERGY.",
       "items": [
-        { "primary": "Engineering protocol", "secondary": "We don’t motivate, we reassemble your personality architecture for new tasks." },
+        { "primary": "Engineering protocol", "secondary": "Engineering protocol for Shadow firmware update. We hardware-exclude sabotage and guarantee multiple growth of performance without system rollback." },
         { "primary": "30-day Sprint", "secondary": "The short cycle of changes does not give the safety mechanisms time to react." },
         { "primary": "Moving “Under the Radars”", "secondary": "The methodology bypasses Ego resistance, making the quantum leap natural." }
       ]
@@ -151,7 +152,7 @@
     "titleLine1": "Telemetry of",
     "titleLine2": "your",
     "future": "future",
-    "subTitle": "The Sherlock Shadow system doesn't give “advice”. We introduce changes directly into your business architecture, turning chaos into measurable results.",
+    "subTitle": "The Sherlock Shadow system doesn't give “advice”. We change the decision-making drivers: Shadow firmware update eliminates software limits and opens the path to guaranteed multiple growth of your business metrics.",
     "results": [
       { "label": "PROFIT CONVERSION", "value": "+42%", "desc": "Net profit growth due to the elimination of internal system bugs." },
       { "label": "SOVEREIGN LEADERSHIP", "value": "DEEP", "desc": "Transition to the Master state, where you dictate the rules of the game to the market." },
@@ -229,7 +230,7 @@
     "title1": "ZERO",
     "friction": "FRICTION.",
     "desc1": "While competitors are burning rubber in attempts to “force” themselves to work, you direct 100% of the energy into movement.",
-    "desc2": "This is your unfair advantage. Superpower is when your internal engine no longer fights with the braking system."
+    "desc2": "This is your Unfair Advantage. After removing software limits, your internal engine stops fighting the brakes and unlocks the quantum leap of your new normal."
   },
   "DangerZone": {
     "title1": "DANGER:",
