@@ -1,4 +1,4 @@
-# Technical Specification: Shershadow.online
+# Technical Specification: Shershadowcapital.online
 
 ## Tech Stack
 -   **Framework**: Next.js 14+ (App Router).

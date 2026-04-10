@@ -1,6 +1,6 @@
 # Customer Journey: From Denial to Sovereignty
 
-The Shershadow.online landing page is designed as a psychological funnel that transitions the user from "Functional Denial" to "Systemic Recognition".
+The shershadowcapital.online landing page is designed as a psychological funnel that transitions the user from "Functional Denial" to "Systemic Recognition".
 
 ## Phase 1: Impact (Hero Section)
 -   **Trigger**: The industrial-AI aesthetic signals that this is not a "soft" coaching site. It's a technical audit.
