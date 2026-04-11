@@ -9,7 +9,7 @@ export default function FAQ() {
   const d = dict.FAQ;
 
   return (
-    <section className="py-12 md:py-24 bg-[#0A0A0A] text-white border-t border-white/5 selection:bg-gold selection:text-black">
+    <section className="py-12 md:py-24 bg-[#0A0A0A] text-white border-t border-white/5 overflow-hidden selection:bg-gold selection:text-black">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 md:mb-24 flex flex-col items-center text-center">
           <div className="mb-4 text-gold font-mono text-[10px] tracking-[0.5em] uppercase">{d.protocol}</div>

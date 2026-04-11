@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDictionary } from "./DictionaryProvider";
@@ -8,6 +9,22 @@ import { useDictionary } from "./DictionaryProvider";
 export default function Author() {
   const dict = useDictionary();
   const a = dict.Author;
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const togglePlay = () => {
+    const nextState = !isPlaying;
+    if (iframeRef.current) {
+      const message = JSON.stringify({
+        event: "command",
+        func: nextState ? "playVideo" : "pauseVideo",
+        args: ""
+      });
+      iframeRef.current.contentWindow?.postMessage(message, "*");
+    }
+    setIsPlaying(nextState);
+  };
 
   return (
     <section className="relative bg-carbon py-16 md:py-20 px-4 overflow-hidden md:min-h-screen flex items-center">
@@ -28,6 +45,25 @@ export default function Author() {
           
           {/* Video / Visual Side */}
           <div className="relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black aspect-[9/16] w-full max-w-[320px] xs:max-w-[360px] sm:max-w-sm mx-auto lg:mx-0">
+            {/* Clickable Overlay */}
+            <div 
+              onClick={togglePlay}
+              className="absolute inset-0 z-50 cursor-pointer group-hover:bg-white/5 transition-colors flex items-center justify-center"
+            >
+              {/* Subtle visual feedback on Pause */}
+              {!isPlaying && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-black/40 backdrop-blur-md p-6 rounded-full border border-white/20"
+                >
+                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                   </svg>
+                </motion.div>
+              )}
+            </div>
+
             <motion.div
               className="w-full h-full relative"
               initial={{ filter: "grayscale(100%)", opacity: 0.4 }}
@@ -36,7 +72,8 @@ export default function Author() {
               transition={{ duration: 1.2 }}
             >
               <iframe
-                src="https://www.youtube.com/embed/Et9q9fs8p0E?autoplay=1&mute=1&loop=1&playlist=Et9q9fs8p0E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0"
+                ref={iframeRef}
+                src="https://www.youtube.com/embed/Et9q9fs8p0E?autoplay=0&mute=0&loop=1&playlist=Et9q9fs8p0E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1"
                 allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen={false}
                 className="w-full h-full pointer-events-none"
