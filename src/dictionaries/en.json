@@ -2,21 +2,21 @@
   "lang": "en",
   "Hero": {
     "systemInit": "SYSTEM_INIT // DETECTION_MODE_ACTIVE",
-    "titleLine1": "Your business",
-    "titleLine2": "is stalling,",
-    "titleLine3": "because",
+    "titleLine1": "BUSINESS",
+    "titleLine2": "STALLS,",
+    "titleLine3": "BECAUSE",
     "hooks": [
-      { "id": "EternalStudent", "text": "...you're an \"eternal student\" who constantly gathers knowledge but never turns it into results?" },
-      { "id": "NoEnergy", "text": "...you wake up already without energy, and every new step feels like a struggle?" },
-      { "id": "Stagnation", "text": "...you see others growing manifold, while you are always waiting for something?" },
-      { "id": "Impostor", "text": "...you feel like an impostor (impostor syndrome), despite your real solid successes?" },
-      { "id": "DeferredLife", "text": "...you live in \"deferred life\" mode, constantly preparing for a real start that never comes?" },
-      { "id": "Perfectionist", "text": "...you're a perfectionist who waits for the perfect moment while opportunities pass you by?" },
-      { "id": "BigMoneyFear", "text": "...you blow big deals and sabotage personal growth because your \"firmware\" isn't designed to handle BIG MONEY?" }
+      { "id": "EternalStudent", "text": "...the 'eternal student' syndrome forces a person to endlessly accumulate knowledge without converting it into results?" },
+      { "id": "NoEnergy", "text": "...morning exhaustion has become the norm, and every new step is taken through colossal systemic resistance?" },
+      { "id": "Stagnation", "text": "...chronic stagnation is observed: others grow manifold while the system remains in standby mode?" },
+      { "id": "Impostor", "text": "...the 'impostor complex' is active, devaluing real successes and blocking scale?" },
+      { "id": "DeferredLife", "text": "...the 'deferred life' mode is running, with constant preparation for a start that never happens?" },
+      { "id": "Perfectionist", "text": "...perfectionist paralysis demands the 'ideal moment' while critical windows of opportunity close?" },
+      { "id": "BigMoneyFear", "text": "...major deals collapse because the current firmware is not designed for the bandwidth of BIG MONEY?" }
     ],
     "phaseTag": "PHASE_TAG",
     "detected": "[DETECTED]",
-    "subHeadline": "Your Shadow ($Shadow$) secretly blocks your path through sabotage scenarios. We provide a deep SHADOW firmware UPDATE that hardware-eliminates resistance and guarantees a multiple growth of your results (Zero Friction).",
+    "subHeadline": "Shadow Braking is a terminal block to potential. The Leader is a hypercar with a 700hp motor. If results are absent, it means someone is pressing gas and brake simultaneously. We perform a Shadow Audit and hardware-release the handbrake. Life comes off the brake, guaranteeing inevitable growth.",
     "cta": "START SFI SCANNING",
     "targetStatus": "Target_Status",
     "inStall": "In_Stall",
@@ -29,8 +29,8 @@
     "role": "Chief_Engineer // Igor_Sherlock",
     "titleLine1": "System",
     "titleLine2": "Architect",
-    "desc1": "Igor Sherlock is more than a mentor. He is an engineer who deconstructs your business and your mind like a complex mechanism, finding hidden bugs where others see \"just laziness\" or \"bad market\".",
-    "desc2": "Founder of Sherlock Capital, creator of the SFI protocol, and author of the Zero Friction methodology. His mission is to turn your struggle into a smooth, high-speed move towards scaling.",
+    "desc1": "Igor Sherlock is a systems engineer. He deconstructs business and psyche like a complex mechanism, finding braking nodes where others see 'lack of discipline' or 'bad market'.",
+    "desc2": "Founder of Sherlock Capital, creator of the SFI protocol. His mission is to release the safety handbrake that clamps the brake pads, shifting the system to a mode of pure, high-speed movement.",
     "yearsExp": "15+",
     "yearsExpLabel": "YEARS_EXP",
     "optimized": "500+",
@@ -46,32 +46,32 @@
         "id": "01",
         "zone": "ZONE A: ENGINE ARCHITECTURE",
         "title": "NATURE OF INTERNAL STALLING",
-        "description": "External tools (MBA, hiring, marketing) are just \"body kits\". If the engine (your psyche) operates with Friction Tax, speed won't increase. You're not broken. You just need an engine \"firmware\" update to the <span class='text-[#FFFB00] font-bold'>Launch Control</span> version."
+        "description": "External tools (MBA, hiring, marketing) are just body kits. If the hypercar operates under Shadow Braking, the engine just heats the air. The system is not broken. It needs a firmware update and the removal of factory limits to the <span class='text-[#FFFB00] font-bold'>Launch Control</span> version."
       },
       {
         "id": "02",
-        "zone": "ZONE B: INTERNAL FRICTION ($SFI$)",
-        "title": "WHO IS BRAKING YOUR HYPERCAR?",
-        "description": "Your \"Guardians\" are fears and blocks that once saved you, but today have turned into speed limiters. They fear your scale as much as you do."
+        "zone": "ZONE B: INTERNAL BRAKING ($SFI$)",
+        "title": "WHO IS BRAKING THE HYPERCAR?",
+        "description": "The 'Guardians' (Ego) are safety bugs that once saved the system but now act as a locked handbrake. They perceive scale and expansion as a lethal threat."
       },
       {
         "id": "03",
         "zone": "ZONE C: THE GOLDEN SHADOW",
         "title": "HIDDEN POWER RESERVE",
-        "description": "Your \"Golden Shadow\" is suppressed potential, aggression, and scale. Unpacking these qualities gives an immediate boost in efficiency and profit without increasing the load."
+        "description": "Your 'Golden Shadow' is the blocked throttle. Unpacking suppressed aggression and power gives an immediate boost in efficiency and profit without increasing systemic load."
       }
     ],
     "scanCTA": "Launch System Scan"
   },
   "Sabotage": {
     "systemConflict": "SYSTEM_CONFLICT // ANALYSIS",
-    "title": "SELF-SABOTAGE IS NOT AN ERROR. IT IS A PROTECTIVE PROTOCOL.",
-    "subTitle": "“Why 95% of attempts to ‘start a new life’ end with a return to the starting point.”",
-    "setPointTitle": "The Set-Point Concept",
-    "setPointDesc1": "Your psyche has a <span class='text-white font-bold'>“set point”</span>. This is your internal level of normal: the amount of money, volume of responsibility, and level of stress that the system considers “safe”.",
-    "setPointQuote": "“This is your version of minimum acceptable habits.”",
-    "willpowerTitle": "Why willpower doesn't work",
-    "willpowerDesc": "Trying to maintain results on willpower alone is like trying to hold a stretched spring with your hands. Sooner or later, the resources of the prefrontal cortex will be exhausted, and the spring (your Guardian) will return you to your place with double force.",
+    "title": "SELF-SABOTAGE IS NOT A WEAKNESS. IT IS A PROTECTIVE PROTOCOL.",
+    "subTitle": "“Why 95% of attempts to accelerate end with the smell of burnt brake pads and a return to the garage.”",
+    "setPointTitle": "Factory Limits (Set-Point)",
+    "setPointDesc1": "A strict <span class='text-white font-bold'>set-point</span> is hardcoded in the psyche. This is the financial, social, and stress ceiling that the Ego considers 'safe' and permissible.",
+    "setPointQuote": "“This is the hard-programmed norm of minimum acceptable survival.”",
+    "willpowerTitle": "Why willpower fails",
+    "willpowerDesc": "Trying to break the limit on willpower is like trying to accelerate a hypercar with the handbrake on. Libido is wasted, the safety system slams the brakes, and the person is thrown back with a rollback.",
     "telemetry": "System_Load // Volatility",
     "refStability": "Ref: SET_POINT_STABILITY",
     "floorLevel": "Floor_Level",
@@ -84,31 +84,31 @@
     "guardianArmed": "Guardian_Armed",
     "anomalyDetected": "ANOMALY_DETECTED_IN_ZONE_B",
     "steps": [
-      { "title": "Impulse", "desc": "You set the “maximum achievable goal” through willpower.", "status": "INITIATING_GROWTH" },
-      { "title": "Tension", "desc": "Rapid growth creates excessive pressure on the system. Your Friction Index ($SFI$) enters the red zone.", "status": "PRESSURE_OVERLOAD" },
-      { "title": "Guardian Activation", "desc": "Your safety mechanism (Guardian) perceives success as a threat to stability (unknown = danger).", "status": "GUARDIAN_ARMED" },
-      { "title": "Pressure Release (Sabotage)", "desc": "To save you from “overheating”, the Guardian turns on laziness, illness, out of focus, or wrong decisions.", "status": "EMERGENCY_VENT" },
-      { "title": "Rollback", "desc": "The system forcibly returns you to the “safe harbor” — to your minimal habits. Often deeper than it was before the start.", "status": "SYSTEM_RECOVERY" }
+      { "title": "Impulse", "desc": "An aggressive target is set. Growth is initiated via willpower.", "status": "INITIATING_GROWTH" },
+      { "title": "Tension", "desc": "Rapid speed gain is flagged as a threat. Shadow Braking Index ($SFI$) enters the red zone.", "status": "PRESSURE_OVERLOAD" },
+      { "title": "Guardian Activation", "desc": "The system (Ego) slams the brakes, perceiving success as an anomaly and danger.", "status": "GUARDIAN_ARMED" },
+      { "title": "Braking (Sabotage)", "desc": "To avoid 'overheating', laziness, illness, out of focus, or fatal management errors are generated.", "status": "EMERGENCY_VENT" },
+      { "title": "Rollback", "desc": "Systemic forced return to safe factory settings. Energy is burnt, the system is paralyzed.", "status": "SYSTEM_RECOVERY" }
     ],
     "solutionLabel": "Solution // SHERLOCK_SHADOW_V4",
-    "solutionTitle": "We don't teach you to <span class='text-gold'>“jump higher”</span>. <br /> We perform a <span class='text-neon-scan'>full Shadow firmware update</span>, after which <span class='text-white font-bold'>multiple growth of results is guaranteed</span> by eliminating internal friction.",
+    "solutionTitle": "We don't teach you to <span class='text-gold'>“push the pedal harder”</span>. <br /> We perform a <span class='text-neon-scan'>Shadow Audit and Reprocessing</span>, after which <span class='text-white font-bold'>life comes off the handbrake</span>: the 700hp motor delivers its true performance without resistance.",
     "solutionItems": [
-      "We find shadow aspects that your Guardian considers “dangerous”.",
-      "We integrate them into your Set-point.",
-      "<span class='text-white font-bold'>Your “floor” (minimum) rises.</span>"
+      "Decryption of braking nodes blocking potential.",
+      "Deactivation of safety system bugs.",
+      "<span class='text-white font-bold'>Throttle unlocked. High speed becomes the new normal.</span>"
     ],
-    "solutionCTA": "IDENTIFY MY CURRENT SET-POINT"
+    "solutionCTA": "IDENTIFY SYSTEM BRAKING NODES"
   },
   "Science": {
     "method": "The_Method // Zero_Friction",
     "titleLine1": "30-Days",
     "sprint": "Sprint",
     "algorithm": "Algorithm",
-    "quote": "“We don't do cosmetic motivation. We rewrite the base code of your mindset through a Shadow firmware update, making multiple growth of results an inevitable systemic consequence, not the product of struggle.”",
+    "quote": "“Shadow Braking leads to systemic bankruptcy in four currencies: Money, Time, Status, Libido. We don't heal—we rewrite the base code so the power motor never conflicts with the safety brake.”",
     "steps": [
-      { "id": "01", "title": "SEARCH BUG", "desc": "Deep search for bugs in your neural network that prevent you from seeing growth opportunities." },
-      { "id": "02", "title": "EXTRACT CAPITAL", "desc": "Unpacking your “Golden Shadow” — hidden talents and aggressive potential." },
-      { "id": "03", "title": "REWRITE PROTOCOL", "desc": "Implementing the new SFI 1.0 firmware for operation in Zero Friction mode." }
+      { "id": "01", "title": "SEARCH BUG", "desc": "Shadow neural audit: identification of active braking nodes draining resources." },
+      { "id": "02", "title": "EXTRACT CAPITAL", "desc": "Reserve extraction of the Golden Shadow: releasing Libido and aggression for pure expansion." },
+      { "id": "03", "title": "REWRITE PROTOCOL", "desc": "SFI system firmware: releasing the handbrake and shifting to Zero Friction cruise speed." }
     ],
     "cta": "Start Sprint",
     "phaseComplete": "PHASE_01_COMPLETE"
@@ -116,32 +116,32 @@
   "Comparative": {
     "auditLabel": "SYSTEM_AUDIT // THE_ILLUSION_OF_CHOICE",
     "title": "The Illusion of Choice",
-    "subTitle": "Why classic methods of working with state and business <span class='text-white/80 font-medium'>DO NOT GIVE RESULTS</span> at the level of <span class='text-white/80 font-medium'>SUPER-TASKS</span>. Choose not between “best”, but between <span class='text-gold/90 font-medium tracking-wide italic'>“WORKING”</span>.",
+    "subTitle": "Why classic mindset methods <span class='text-white/80 font-medium'>ONLY HEAT THE AIR</span>. When the emergency brake is on, choose not a 'good therapist', but an <span class='text-gold/90 font-medium tracking-wide italic'>UP-TO-DATE FIRMWARE REFLASH</span>.",
     "column1": {
       "title": "Conventional Therapy",
-      "verdict": "ANALYSIS WITHOUT REASSEMBLY. THE SYSTEM REMAINS IN THE OLD ARCHITECTURE.",
+      "verdict": "STUDYING THE PADS WITHOUT RELEASING THE BRAKE. STALLING REMAINS ACTIVE.",
       "items": [
-        { "primary": "Searching for reasons in the past", "secondary": "Digging into childhood does not change the current neural chains of sabotage here and now." },
-        { "primary": "Indefinite process", "secondary": "The lack of a deadline allows the psyche to imitate work without results for years." },
-        { "primary": "Intellectual insight", "secondary": "Understanding the problem does not provide tools for its technical elimination." }
+        { "primary": "Searching for reasons in the past", "secondary": "Understanding who pulled the handbrake in childhood doesn't help the car move." },
+        { "primary": "Indefinite process", "secondary": "The lack of deadlines allows the psyche to endlessly intimate work while burning time." },
+        { "primary": "Intellectual insight", "secondary": "Recognizing a braking node is not an engineering tool for its deactivation." }
       ]
     },
     "column2": {
       "title": "Coaching and Training",
-      "verdict": "EXTERNAL GLOSS. THE “GUARDIAN” SYSTEM QUICKLY REPRESSES THIS IMPULSE.",
+      "verdict": "ATTEMPTING ACCELERATION WHILE BRAKING. THE ENGINE BURNS OUT FASTER.",
       "items": [
-        { "primary": "External tools", "secondary": "An attempt to implement skills on an old foundation leads to rapid rejection." },
-        { "primary": "Betting on willpower", "secondary": "Willpower resource is limited — the system always returns you to the comfort point." },
-        { "primary": "Dopamine trap", "secondary": "A temporary rise in training is replaced by an even deeper rollback." }
+        { "primary": "External tools", "secondary": "New marketing funnels are powerless if the internal system blocks scale." },
+        { "primary": "Betting on willpower", "secondary": "Pushing the throttle while the Ego-brake is active always leads to a burnout." },
+        { "primary": "Dopamine trap", "secondary": "Motivation euphoria is replaced by severe exhaustion of Libido and Money balances." }
       ]
     },
     "column3": {
       "title": "Shadow Sprint (SFI)",
-      "verdict": "ZERO FRICTION. SUSTAINABLE TRANSITION TO A NEW LEVEL OF INCOME AND ENERGY.",
+      "verdict": "ZERO FRICTION. RELEASING FACTORY LIMITS. PURE EXPANSION.",
       "items": [
-        { "primary": "Engineering protocol", "secondary": "Engineering protocol for Shadow firmware update. We hardware-exclude sabotage and guarantee multiple growth of performance without system rollback." },
-        { "primary": "30-day Sprint", "secondary": "The short cycle of changes does not give the safety mechanisms time to react." },
-        { "primary": "Moving “Under the Radars”", "secondary": "The methodology bypasses Ego resistance, making the quantum leap natural." }
+        { "primary": "Engineering protocol", "secondary": "Shadow audit and hardware bug deactivation. The system is taken off pause." },
+        { "primary": "30-day Sprint", "secondary": "An ultra-short firmware cycle bypasses resistance triggers." },
+        { "primary": "Preventing bankruptcy", "secondary": "Focus protection of 4 currencies: Money, Time, Status, Libido stay in the system instead of burning in friction." }
       ]
     },
     "verdictLabel": "System_Verdict",
@@ -152,11 +152,11 @@
     "titleLine1": "Telemetry of",
     "titleLine2": "your",
     "future": "future",
-    "subTitle": "The Sherlock Shadow system doesn't give “advice”. We change the decision-making drivers: Shadow firmware update eliminates software limits and opens the path to guaranteed multiple growth of your business metrics.",
+    "subTitle": "Sherlock Shadow doesn't give 'advice'. The drivers change: safety blocks removal releases the motor, converting energy directly into Money, Time, Status, and Libido.",
     "results": [
-      { "label": "PROFIT CONVERSION", "value": "+42%", "desc": "Net profit growth due to the elimination of internal system bugs." },
-      { "label": "SOVEREIGN LEADERSHIP", "value": "DEEP", "desc": "Transition to the Master state, where you dictate the rules of the game to the market." },
-      { "label": "FREEDOM LEVEL", "value": "MAX", "desc": "Exit from operations without losing control and product quality." }
+      { "label": "PROFIT CONVERSION", "value": "MAX", "desc": "Manifold profit growth after eliminating hidden financial constraints." },
+      { "label": "SOVEREIGN LEADERSHIP", "value": "DEEP", "desc": "Absolute status. Reality is formatted to meet systemic demands." },
+      { "label": "LIBIDO RESERVE", "value": "+80%", "desc": "Colossal return of Time and Energy (Libido) previously burnt on internal struggle." }
     ],
     "systemReady": "SYSTEM_READY_FOR_CALIBRATION",
     "cta": "Get Access"
@@ -167,20 +167,20 @@
     "sabotage": "SABOTAGE",
     "faqs": [
       {
-        "q": "WHY NOW?",
-        "a": "Your Guardian is winning time. Every week of delay is not just lost profit, it is a resource that your Shadow ($Shadow$) burns right now. The system does not forgive inaction in conditions of limit loads."
+        "q": "WHERE DOES THE SYSTEM BRAKE THE MOST?",
+        "a": "At quantum transition points. As soon as new Money or Status appears, the fear of losing control is activated. The handbrake is pulled to the limit."
       },
       {
-        "q": "WHY SHADOW IS MORE IMPORTANT THAN MARKETING?",
-        "a": "Marketing is gasoline. If there is a hole in your engine tank (Friction Tax), you just pour money into the asphalt. We don't hang a new fairing on the car, we fix the engine itself."
+        "q": "WHAT IS THE NATURE OF SHADOW BRAKING?",
+        "a": "Braking is a bug in the Ego's protective firmware. It guards the psyche from 'the unknown', artificially blocking expansion and Libido growth."
       },
       {
-        "q": "WHO IS THE GUARDIAN?",
-        "a": "This is your internal protection mechanism. It sabotages your growth, masquerading as 'common sense' and 'rational planning'. Its task is to leave you where it is 'safe' for you, but where there is no scale."
+        "q": "WHY IS MONEY NOT THE ONLY CURRENCY?",
+        "a": "There are 4 currencies: Money, Time, Status, Libido. A safety node failure hits all fronts: you can earn money but burn out or destroy your reputation."
       },
       {
         "q": "WHAT IS SFI INDEX?",
-        "a": "Shadow Friction Index is a digitized indicator of your internal resistance. This is a technical parameter that shows how much effort your system spends on fighting itself."
+        "a": "Shadow Friction Index digitizes internal braking. It shows how much of the 700hp potential is burnt on brake pads before reaching real results."
       }
     ],
     "copyright": "© 2026 SHER SHADOW CAPITAL // ALL_RIGHTS_RESERVED",
@@ -191,59 +191,59 @@
     "sequence": "Final_Sequence // Launch_Initiated",
     "title": "Your new",
     "stage": "Stage",
-    "quote": "“We don't promise it will be easy. We promise that you will stop stalling and start soaring.”",
+    "quote": "“The problem is not engine power. The problem is that the safety system has clamped the handbrake shut.”",
     "scenarios": [
-      { "id": "01", "label": "VITALITY", "desc": "Checking the level of vital resource and system resistance to external loads." },
-      { "id": "02", "label": "SOVEREIGN", "desc": "Assessment of inner power and freedom from unconscious manipulations." },
-      { "id": "03", "label": "EXPANSION", "desc": "Measuring growth capacity without activating self-sabotage protocols." },
-      { "id": "04", "label": "ARCHITECT", "desc": "Analysis of structural integrity and system logic of your business." }
+      { "id": "01", "label": "VITALITY", "desc": "Checking Libido level and time consumption efficiency on systemic micro-tasks." },
+      { "id": "02", "label": "SOVEREIGN", "desc": "Status assessment: power over your reality and protection from external suppression." },
+      { "id": "03", "label": "EXPANSION", "desc": "Expansion capacity analysis: handling big Money without triggering safety protocols." },
+      { "id": "04", "label": "ARCHITECT", "desc": "Business logic scanning for bugs stalling quantum growth." }
     ],
     "protocol": "Diagnostic_Protocol // 12_Data_Points",
-    "testDesc": "Take a 12-question test to get an accurate calculation of the Shadow Friction Index ($SFI$) for 4 key scenarios.",
-    "cta": "START SFI TEST",
+    "testDesc": "A 12-question Shadow Audit will determine the Shadow Braking Index ($SFI$) and show where the motor burns resources in vain.",
+    "cta": "START AUDIT",
     "ready": "Ready_for_Upload",
     "calibrated": "System_Calibrated"
   },
   "ShadowTax": {
     "zone": "ZONE_C // ATTENTION_REQUIRED",
-    "titleLine1": "THE GOLDEN",
-    "titleLine2": "SHADOW",
-    "desc1": "The problem is not marketing or the team. You pay an invisible tax on success — <span class='text-white font-bold'>Shadow Friction</span>.",
-    "desc2": "Every action you take passes through an internal filter of sabotage. You spend 80% of your energy fighting yourself, and only 20% on real growth.",
+    "titleLine1": "SYSTEM",
+    "titleLine2": "BANKRUPTCY",
+    "desc1": "The main threat is not competitors. It is the tax levied for <span class='text-white font-bold'>Shadow Braking</span>.",
+    "desc2": "Internal contradictions lead to colossal leakage in 4 currencies. 80% of Money, Time, Status, and Libido are burnt on brake pads, with only 20% converted into motion.",
     "scanning": "_SCANNING_PSYCHE_ANOMALIES...",
     "coord": "COORD: 25.2048° N, 55.2708° E",
-    "inputEnergy": "Input_Energy",
-    "frictionLoss": "Friction_Loss (82.4%)",
+    "inputEnergy": "Input_Energy_700HP",
+    "frictionLoss": "Braking_Loss (82.4%)",
     "resultField": "Result_Field"
   },
   "SocialProof": {
     "title": "GALLERY OF MANIFESTATION",
-    "subTitle": "Scale that becomes natural. Energy that goes into results, not struggle."
+    "subTitle": "Broken handbrake. Instant capitalization of Money, Time, Status, and Libido without resistance."
   },
   "Solution": {
-    "titleLine1": "YOUR ADVANTAGE.",
-    "titleLine2": "YOUR SUPERPOWER.",
-    "desc1": "While the market is stalling and trying to 'squeeze' the result through discipline, you get a superpower.",
-    "desc2": "Shadow integration is driving without brakes. You direct 100% of the energy into motion, going into a point. <span class='text-carbon font-bold'>This advantage cannot be bought.</span>"
+    "titleLine1": "HANDBRAKE",
+    "titleLine2": "RELEASED.",
+    "desc1": "While the market seeks motivation, attempting to artificially rev engines, the true advantage goes to the business whose resources are fully unlocked.",
+    "desc2": "Life without Shadow Braking is driving without brakes. 700hp power (Libido) goes directly into expansion and outcome. <span class='text-carbon font-bold'>Absolute energy efficiency.</span>"
   },
   "Superpower": {
-    "title1": "ZERO",
-    "friction": "FRICTION.",
-    "desc1": "While competitors are burning rubber in attempts to “force” themselves to work, you direct 100% of the energy into movement.",
-    "desc2": "This is your Unfair Advantage. After removing software limits, your internal engine stops fighting the brakes and unlocks the quantum leap of your new normal."
+    "title1": "RELEASING",
+    "friction": "LIMITS.",
+    "desc1": "Wasting fuel to push the floor while the handbrake is up is a systemic error. Taking life off pause directs 100% mission energy into pure dynamics.",
+    "desc2": "This is true technical perfection. Once factory speed limits are cleared, the system stops blocking itself, opening access to exponential growth in 4 key currencies."
   },
   "DangerZone": {
     "title1": "DANGER:",
-    "title2": "«SABOTAGE LOOP»",
-    "desc1": "It is impossible to see the Shadow on your own. <br /> Trying to do it yourself, you fall into a loop:",
-    "steps": ["ILLUSION OF PROGRESS", "HIDDEN SABOTAGE", "HARD ROLLBACK"],
-    "resultTitle": "The result is a point “below zero”.",
-    "resultDesc": "Either Sprint and objective control, or a burned-out engine of your system."
+    "title2": "“BRAKING LOOP”",
+    "desc1": "It is nearly impossible to detect an active Braking bug on your own. <br /> Attempting to drive on leads to this scenario:",
+    "steps": ["ILLUSION OF GAS", "PADS OVERHEATING", "SYSTEM TOTAL STOP"],
+    "resultTitle": "Result: Burnt engine.",
+    "resultDesc": "The only way out: update the Shadow firmware and stop imitating motion."
   },
   "Footer": {
     "titleLine1": "READY TO",
     "titleLine2": "RELEASE THE HANDBRAKE?",
-    "cta": "START AUDIT",
+    "cta": "START SHADOW AUDIT",
     "rights": "© 2026 SHER SHADOW CAPITAL. ALL RIGHTS RESERVED.",
     "privacy": "PRIVACY POLICY",
     "hq": "DUBAI DESERT HQ",
@@ -252,198 +252,198 @@
   "HorizontalScroll": {
     "trajectory": "THE_TRAJECTORY // ROUTE",
     "titleLine1": "THREE STAGES",
-    "titleLine2": "OF BREAKTHROUGH",
+    "titleLine2": "OF BRAKE RELEASE",
     "steps": [
       {
         "num": "01",
         "title": "Shadow Audit",
-        "subtitle": "Audit of Shadow Friction",
-        "desc": "AI scanning of your real Shadow Friction Index (SFI). We find hidden points of energy drain and sabotage in the decision-making system.",
+        "subtitle": "Primary Diagnostics",
+        "desc": "Inspection of the Shadow Braking Index (SFI). Precise scanning for bugs and identifying nodes in the decision-making matrix.",
         "color": "#FFFFFF"
       },
       {
         "num": "02",
         "title": "30-Day Sprint",
-        "subtitle": "Decryption and Reflashing",
-        "desc": "Working with a Shadow Advisor and a live curator. Isolation of management bugs and implementation of new action protocols without resistance.",
+        "subtitle": "Handbrake Snap",
+        "desc": "Code debugging and emergency deactivation of sabotage scripts. Working with a Shadow Advisor to unlock 4 currencies.",
         "color": "#FF0000"
       },
       {
         "num": "03",
-        "title": "Zero Resistance",
-        "subtitle": "Scale without brakes",
-        "desc": "Instant decisions. Natural exit to a new level of turnover. Pure acceleration, where the business grows faster than you.",
+        "title": "Zero Braking",
+        "subtitle": "Scale without limits",
+        "desc": "Factory limits removed. The hypercar reaches peak power. Time, Money, Status, and Libido convert instantly.",
         "color": "#FF0000"
       }
     ]
   },
   "Quiz": {
     "title": "SFI_DIAGNOSTIC",
-    "subtitle": "SHADOW FRICTION TEST",
+    "subtitle": "SHADOW BRAKING AUDIT",
     "intro": {
-      "title": "SFI DIAGNOSTIC",
-      "description": "Shadow Friction Index ($SFI$) is a measure of your internal resistance. This test will determine what «shadow tax» you pay every day and why your growth is blocked.",
+      "title": "WHERE DO YOU BRAKE?",
+      "description": "The Index (SFI) digitizes how hard your safety system presses the brakes. The audit will show why 700hp of Libido burns in vain.",
       "highlights": [
-        "Digitization of shadow resistance",
-        "Your sabotage archetype",
-        "Calculation of the cost of «non-action»"
+        "Digitizing Shadow Braking nodes",
+        "Recognizing safety bugs",
+        "Balance leakage in 4 currencies"
       ],
       "startCTA": "START SCANNING",
-      "backCTA": "RETURN TO SITE"
+      "backCTA": "CANCEL AUDIT"
     },
-    "cta": "NEXT QUESTION",
-    "resultCTA": "GET RESULT",
+    "cta": "NEXT CALCULATION",
+    "resultCTA": "GET AUDIT",
     "progressLabel": "DATA_SYNCHRONIZATION",
     "questions": [
       {
         "id": 1,
-        "text": "What irritates you most in the behavior of others?",
+        "text": "Where do others brake, causing you the greatest aversion?",
         "options": [
-          { "text": "Weakness and inability to keep one's word.", "vector": "A" },
-          { "text": "Modesty that looks like hidden pride.", "vector": "B" },
-          { "text": "Slowness and lack of 'fire' in the eyes.", "vector": "C" },
-          { "text": "Stubborn logic where one should just feel.", "vector": "D" }
+          { "text": "In weak-willedness and inability to take responsibility.", "vector": "A" },
+          { "text": "In false modesty that masks fear.", "vector": "B" },
+          { "text": "In slowness and lack of life energy (Libido).", "vector": "C" },
+          { "text": "In rigid rules ignoring intuitive routes.", "vector": "D" }
         ]
       },
       {
         "id": 2,
-        "text": "What is your main 'shadow' grievance against the world?",
+        "text": "Which systemic bug of the world forces you to burn resources?",
         "options": [
-          { "text": "The world is too chaotic, I want more control.", "vector": "A" },
-          { "text": "The world doesn't notice me, though I deserve more.", "vector": "B" },
-          { "text": "The world drains me, I feel like an empty battery.", "vector": "C" },
-          { "text": "The world is too predictable, I'm bored within these boundaries.", "vector": "D" }
+          { "text": "Chaos requiring constant micromanagement.", "vector": "A" },
+          { "text": "Blindness to unique status and potential.", "vector": "B" },
+          { "text": "Toxic environments draining energy and Time.", "vector": "C" },
+          { "text": "Templates and frameworks limiting thought.", "vector": "D" }
         ]
       },
       {
         "id": 3,
-        "text": "If you could become a 'tyrant' for one day, what would you do?",
+        "text": "If the system removed all control limits for a day, what would be the first order?",
         "options": [
-          { "text": "Impose strict order and fire everyone useless.", "vector": "A" },
-          { "text": "Force everyone to recognize my genius and uniqueness.", "vector": "B" },
-          { "text": "Cancel all rules and just enjoy myself.", "vector": "C" },
-          { "text": "Destroy old structures to see what is born in chaos.", "vector": "D" }
+          { "text": "To rigidly purge the infrastructure of ineffective elements.", "vector": "A" },
+          { "text": "To monopolize the market and take absolute Status.", "vector": "B" },
+          { "text": "Full autonomy from systemic processes for pleasure.", "vector": "C" },
+          { "text": "Dismantling old business architectures to create total novelty.", "vector": "D" }
         ]
       },
       {
         "id": 4,
-        "text": "Your ideal image of success is...",
+        "text": "The ideal model of full throttle release is the chance to be...",
         "options": [
-          { "text": "A figure whose 'no' changes market destinies.", "vector": "A" },
-          { "text": "A figure everyone talks about with admiration.", "vector": "B" },
-          { "text": "A figure with an inexhaustible supply of drive and strength.", "vector": "C" },
-          { "text": "A figure who sees the future where others see fog.", "vector": "D" }
+          { "text": "A Sovereign whose decisions automatically become law.", "vector": "A" },
+          { "text": "A Legend converting recognition into super-Money.", "vector": "B" },
+          { "text": "An inexhaustible reactor of pure Libido and life force.", "vector": "C" },
+          { "text": "An Architect seeing quantum leaps beyond the event horizon.", "vector": "D" }
         ]
       },
       {
         "id": 5,
-        "text": "What do you fear most in deep loneliness?",
+        "text": "What is perceived by the safety system as a fatal threat?",
         "options": [
-          { "text": "That I actually have no influence on anything.", "vector": "A" },
-          { "text": "That I am ordinary and unremarkable.", "vector": "B" },
-          { "text": "That I am empty and there is no life in me.", "vector": "C" },
-          { "text": "That life has no meaning and everything is accidental.", "vector": "D" }
+          { "text": "Loss of power and total reset of control.", "vector": "A" },
+          { "text": "Oblivion and the status of an 'ordinary' player.", "vector": "B" },
+          { "text": "Emotional burnout and total stop of Libido flow.", "vector": "C" },
+          { "text": "Loss of meaning and understanding of future architecture.", "vector": "D" }
         ]
       },
       {
         "id": 6,
-        "text": "What social mask do you wear most often?",
+        "text": "What social camouflage does your system use to mask ambition?",
         "options": [
-          { "text": "'The Fair and Correct One'.", "vector": "A" },
-          { "text": "'The Modest Professional'.", "vector": "B" },
-          { "text": "'The Ever-Busy Expert'.", "vector": "C" },
-          { "text": "'The Logical Systematist'.", "vector": "D" }
+          { "text": "'Cold-blooded and fair authority'.", "vector": "A" },
+          { "text": "'Modest but irreplaceable pro'.", "vector": "B" },
+          { "text": "'Maximum busy, non-refusal mechanism'.", "vector": "C" },
+          { "text": "'Dry and impassive rationalist'.", "vector": "D" }
         ]
       },
       {
         "id": 7,
-        "text": "What do you spend the most energy on?",
+        "text": "Holding which brake pedal consumes 80% of power?",
         "options": [
-          { "text": "Restraining aggression towards those who violate your boundaries.", "vector": "A" },
-          { "text": "Suppressing the desire to brag about your victories.", "vector": "B" },
-          { "text": "Fighting laziness and trying to 'ignite' yourself for work.", "vector": "C" },
-          { "text": "Trying to calculate all risks, killing intuition.", "vector": "D" }
+          { "text": "Restraining hard aggression against sovereign violators.", "vector": "A" },
+          { "text": "Suppressing the natural need for expansion and expression.", "vector": "B" },
+          { "text": "Endlessly imitating work with burnt-out Libido.", "vector": "C" },
+          { "text": "Attempting to shove brilliant chaos into logical Time tables.", "vector": "D" }
         ]
       },
       {
         "id": 8,
-        "text": "Your 'Shadow' dream in business is...",
+        "text": "An absolutely unlocked expansion scenario looks like...",
         "options": [
-          { "text": "To have absolute power over all processes.", "vector": "A" },
-          { "text": "To become #1 so competitors fear to even mention your name.", "vector": "B" },
-          { "text": "To work only when there is an impulse, and still grow rich.", "vector": "C" },
-          { "text": "To manage reality through signs and premonitions, not reports.", "vector": "D" }
+          { "text": "Total control where the system works like a clock without your Time.", "vector": "A" },
+          { "text": "A level of Status where market laws are rewritten under your name.", "vector": "B" },
+          { "text": "Being in a pure flow where Money growth happens with absolute relax.", "vector": "C" },
+          { "text": "Managing reality at supersonic speed, relying solely on gut feeling.", "vector": "D" }
         ]
       },
       {
         "id": 9,
-        "text": "In a conflict, you...",
+        "text": "How is the handbrake activated during confrontation?",
         "options": [
-          { "text": "Turn cold and distance yourself to strike more accurately.", "vector": "A" },
-          { "text": "Start proving your value and righteousness.", "vector": "B" },
-          { "text": "Give up because there is no strength to fight.", "vector": "C" },
-          { "text": "Confuse the opponent with irrational arguments.", "vector": "D" }
+          { "text": "Going into total freeze and distancing for a surgical strike.", "vector": "A" },
+          { "text": "Draining energy into attempts to prove status and rightness.", "vector": "B" },
+          { "text": "Instant blackout: capitulation due to Libido deficit.", "vector": "C" },
+          { "text": "Freezing the opponent with complex logical constructs.", "vector": "D" }
         ]
       },
       {
         "id": 10,
-        "text": "What is 'Money' to you, really?",
+        "text": "In which currency is true Money capitalization measured?",
         "options": [
-          { "text": "A tool to protect my autonomy and boundaries.", "vector": "A" },
-          { "text": "Confirmation of my audacity and scale.", "vector": "B" },
-          { "text": "Fuel for pleasures and high-life living.", "vector": "C" },
-          { "text": "A resource for realizing the maddest ideas.", "vector": "D" }
+          { "text": "In ironclad protection of personal boundaries and autonomy.", "vector": "A" },
+          { "text": "In flawless Status and unreachable scale.", "vector": "B" },
+          { "text": "In pure life joy and bubbling Libido.", "vector": "C" },
+          { "text": "In Time released to generate wild breakthrough ideas.", "vector": "D" }
         ]
       },
       {
         "id": 11,
-        "text": "Your main saboteur (Guardian) tells you:",
+        "text": "Factory safety settings (bugs) dictate the rule:",
         "options": [
-          { "text": "'Be polite, don't escalate the conflict.'", "vector": "A" },
-          { "text": "'Don't stick your neck out, it's not time to declare yourself yet.'", "vector": "B" },
-          { "text": "'Rest first, do it tomorrow.'", "vector": "C" },
-          { "text": "'It's illogical, make a plan first.'", "vector": "D" }
+          { "text": "'Observe subordination, do not provoke open conflict.'", "vector": "A" },
+          { "text": "'Sit quietly, your Status is not yet backed by results.'", "vector": "B" },
+          { "text": "'Conserve energy at any cost, or you'll burn out completely.'", "vector": "C" },
+          { "text": "'Do not step without analysis, intuition lies.'", "vector": "D" }
         ]
       },
       {
         "id": 12,
-        "text": "Which loss would be most painful for you?",
+        "text": "In case of system bankruptcy, which currency loss will be critical?",
         "options": [
-          { "text": "Loss of control over your life and resources.", "vector": "A" },
-          { "text": "Loss of recognition and status in the eyes of others.", "vector": "B" },
-          { "text": "Loss of taste for life and physical vigor.", "vector": "C" },
-          { "text": "Loss of ability to feel the 'Flow' and intuitive exits.", "vector": "D" }
+          { "text": "Loss of architectural control over your ecosystem.", "vector": "A" },
+          { "text": "Loss of Status and recognition in the eyes of an authoritative circle.", "vector": "B" },
+          { "text": "Total Libido failure: life perceived as gray, empty code.", "vector": "C" },
+          { "text": "Loss of intuitive connection: inability to see Time flows.", "vector": "D" }
         ]
       }
     ],
     "results": {
       "A": {
-        "title": "Sovereign (Power & Boundaries)",
-        "shadowBug": "Transparency",
-        "price": "You are an extra in your own life. While you are «understanding» others, your personal goals are on pause. You lose respect because people can walk all over you. Your potential drains into a bucket of other people's wants.",
+        "title": "Sovereign (Control Node)",
+        "shadowBug": "Illusion of Power",
+        "price": "Externally everything is controlled, but effectively Money and Time go into micromanagement. The handbrake is pulled on delegation. The system fears losing power, so the motor burns 80% power so nobody 'breaks the frame'. Financial ceiling is inevitable.",
         "vector": "A"
       },
       "B": {
-        "title": "Expansion (Audacity & Scale)",
+        "title": "Expansion (Status Blocker)",
         "shadowBug": "Self-ban on Brightness",
-        "price": "Delayed life syndrome. You are always «preparing» for a jump, but never jump. You earn 10x less than you could, simply because you are afraid to take your rightful place. Your ideas are stolen by those who are bolder but weaker than you.",
+        "price": "The motor roars, but the gearbox is broken. Status is artificially lowered by 'impostor syndrome'. The system pays for low self-esteem with Money that bolder, weaker players take with ease. Braking on manifestation.",
         "vector": "B"
       },
       "C": {
-        "title": "Vitality (Resource & Energy)",
+        "title": "Vitality (Libido Collapse)",
         "shadowBug": "Life by the Manual",
-        "price": "Burnout and loss of meaning. You seem to be doing everything right, but there is zero joy. Your body will start to fall apart through illness — it's the only way to make you listen to yourself. You live like a robot waiting for disposal.",
+        "price": "The system burns Libido, imitating motion. The handbrake is pulled in favor of 'correct' algorithms, zeroing out life joy. Business doesn't grow because the driver has an empty tank. Total system bankruptcy will come through depression or health failure.",
         "vector": "C"
       },
       "D": {
-        "title": "Architect (Intuition & Chaos)",
-        "shadowBug": "Prison of Logic",
-        "price": "Missed opportunities. While you build complex logical chains and search for «guarantees», life passes by. You get stuck in analysis paralysis while others just go and do. Your intuition is screaming, but you don't hear it.",
+        "title": "Architect (Time Prison)",
+        "shadowBug": "Perfectionist Paralysis",
+        "price": "You are gifted with incredible vision, but the safety system blocks throttle waiting for 'ideal guarantees'. Time relentlessly burns. While the brain analyzes risks, quantum leaps go to those who dared to release the handbrake.",
         "vector": "D"
       }
     },
     "botUsername": "Shadowass1st_bot",
-    "botCTA": "GET SOLUTION IN TELEGRAM",
-    "priceHeading": "THE PRICE OF YOUR SHADOW"
+    "botCTA": "UNPACK AUDIT IN TELEGRAM",
+    "priceHeading": "LOSS STATISTICS"
   }
 }
